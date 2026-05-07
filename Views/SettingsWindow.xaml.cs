@@ -277,49 +277,56 @@ namespace Pixelab
             try
             {
                 if (!File.Exists(_colorsPath)) return;
-                
+
                 string json = File.ReadAllText(_colorsPath);
                 using var doc = JsonDocument.Parse(json);
-                
+
                 _colors.Clear();
                 _groups.Clear();
-                
-                if (doc.RootElement.TryGetProperty("colors", out var colorsArr))
-                {
-                    foreach (var c in colorsArr.EnumerateArray())
-                    {
-                        _colors.Add(new ColorData
-                        {
-                            ColorId = c.GetProperty("color_id").GetString() ?? "",
-                            Name = c.GetProperty("name").GetString() ?? "",
-                            R = c.GetProperty("r").GetByte(),
-                            G = c.GetProperty("g").GetByte(),
-                            B = c.GetProperty("b").GetByte(),
-                            Group = c.GetProperty("group").GetString() ?? "",
-                            Enabled = c.GetProperty("enabled").GetBoolean(),
-                            Favorite = c.GetProperty("favorite").GetBoolean()
-                        });
-                    }
-                }
-                
+
                 if (doc.RootElement.TryGetProperty("groups", out var groupsArr))
                 {
                     foreach (var g in groupsArr.EnumerateArray())
                     {
+                        string groupId = g.GetProperty("group_id").GetString() ?? "";
                         _groups.Add(new GroupData
                         {
-                            GroupId = g.GetProperty("group_id").GetString() ?? "",
-                            Name = g.GetProperty("name").GetString() ?? "",
+                            GroupId = groupId,
+                            Name    = g.GetProperty("name").GetString() ?? "",
                             Enabled = g.GetProperty("enabled").GetBoolean()
                         });
+
+                        if (g.TryGetProperty("colors", out var colorsArr))
+                        {
+                            foreach (var c in colorsArr.EnumerateArray())
+                            {
+                                string hex = c.GetProperty("hex").GetString() ?? "#000000";
+                                (byte r, byte gByte, byte b) = HexToRgb(hex);
+                                _colors.Add(new ColorData
+                                {
+                                    ColorId  = c.GetProperty("color_id").GetString() ?? "",
+                                    Name     = c.GetProperty("name").GetString() ?? "",
+                                    R = r, G = gByte, B = b,
+                                    Group    = groupId,
+                                    Enabled  = c.GetProperty("enabled").GetBoolean(),
+                                    Favorite = c.GetProperty("favorite").GetBoolean()
+                                });
+                            }
+                        }
                     }
                 }
-                
+
                 PopulateColorGroups();
                 PopulateGroupFilter();
                 PopulateColors("all");
             }
             catch { }
+        }
+
+        private static (byte r, byte g, byte b) HexToRgb(string hex)
+        {
+            hex = hex.TrimStart('#');
+            return (Convert.ToByte(hex[0..2], 16), Convert.ToByte(hex[2..4], 16), Convert.ToByte(hex[4..6], 16));
         }
 
         private void PopulateColorGroups()
@@ -544,43 +551,45 @@ namespace Pixelab
             try
             {
                 if (!File.Exists(_colorsPath)) return;
-                
+
                 string json = File.ReadAllText(_colorsPath);
                 using var doc = JsonDocument.Parse(json);
-                
-                var root = new Dictionary<string, object>();
-                
-                var colorsArr = new List<Dictionary<string, object>>();
-                if (doc.RootElement.TryGetProperty("colors", out var existingColors))
-                {
-                    foreach (var c in existingColors.EnumerateArray())
-                    {
-                        var colorId = c.GetProperty("color_id").GetString() ?? "";
-                        var updated = _colors.FirstOrDefault(x => x.ColorId == colorId);
-                        
-                        var colorDict = JsonSerializer.Deserialize<Dictionary<string, object>>(c.GetRawText())!;
-                        if (updated != null)
-                        {
-                            colorDict["enabled"] = updated.Enabled;
-                            colorDict["favorite"] = updated.Favorite;
-                        }
-                        colorsArr.Add(colorDict);
-                    }
-                }
-                root["colors"] = colorsArr;
-                
+
+                if (!doc.RootElement.TryGetProperty("groups", out var existingGroups)) return;
+
                 var groupsArr = new List<Dictionary<string, object>>();
-                foreach (var g in _groups)
+                foreach (var g in existingGroups.EnumerateArray())
                 {
+                    string groupId   = g.GetProperty("group_id").GetString() ?? "";
+                    var groupMeta    = _groups.FirstOrDefault(x => x.GroupId == groupId);
+
+                    var colorsArr = new List<Dictionary<string, object>>();
+                    if (g.TryGetProperty("colors", out var existingColors))
+                    {
+                        foreach (var c in existingColors.EnumerateArray())
+                        {
+                            string colorId = c.GetProperty("color_id").GetString() ?? "";
+                            var colorData  = _colors.FirstOrDefault(x => x.ColorId == colorId);
+                            var colorDict  = JsonSerializer.Deserialize<Dictionary<string, object>>(c.GetRawText())!;
+                            if (colorData != null)
+                            {
+                                colorDict["enabled"]  = colorData.Enabled;
+                                colorDict["favorite"] = colorData.Favorite;
+                            }
+                            colorsArr.Add(colorDict);
+                        }
+                    }
+
                     groupsArr.Add(new Dictionary<string, object>
                     {
-                        ["group_id"] = g.GroupId,
-                        ["name"] = g.Name,
-                        ["enabled"] = g.Enabled
+                        ["group_id"] = groupId,
+                        ["name"]     = g.GetProperty("name").GetString() ?? "",
+                        ["enabled"]  = (object)(groupMeta?.Enabled ?? g.GetProperty("enabled").GetBoolean()),
+                        ["colors"]   = colorsArr
                     });
                 }
-                root["groups"] = groupsArr;
-                
+
+                var root    = new Dictionary<string, object> { ["groups"] = groupsArr };
                 var options = new JsonSerializerOptions { WriteIndented = true };
                 File.WriteAllText(_colorsPath, JsonSerializer.Serialize(root, options));
             }

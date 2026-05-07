@@ -112,8 +112,8 @@ namespace Pixelab
         /// <summary>Current color space for pattern generation (RGB or Lab)</summary>
         private PatternGenerator.ColorSpace _colorSpace = PatternGenerator.ColorSpace.Lab;
         
-        /// <summary>Selected color group filter for pattern generation ("all" or specific group_id)</summary>
-        private string _selectedGroupFilter = "all";
+        /// <summary>Selected group IDs for pattern generation (empty = all groups)</summary>
+        private HashSet<string> _selectedGroupIds = new();
 
         // ============================================================================
         // HIGHLIGHT ANIMATION STATE
@@ -140,9 +140,6 @@ namespace Pixelab
         
         /// <summary>Path to the bead colors database file</summary>
         private readonly string _colorsPath;
-        
-        /// <summary>Path to the saved patterns file</summary>
-        private readonly string _patternsPath;
         
         /// <summary>Pattern generator instance for creating bead patterns</summary>
         private PatternGenerator? _patternGenerator;
@@ -191,33 +188,21 @@ namespace Pixelab
             // Set paths in AppData
             _settingsPath = IO.Path.Combine(pixelabFolder, "settings.json");
             _colorsPath = IO.Path.Combine(pixelabFolder, "colors.json");
-            _patternsPath = IO.Path.Combine(pixelabFolder, "patterns.json");
-            
+
             // Find default resource files (shipped with the application)
             string baseDir = AppDomain.CurrentDomain.BaseDirectory;
             string defaultColorsPath = IO.Path.Combine(baseDir, "Resources", "Colors", "colors.json");
-            string defaultPatternsPath = IO.Path.Combine(baseDir, "Resources", "patterns.json");
-            
+
             // Fallback to relative paths for development environment
             if (!IO.File.Exists(defaultColorsPath))
-            {
                 defaultColorsPath = IO.Path.Combine("Resources", "Colors", "colors.json");
-                defaultPatternsPath = IO.Path.Combine("Resources", "patterns.json");
-            }
-            
-            // Copy default files to AppData if they don't exist
+
+            // Copy default colors to AppData if they don't exist
             if (!IO.File.Exists(_colorsPath) && IO.File.Exists(defaultColorsPath))
-            {
                 IO.File.Copy(defaultColorsPath, _colorsPath);
-            }
-            
-            if (!IO.File.Exists(_patternsPath) && IO.File.Exists(defaultPatternsPath))
-            {
-                IO.File.Copy(defaultPatternsPath, _patternsPath);
-            }
-            
-            // Initialize the pattern generator with AppData paths
-            _patternGenerator = new PatternGenerator(_colorsPath, _patternsPath);
+
+            // Initialize the pattern generator
+            _patternGenerator = new PatternGenerator(_colorsPath);
             
             // Setup highlight animation timer (blinks every 400ms)
             _highlightTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(400) };
@@ -296,44 +281,88 @@ namespace Pixelab
         }
         
         /// <summary>
-        /// Loads available color groups into the ColorGroupComboBox.
+        /// Loads available color groups into the ColorGroupComboBox as checkboxes.
         /// </summary>
         private void LoadColorGroups()
         {
             if (_patternGenerator == null) return;
-            
-            var groups = _patternGenerator.GetGroups();
+
+            var groups = _patternGenerator.GetGroups().Where(g => g.Enabled).ToList();
             ColorGroupComboBox.Items.Clear();
-            
-            // Add "All Groups" option
-            ColorGroupComboBox.Items.Add(new ComboBoxItem 
-            { 
-                Content = Loc.T("labels.all_groups"), 
-                Tag = "all" 
-            });
-            
-            // Add each enabled group
-            foreach (var group in groups.Where(g => g.Enabled))
+
+            // Header item — always selected, shows selection summary
+            _groupHeaderItem = new ComboBoxItem
             {
-                ColorGroupComboBox.Items.Add(new ComboBoxItem 
-                { 
-                    Content = group.Name, 
-                    Tag = group.GroupId 
-                });
-            }
-            
-            // Select the current filter
-            for (int i = 0; i < ColorGroupComboBox.Items.Count; i++)
+                Content = Loc.T("labels.all_groups"),
+                IsHitTestVisible = false,
+                Focusable = false
+            };
+            ColorGroupComboBox.Items.Add(_groupHeaderItem);
+
+            // Add each enabled group as a CheckBox item
+            foreach (var group in groups)
             {
-                if (ColorGroupComboBox.Items[i] is ComboBoxItem item && (string)item.Tag == _selectedGroupFilter)
+                var cb = new CheckBox
                 {
-                    ColorGroupComboBox.SelectedIndex = i;
-                    break;
-                }
+                    Content = group.Name,
+                    Tag = group.GroupId,
+                    IsChecked = _selectedGroupIds.Count == 0 || _selectedGroupIds.Contains(group.GroupId),
+                    Foreground = System.Windows.Media.Brushes.White,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    Margin = new Thickness(2, 2, 2, 2)
+                };
+                cb.Click += GroupCheckBox_Click;
+
+                ColorGroupComboBox.Items.Add(new ComboBoxItem { Content = cb, Padding = new Thickness(4, 2, 4, 2) });
             }
-            
-            if (ColorGroupComboBox.SelectedIndex < 0)
-                ColorGroupComboBox.SelectedIndex = 0;
+
+            ColorGroupComboBox.SelectedIndex = 0;
+            UpdateGroupFilterHeader();
+        }
+
+        private ComboBoxItem? _groupHeaderItem;
+
+        private void GroupCheckBox_Click(object sender, RoutedEventArgs e)
+        {
+            // Prevent the ComboBoxItem from processing this click (which would close the dropdown)
+            e.Handled = true;
+
+            // Recompute _selectedGroupIds from current checkbox states
+            _selectedGroupIds.Clear();
+            foreach (ComboBoxItem item in ColorGroupComboBox.Items.Cast<ComboBoxItem>().Skip(1))
+            {
+                if (item.Content is CheckBox cb && cb.IsChecked == true)
+                    _selectedGroupIds.Add((string)cb.Tag!);
+            }
+
+            UpdateGroupFilterHeader();
+            ColorGroupComboBox.IsDropDownOpen = true;
+        }
+
+        private void UpdateGroupFilterHeader()
+        {
+            if (_groupHeaderItem == null) return;
+
+            int total = ColorGroupComboBox.Items.Count - 1;
+            int checked_ = _selectedGroupIds.Count;
+
+            if (checked_ == 0 || checked_ == total)
+            {
+                _selectedGroupIds.Clear();
+                _groupHeaderItem.Content = Loc.T("labels.all_groups");
+                // Sync checkboxes to all-checked
+                foreach (ComboBoxItem item in ColorGroupComboBox.Items.Cast<ComboBoxItem>().Skip(1))
+                    if (item.Content is CheckBox cb) cb.IsChecked = true;
+            }
+            else
+            {
+                var names = ColorGroupComboBox.Items.Cast<object>().Skip(1)
+                    .OfType<ComboBoxItem>()
+                    .Where(i => i.Content is CheckBox cb && cb.IsChecked == true)
+                    .Select(i => ((CheckBox)i.Content).Content?.ToString() ?? "")
+                    .ToList();
+                _groupHeaderItem.Content = string.Join(", ", names);
+            }
         }
 
         /// <summary>
@@ -754,42 +783,20 @@ namespace Pixelab
         /// </summary>
         private void ColorGroupComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (ColorGroupComboBox.SelectedItem is ComboBoxItem item)
-            {
-                _selectedGroupFilter = (string)item.Tag;
-            }
+            // Always keep the header item selected so the summary text stays visible
+            if (ColorGroupComboBox.SelectedIndex != 0)
+                ColorGroupComboBox.SelectedIndex = 0;
         }
 
         /// <summary>
         /// Handles the Generate Pattern button click.
-        /// Either loads an existing pattern or generates a new one.
         /// </summary>
         private void GeneratePattern_Click(object sender, RoutedEventArgs e)
         {
             if (_currentImage == null || _currentImagePath == null) return;
-            
+
             try
             {
-                // Check if a pattern already exists for this image WITH THE SAME GROUP FILTER
-                if (_patternGenerator!.PatternExists(_currentImagePath, _selectedGroupFilter))
-                {
-                    var result = MessageBox.Show(
-                        Loc.T("messages.pattern_exists"),
-                        Loc.T("messages.pattern_found"),
-                        MessageBoxButton.YesNoCancel,
-                        MessageBoxImage.Question);
-                    
-                    if (result == MessageBoxResult.Yes)
-                    {
-                        LoadExistingPattern();
-                        return;
-                    }
-                    else if (result == MessageBoxResult.Cancel)
-                    {
-                        return;
-                    }
-                }
-                
                 GenerateNewPattern();
             }
             catch (Exception ex)
@@ -803,27 +810,6 @@ namespace Pixelab
         }
 
         /// <summary>
-        /// Loads an existing pattern from the patterns file.
-        /// </summary>
-        private void LoadExistingPattern()
-        {
-            var pattern = _patternGenerator!.LoadPattern(_currentImagePath!, _selectedGroupFilter);
-            
-            if (pattern == null)
-            {
-                MessageBox.Show(
-                    Loc.T("messages.error_loading_pattern"),
-                    Loc.T("messages.error"),
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-                return;
-            }
-            
-            _currentPattern = pattern;
-            ApplyGeneratedImage(_patternGenerator.GenerateImageFromPattern(pattern, _currentImage!), pattern.Colors.Count);
-        }
-
-        /// <summary>
         /// Generates a new bead pattern from the current image.
         /// </summary>
         private void GenerateNewPattern()
@@ -834,7 +820,7 @@ namespace Pixelab
                 (int)AlphaThresholdSlider.Value,
                 _compressionLevel,
                 _colorSpace,
-                _selectedGroupFilter);
+                _selectedGroupIds.Count > 0 ? _selectedGroupIds : null);
             
             _currentPattern = pattern;
             ApplyGeneratedImage(generatedImage, pattern.Colors.Count);
@@ -874,32 +860,8 @@ namespace Pixelab
             
             if (_currentPattern == null) return;
             
-            // Build a lookup dictionary for color information
-            var colorLookup = new Dictionary<string, (byte r, byte g, byte b, string name)>();
-            
-            try
-            {
-                string json = IO.File.ReadAllText(_colorsPath);
-                using var doc = JsonDocument.Parse(json);
-                
-                if (doc.RootElement.TryGetProperty("colors", out var colors))
-                {
-                    foreach (var c in colors.EnumerateArray())
-                    {
-                        string id = c.GetProperty("color_id").GetString() ?? "";
-                        byte r = c.GetProperty("r").GetByte();
-                        byte g = c.GetProperty("g").GetByte();
-                        byte b = c.GetProperty("b").GetByte();
-                        string name = c.GetProperty("name").GetString() ?? id;
-                        colorLookup[id] = (r, g, b, name);
-                    }
-                }
-            }
-            catch
-            {
-                return;
-            }
-            
+            var colorLookup = _patternGenerator!.GetColorLookup();
+
             // Create color swatches sorted by pixel count (most used first)
             foreach (var patternColor in _currentPattern.Colors.OrderByDescending(c => c.Pixels.Count))
             {
@@ -910,13 +872,13 @@ namespace Pixelab
                         Width = 24,
                         Height = 24,
                         Margin = new Thickness(2),
-                        Background = new SolidColorBrush(Color.FromRgb(color.r, color.g, color.b)),
+                        Background = new SolidColorBrush(Color.FromRgb(color.R, color.G, color.B)),
                         BorderBrush = Brushes.White,
                         BorderThickness = new Thickness(2),
                         CornerRadius = new CornerRadius(3),
                         Tag = patternColor.ColorId,
                         Cursor = Cursors.Hand,
-                        ToolTip = Loc.T("tooltips.color_beads", patternColor.ColorId, color.name, patternColor.Pixels.Count)
+                        ToolTip = Loc.T("tooltips.color_beads", patternColor.ColorId, color.Name, patternColor.Pixels.Count)
                     };
                     
                     border.MouseLeftButtonDown += BeadColor_Click;
