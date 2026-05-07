@@ -931,18 +931,164 @@ namespace Pixelab
             }
         }
 
-        private void DeleteColor_Click(object sender, RoutedEventArgs e)
+        private void DeleteColors_Click(object sender, RoutedEventArgs e)
         {
             if (Owner is not MainWindow mainWindow) return;
             var generator = mainWindow.GetPatternGenerator();
             if (generator == null) return;
 
-            // Build dialog
+            var allColors = generator.GetGroups()
+                .SelectMany(g => g.Colors.Select(c => new { c.ColorId, c.Name, GroupName = g.Name }))
+                .OrderBy(c => c.ColorId)
+                .ToList();
+
+            if (allColors.Count == 0)
+            {
+                MessageBox.Show("No colors available to delete.", "Delete Color(s)", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+
             var dialog = new Window
             {
-                Title = "Delete Color",
+                Title = "Delete Color(s)",
+                Width = 420,
+                Height = 460,
+                WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                Owner = this,
+                ResizeMode = ResizeMode.NoResize,
+                Background = new SolidColorBrush(Color.FromRgb(30, 30, 30))
+            };
+
+            var root = new Grid { Margin = new Thickness(16) };
+            root.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            root.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            root.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            root.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+
+            var searchBox = new TextBox
+            {
+                Background = new SolidColorBrush(Color.FromRgb(62, 62, 66)),
+                Foreground = Brushes.White,
+                BorderBrush = new SolidColorBrush(Color.FromRgb(85, 85, 85)),
+                Padding = new Thickness(8, 6, 8, 6),
+                Margin = new Thickness(0, 0, 0, 8)
+            };
+            Grid.SetRow(searchBox, 0);
+
+            var hint = new TextBlock
+            {
+                Text = "Hold Ctrl or Shift to select multiple colors.",
+                Foreground = new SolidColorBrush(Color.FromRgb(136, 136, 136)),
+                FontSize = 10,
+                Margin = new Thickness(0, 0, 0, 6)
+            };
+            Grid.SetRow(hint, 1);
+
+            var listBox = new ListBox
+            {
+                SelectionMode = SelectionMode.Extended,
+                Background = new SolidColorBrush(Color.FromRgb(37, 37, 38)),
+                Foreground = Brushes.White,
+                BorderBrush = new SolidColorBrush(Color.FromRgb(85, 85, 85)),
+                Margin = new Thickness(0, 0, 0, 12)
+            };
+            Grid.SetRow(listBox, 2);
+
+            void RefreshList(string filter)
+            {
+                listBox.Items.Clear();
+                foreach (var c in allColors)
+                {
+                    if (!string.IsNullOrEmpty(filter) &&
+                        !c.ColorId.Contains(filter, StringComparison.OrdinalIgnoreCase) &&
+                        !c.Name.Contains(filter, StringComparison.OrdinalIgnoreCase))
+                        continue;
+                    listBox.Items.Add(new ListBoxItem
+                    {
+                        Content = $"{c.ColorId}  —  {c.Name}  ({c.GroupName})",
+                        Tag = c.ColorId,
+                        Foreground = Brushes.White,
+                        Background = Brushes.Transparent
+                    });
+                }
+            }
+
+            RefreshList("");
+            searchBox.TextChanged += (s, ev) => RefreshList(searchBox.Text.Trim());
+
+            var buttons = new StackPanel { Orientation = Orientation.Horizontal, HorizontalAlignment = HorizontalAlignment.Right };
+            Grid.SetRow(buttons, 3);
+
+            var cancelBtn = new Button
+            {
+                Content = "Cancel", Width = 80, Padding = new Thickness(0, 6, 0, 6),
+                Background = new SolidColorBrush(Color.FromRgb(62, 62, 66)),
+                Foreground = Brushes.White, BorderThickness = new Thickness(0), Margin = new Thickness(0, 0, 8, 0)
+            };
+            var deleteBtn = new Button
+            {
+                Content = "Delete", Width = 80, Padding = new Thickness(0, 6, 0, 6),
+                Background = new SolidColorBrush(Color.FromRgb(183, 0, 116)),
+                Foreground = Brushes.White, BorderThickness = new Thickness(0)
+            };
+
+            cancelBtn.Click += (s, ev) => dialog.DialogResult = false;
+            deleteBtn.Click += (s, ev) => dialog.DialogResult = true;
+
+            buttons.Children.Add(cancelBtn);
+            buttons.Children.Add(deleteBtn);
+
+            root.Children.Add(searchBox);
+            root.Children.Add(hint);
+            root.Children.Add(listBox);
+            root.Children.Add(buttons);
+            dialog.Content = root;
+
+            if (dialog.ShowDialog() != true) return;
+
+            var selectedIds = listBox.SelectedItems
+                .OfType<ListBoxItem>()
+                .Select(item => item.Tag as string)
+                .Where(id => id != null)
+                .ToList();
+
+            if (selectedIds.Count == 0) return;
+
+            var confirm = MessageBox.Show(
+                $"Delete {selectedIds.Count} color(s)? This cannot be undone.",
+                "Confirm Delete",
+                MessageBoxButton.OKCancel,
+                MessageBoxImage.Warning);
+
+            if (confirm != MessageBoxResult.OK) return;
+
+            foreach (var id in selectedIds)
+                generator.DeleteColor(id!);
+
+            LoadColorsData();
+            PopulateColorGroups();
+            PopulateGroupFilter();
+            PopulateColors("all");
+            mainWindow.ReloadColorGroups();
+        }
+
+        private void DeleteGroup_Click(object sender, RoutedEventArgs e)
+        {
+            if (Owner is not MainWindow mainWindow) return;
+            var generator = mainWindow.GetPatternGenerator();
+            if (generator == null) return;
+
+            if (_groups.Count == 0)
+            {
+                MessageBox.Show("No groups available to delete.", "Delete Group", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+
+            var dialog = new Window
+            {
+                Title = "Delete Group",
                 Width = 360,
-                Height = 225,
+                Height = 175,
                 WindowStartupLocation = WindowStartupLocation.CenterOwner,
                 Owner = this,
                 ResizeMode = ResizeMode.NoResize,
@@ -950,16 +1096,6 @@ namespace Pixelab
             };
 
             var stack = new StackPanel { Margin = new Thickness(16) };
-
-            var idLabel = new TextBlock { Text = "Color ID (leave empty to delete entire group):", Foreground = Brushes.White, Margin = new Thickness(0, 0, 0, 4) };
-            var idTextBox = new TextBox
-            {
-                Background = new SolidColorBrush(Color.FromRgb(62, 62, 66)),
-                Foreground = Brushes.White,
-                BorderBrush = new SolidColorBrush(Color.FromRgb(85, 85, 85)),
-                Padding = new Thickness(8, 6, 8, 6),
-                Margin = new Thickness(0, 0, 0, 12)
-            };
 
             var groupLabel = new TextBlock { Text = "Color Group:", Foreground = Brushes.White, Margin = new Thickness(0, 0, 0, 4) };
             var groupComboBox = new ComboBox
@@ -979,20 +1115,18 @@ namespace Pixelab
                 Background = new SolidColorBrush(Color.FromRgb(62, 62, 66)),
                 Foreground = Brushes.White, BorderThickness = new Thickness(0), Margin = new Thickness(0, 0, 8, 0)
             };
-            var okBtn = new Button
+            var deleteBtn = new Button
             {
-                Content = "OK", Width = 80, Padding = new Thickness(0, 6, 0, 6),
+                Content = "Delete", Width = 80, Padding = new Thickness(0, 6, 0, 6),
                 Background = new SolidColorBrush(Color.FromRgb(183, 0, 116)),
                 Foreground = Brushes.White, BorderThickness = new Thickness(0)
             };
 
-            okBtn.Click += (s, ev) => { dialog.DialogResult = true; };
-            cancelBtn.Click += (s, ev) => { dialog.DialogResult = false; };
+            cancelBtn.Click += (s, ev) => dialog.DialogResult = false;
+            deleteBtn.Click += (s, ev) => dialog.DialogResult = true;
 
             buttons.Children.Add(cancelBtn);
-            buttons.Children.Add(okBtn);
-            stack.Children.Add(idLabel);
-            stack.Children.Add(idTextBox);
+            buttons.Children.Add(deleteBtn);
             stack.Children.Add(groupLabel);
             stack.Children.Add(groupComboBox);
             stack.Children.Add(buttons);
@@ -1000,30 +1134,17 @@ namespace Pixelab
 
             if (dialog.ShowDialog() != true) return;
 
-            var colorId = idTextBox.Text.Trim();
             var selectedGroup = (groupComboBox.SelectedItem as ComboBoxItem)?.Tag as string ?? "";
 
-            if (string.IsNullOrEmpty(colorId))
-            {
-                // Warn before deleting whole group
-                var confirm = MessageBox.Show(
-                    "If no Color ID is specified, this action will delete the WHOLE selected group.",
-                    "Warning",
-                    MessageBoxButton.OKCancel,
-                    MessageBoxImage.Warning);
+            var confirm = MessageBox.Show(
+                $"Delete the entire group '{(groupComboBox.SelectedItem as ComboBoxItem)?.Content}'? This will remove all colors in it and cannot be undone.",
+                "Confirm Delete Group",
+                MessageBoxButton.OKCancel,
+                MessageBoxImage.Warning);
 
-                if (confirm != MessageBoxResult.OK) return;
+            if (confirm != MessageBoxResult.OK) return;
 
-                generator.DeleteGroup(selectedGroup);
-            }
-            else
-            {
-                if (!generator.DeleteColor(colorId))
-                {
-                    MessageBox.Show($"Color '{colorId}' not found.", "Not Found", MessageBoxButton.OK, MessageBoxImage.Warning);
-                    return;
-                }
-            }
+            generator.DeleteGroup(selectedGroup);
 
             LoadColorsData();
             PopulateColorGroups();

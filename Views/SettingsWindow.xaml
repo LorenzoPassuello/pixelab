@@ -273,7 +273,10 @@
                                 <Button x:Name="ImportColorsButton" Content="Add Group from JSON" Click="ImportColors_Click"
                                         Background="#3E3E42" Foreground="#FFFFFF" BorderBrush="#555555"
                                         Padding="12,6" Margin="0,0,8,0" Cursor="Hand"/>
-                                <Button x:Name="DeleteCustomColorButton" Content="Delete Color" Click="DeleteColor_Click"
+                                <Button x:Name="DeleteColorsButton" Content="Delete Color(s)" Click="DeleteColors_Click"
+                                        Background="#3E3E42" Foreground="#FFFFFF" BorderBrush="#555555"
+                                        Padding="12,6" Margin="0,0,8,0" Cursor="Hand"/>
+                                <Button x:Name="DeleteGroupButton" Content="Delete Group" Click="DeleteGroup_Click"
                                         Background="#3E3E42" Foreground="#FFFFFF" BorderBrush="#555555"
                                         Padding="12,6" Cursor="Hand"/>
                             </StackPanel>

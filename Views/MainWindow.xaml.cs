@@ -814,6 +814,7 @@ namespace Pixelab
         /// </summary>
         private void GenerateNewPattern()
         {
+            ClearHighlight();
             var (pattern, generatedImage) = _patternGenerator!.GeneratePattern(
                 _currentImage!,
                 _currentImagePath!,
