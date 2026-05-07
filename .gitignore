@@ -28,8 +28,9 @@ desktop.ini
 .claude/
 CLAUDE.md
 
-# Migrate colors script
+# Python Scripts
 migrate_colors.py
+maps.py
 
 # User-specific app data (generated at runtime, not source)
 # Runtime user data is stored in %appdata%/Pixelab/ and is never in the repo.

@@ -340,7 +340,7 @@
           "name": "C34",
           "hex": "#6B6B6B",
           "l": 45.2,
-          "a": 0,
+          "a": -0,
           "b": 0,
           "enabled": true,
           "favorite": false
@@ -1755,13 +1755,13 @@
       ]
     },
     {
-      "group_id": "yant_eros",
+      "group_id": "yantjouet_eros",
       "name": "YantJouet Series (by Eros)",
       "enabled": true,
       "colors": [
         {
-          "color_id": "JA01",
-          "name": "JA01",
+          "color_id": "Y-A01",
+          "name": "A01",
           "hex": "#FFE5B2",
           "l": 91.9,
           "a": 1.6,
@@ -1770,8 +1770,8 @@
           "favorite": false
         },
         {
-          "color_id": "JA02",
-          "name": "JA02",
+          "color_id": "Y-A02",
+          "name": "A02",
           "hex": "#EDEDB8",
           "l": 92.6,
           "a": -8.4,
@@ -1780,8 +1780,8 @@
           "favorite": false
         },
         {
-          "color_id": "JA03",
-          "name": "JA03",
+          "color_id": "Y-A03",
+          "name": "A03",
           "hex": "#FFF387",
           "l": 94.8,
           "a": -10.1,
@@ -1790,8 +1790,8 @@
           "favorite": false
         },
         {
-          "color_id": "JA04",
-          "name": "JA04",
+          "color_id": "Y-A04",
+          "name": "A04",
           "hex": "#FFEB3F",
           "l": 92.1,
           "a": -10.7,
@@ -1800,8 +1800,8 @@
           "favorite": false
         },
         {
-          "color_id": "JA05",
-          "name": "JA05",
+          "color_id": "Y-A05",
+          "name": "A05",
           "hex": "#F7E326",
           "l": 89.3,
           "a": -10.8,
@@ -1810,8 +1810,8 @@
           "favorite": false
         },
         {
-          "color_id": "JA06",
-          "name": "JA06",
+          "color_id": "Y-A06",
+          "name": "A06",
           "hex": "#FFB200",
           "l": 77.9,
           "a": 17.2,
@@ -1820,8 +1820,8 @@
           "favorite": false
         },
         {
-          "color_id": "JA07",
-          "name": "JA07",
+          "color_id": "Y-A07",
+          "name": "A07",
           "hex": "#FF7C26",
           "l": 66.4,
           "a": 45.3,
@@ -1830,8 +1830,8 @@
           "favorite": false
         },
         {
-          "color_id": "JA08",
-          "name": "JA08",
+          "color_id": "Y-A08",
+          "name": "A08",
           "hex": "#F2C500",
           "l": 81.2,
           "a": 1.7,
@@ -1840,8 +1840,8 @@
           "favorite": false
         },
         {
-          "color_id": "JA09",
-          "name": "JA09",
+          "color_id": "Y-A09",
+          "name": "A09",
           "hex": "#F49C61",
           "l": 72.1,
           "a": 27.3,
@@ -1850,8 +1850,8 @@
           "favorite": false
         },
         {
-          "color_id": "JA10",
-          "name": "JA10",
+          "color_id": "Y-A10",
+          "name": "A10",
           "hex": "#F77D3A",
           "l": 65.6,
           "a": 42.3,
@@ -1860,8 +1860,8 @@
           "favorite": false
         },
         {
-          "color_id": "JA11",
-          "name": "JA11",
+          "color_id": "Y-A11",
+          "name": "A11",
           "hex": "#F7B85A",
           "l": 78.9,
           "a": 13.3,
@@ -1870,8 +1870,8 @@
           "favorite": false
         },
         {
-          "color_id": "JA12",
-          "name": "JA12",
+          "color_id": "Y-A12",
+          "name": "A12",
           "hex": "#FFAA80",
           "l": 77,
           "a": 26.8,
@@ -1880,8 +1880,8 @@
           "favorite": false
         },
         {
-          "color_id": "JA13",
-          "name": "JA13",
+          "color_id": "Y-A13",
+          "name": "A13",
           "hex": "#FFB245",
           "l": 78.2,
           "a": 18.7,
@@ -1890,8 +1890,8 @@
           "favorite": false
         },
         {
-          "color_id": "JA14",
-          "name": "JA14",
+          "color_id": "Y-A14",
+          "name": "A14",
           "hex": "#EF5A29",
           "l": 57.9,
           "a": 55.2,
@@ -1900,8 +1900,8 @@
           "favorite": false
         },
         {
-          "color_id": "JA15",
-          "name": "JA15",
+          "color_id": "Y-A15",
+          "name": "A15",
           "hex": "#F7F729",
           "l": 94.5,
           "a": -20.5,
@@ -1910,8 +1910,8 @@
           "favorite": false
         },
         {
-          "color_id": "JA16",
-          "name": "JA16",
+          "color_id": "Y-A16",
+          "name": "A16",
           "hex": "#FFF699",
           "l": 95.8,
           "a": -9.8,
@@ -1920,8 +1920,8 @@
           "favorite": false
         },
         {
-          "color_id": "JA17",
-          "name": "JA17",
+          "color_id": "Y-A17",
+          "name": "A17",
           "hex": "#FFC500",
           "l": 82.5,
           "a": 7.3,
@@ -1930,8 +1930,8 @@
           "favorite": false
         },
         {
-          "color_id": "JA18",
-          "name": "JA18",
+          "color_id": "Y-A18",
+          "name": "A18",
           "hex": "#FFBB7F",
           "l": 80.9,
           "a": 17.8,
@@ -1940,8 +1940,8 @@
           "favorite": false
         },
         {
-          "color_id": "JA19",
-          "name": "JA19",
+          "color_id": "Y-A19",
+          "name": "A19",
           "hex": "#FF746B",
           "l": 65.6,
           "a": 52.3,
@@ -1950,8 +1950,8 @@
           "favorite": false
         },
         {
-          "color_id": "JA20",
-          "name": "JA20",
+          "color_id": "Y-A20",
+          "name": "A20",
           "hex": "#FFCC00",
           "l": 84.2,
           "a": 3.7,
@@ -1960,8 +1960,8 @@
           "favorite": false
         },
         {
-          "color_id": "JA21",
-          "name": "JA21",
+          "color_id": "Y-A21",
+          "name": "A21",
           "hex": "#FFC95E",
           "l": 83.9,
           "a": 8,
@@ -1970,8 +1970,8 @@
           "favorite": false
         },
         {
-          "color_id": "JA22",
-          "name": "JA22",
+          "color_id": "Y-A22",
+          "name": "A22",
           "hex": "#FFE36D",
           "l": 90.5,
           "a": -4.2,
@@ -1980,8 +1980,8 @@
           "favorite": false
         },
         {
-          "color_id": "JA23",
-          "name": "JA23",
+          "color_id": "Y-A23",
+          "name": "A23",
           "hex": "#FFC996",
           "l": 84.6,
           "a": 12.7,
@@ -1990,8 +1990,8 @@
           "favorite": false
         },
         {
-          "color_id": "JA24",
-          "name": "JA24",
+          "color_id": "Y-A24",
+          "name": "A24",
           "hex": "#FFF7AF",
           "l": 96.4,
           "a": -7.9,
@@ -2000,8 +2000,8 @@
           "favorite": false
         },
         {
-          "color_id": "JA25",
-          "name": "JA25",
+          "color_id": "Y-A25",
+          "name": "A25",
           "hex": "#FFD84F",
           "l": 87.5,
           "a": -0.5,
@@ -2010,8 +2010,8 @@
           "favorite": false
         },
         {
-          "color_id": "JA26",
-          "name": "JA26",
+          "color_id": "Y-A26",
+          "name": "A26",
           "hex": "#FFBE00",
           "l": 80.8,
           "a": 10.9,
@@ -2020,8 +2020,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB01",
-          "name": "JB01",
+          "color_id": "Y-B01",
+          "name": "B01",
           "hex": "#CBEA00",
           "l": 87.7,
           "a": -32.9,
@@ -2030,8 +2030,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB02",
-          "name": "JB02",
+          "color_id": "Y-B02",
+          "name": "B02",
           "hex": "#7ED800",
           "l": 78.2,
           "a": -54,
@@ -2040,8 +2040,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB03",
-          "name": "JB03",
+          "color_id": "Y-B03",
+          "name": "B03",
           "hex": "#7ED877",
           "l": 79,
           "a": -46,
@@ -2050,8 +2050,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB04",
-          "name": "JB04",
+          "color_id": "Y-B04",
+          "name": "B04",
           "hex": "#68E23F",
           "l": 80.6,
           "a": -62,
@@ -2060,8 +2060,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB05",
-          "name": "JB05",
+          "color_id": "Y-B05",
+          "name": "B05",
           "hex": "#67BF3F",
           "l": 69.8,
           "a": -49.1,
@@ -2070,8 +2070,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB06",
-          "name": "JB06",
+          "color_id": "Y-B06",
+          "name": "B06",
           "hex": "#51CC96",
           "l": 74.3,
           "a": -46.8,
@@ -2080,8 +2080,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB07",
-          "name": "JB07",
+          "color_id": "Y-B07",
+          "name": "B07",
           "hex": "#008C70",
           "l": 51.8,
           "a": -39.1,
@@ -2090,8 +2090,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB08",
-          "name": "JB08",
+          "color_id": "Y-B08",
+          "name": "B08",
           "hex": "#008045",
           "l": 46.8,
           "a": -44.6,
@@ -2100,8 +2100,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB09",
-          "name": "JB09",
+          "color_id": "Y-B09",
+          "name": "B09",
           "hex": "#004E2F",
           "l": 28.5,
           "a": -29.8,
@@ -2110,8 +2110,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB10",
-          "name": "JB10",
+          "color_id": "Y-B10",
+          "name": "B10",
           "hex": "#88CEAD",
           "l": 77.5,
           "a": -29.1,
@@ -2120,8 +2120,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB11",
-          "name": "JB11",
+          "color_id": "Y-B11",
+          "name": "B11",
           "hex": "#5A6834",
           "l": 41.7,
           "a": -14.5,
@@ -2130,8 +2130,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB12",
-          "name": "JB12",
+          "color_id": "Y-B12",
+          "name": "B12",
           "hex": "#186F5A",
           "l": 41.7,
           "a": -30.4,
@@ -2140,8 +2140,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB13",
-          "name": "JB13",
+          "color_id": "Y-B13",
+          "name": "B13",
           "hex": "#C8FF7D",
           "l": 94,
           "a": -37.6,
@@ -2150,8 +2150,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB14",
-          "name": "JB14",
+          "color_id": "Y-B14",
+          "name": "B14",
           "hex": "#A5EA00",
           "l": 85.4,
           "a": -47.7,
@@ -2160,8 +2160,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB15",
-          "name": "JB15",
+          "color_id": "Y-B15",
+          "name": "B15",
           "hex": "#004E13",
           "l": 28.1,
           "a": -34.9,
@@ -2170,8 +2170,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB16",
-          "name": "JB16",
+          "color_id": "Y-B16",
+          "name": "B16",
           "hex": "#B4FF90",
           "l": 93.1,
           "a": -42.3,
@@ -2180,8 +2180,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB17",
-          "name": "JB17",
+          "color_id": "Y-B17",
+          "name": "B17",
           "hex": "#8DA300",
           "l": 63.2,
           "a": -25.1,
@@ -2190,8 +2190,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB18",
-          "name": "JB18",
+          "color_id": "Y-B18",
+          "name": "B18",
           "hex": "#E1F700",
           "l": 92.8,
           "a": -30,
@@ -2200,8 +2200,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB19",
-          "name": "JB19",
+          "color_id": "Y-B19",
+          "name": "B19",
           "hex": "#51B696",
           "l": 67.6,
           "a": -37.3,
@@ -2210,8 +2210,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB20",
-          "name": "JB20",
+          "color_id": "Y-B20",
+          "name": "B20",
           "hex": "#CDFFD4",
           "l": 95.7,
           "a": -23.9,
@@ -2220,8 +2220,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB21",
-          "name": "JB21",
+          "color_id": "Y-B21",
+          "name": "B21",
           "hex": "#008270",
           "l": 48.4,
           "a": -34.7,
@@ -2230,8 +2230,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB22",
-          "name": "JB22",
+          "color_id": "Y-B22",
+          "name": "B22",
           "hex": "#005E49",
           "l": 35,
           "a": -29.8,
@@ -2240,8 +2240,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB23",
-          "name": "JB23",
+          "color_id": "Y-B23",
+          "name": "B23",
           "hex": "#465128",
           "l": 32.6,
           "a": -11.9,
@@ -2250,8 +2250,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB24",
-          "name": "JB24",
+          "color_id": "Y-B24",
+          "name": "B24",
           "hex": "#DFFF9C",
           "l": 95.8,
           "a": -25.8,
@@ -2260,8 +2260,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB25",
-          "name": "JB25",
+          "color_id": "Y-B25",
+          "name": "B25",
           "hex": "#527352",
           "l": 45.2,
           "a": -19,
@@ -2270,8 +2270,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB26",
-          "name": "JB26",
+          "color_id": "Y-B26",
+          "name": "B26",
           "hex": "#A58C3A",
           "l": 59,
           "a": -0.3,
@@ -2280,8 +2280,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB27",
-          "name": "JB27",
+          "color_id": "Y-B27",
+          "name": "B27",
           "hex": "#D5D59C",
           "l": 84,
           "a": -9,
@@ -2290,8 +2290,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB28",
-          "name": "JB28",
+          "color_id": "Y-B28",
+          "name": "B28",
           "hex": "#9EE5A1",
           "l": 84.9,
           "a": -35.4,
@@ -2300,8 +2300,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB29",
-          "name": "JB29",
+          "color_id": "Y-B29",
+          "name": "B29",
           "hex": "#D1EA00",
           "l": 88.2,
           "a": -30.5,
@@ -2310,8 +2310,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB30",
-          "name": "JB30",
+          "color_id": "Y-B30",
+          "name": "B30",
           "hex": "#EFFFCE",
           "l": 97.8,
           "a": -13.4,
@@ -2320,8 +2320,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB31",
-          "name": "JB31",
+          "color_id": "Y-B31",
+          "name": "B31",
           "hex": "#C1F2B8",
           "l": 90.9,
           "a": -26.3,
@@ -2330,8 +2330,8 @@
           "favorite": false
         },
         {
-          "color_id": "JB32",
-          "name": "JB32",
+          "color_id": "Y-B32",
+          "name": "B32",
           "hex": "#95A050",
           "l": 63.4,
           "a": -16.1,
@@ -2340,8 +2340,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC01",
-          "name": "JC01",
+          "color_id": "Y-C01",
+          "name": "C01",
           "hex": "#DAFFE0",
           "l": 96.7,
           "a": -17.6,
@@ -2350,8 +2350,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC02",
-          "name": "JC02",
+          "color_id": "Y-C02",
+          "name": "C02",
           "hex": "#9EEDED",
           "l": 88.9,
           "a": -24,
@@ -2360,8 +2360,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC03",
-          "name": "JC03",
+          "color_id": "Y-C03",
+          "name": "C03",
           "hex": "#A0E2FF",
           "l": 86.5,
           "a": -13.7,
@@ -2370,8 +2370,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC04",
-          "name": "JC04",
+          "color_id": "Y-C04",
+          "name": "C04",
           "hex": "#59C7FF",
           "l": 76.2,
           "a": -14.7,
@@ -2380,8 +2380,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC05",
-          "name": "JC05",
+          "color_id": "Y-C05",
+          "name": "C05",
           "hex": "#2B9ED8",
           "l": 61.6,
           "a": -11.5,
@@ -2390,8 +2390,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC06",
-          "name": "JC06",
+          "color_id": "Y-C06",
+          "name": "C06",
           "hex": "#6BA4D6",
           "l": 65.4,
           "a": -4.9,
@@ -2400,8 +2400,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC07",
-          "name": "JC07",
+          "color_id": "Y-C07",
+          "name": "C07",
           "hex": "#3F7CBE",
           "l": 50.9,
           "a": 1.6,
@@ -2410,8 +2410,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC08",
-          "name": "JC08",
+          "color_id": "Y-C08",
+          "name": "C08",
           "hex": "#3A5A9C",
           "l": 38.9,
           "a": 9.9,
@@ -2420,8 +2420,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC09",
-          "name": "JC09",
+          "color_id": "Y-C09",
+          "name": "C09",
           "hex": "#4B52A5",
           "l": 38.3,
           "a": 21.7,
@@ -2430,8 +2430,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC10",
-          "name": "JC10",
+          "color_id": "Y-C10",
+          "name": "C10",
           "hex": "#59C2E5",
           "l": 73.8,
           "a": -20.1,
@@ -2440,8 +2440,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC11",
-          "name": "JC11",
+          "color_id": "Y-C11",
+          "name": "C11",
           "hex": "#3AC1BD",
           "l": 71.4,
           "a": -36.1,
@@ -2450,8 +2450,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC12",
-          "name": "JC12",
+          "color_id": "Y-C12",
+          "name": "C12",
           "hex": "#12436B",
           "l": 27.3,
           "a": -0.5,
@@ -2460,8 +2460,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC13",
-          "name": "JC13",
+          "color_id": "Y-C13",
+          "name": "C13",
           "hex": "#BFE1EF",
           "l": 87.6,
           "a": -8.2,
@@ -2470,8 +2470,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC14",
-          "name": "JC14",
+          "color_id": "Y-C14",
+          "name": "C14",
           "hex": "#D8F7F8",
           "l": 95.1,
           "a": -9.8,
@@ -2480,8 +2480,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC15",
-          "name": "JC15",
+          "color_id": "Y-C15",
+          "name": "C15",
           "hex": "#3DCCBD",
           "l": 74.7,
           "a": -40.7,
@@ -2490,8 +2490,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC16",
-          "name": "JC16",
+          "color_id": "Y-C16",
+          "name": "C16",
           "hex": "#426B8C",
           "l": 43.6,
           "a": -4.4,
@@ -2500,8 +2500,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC17",
-          "name": "JC17",
+          "color_id": "Y-C17",
+          "name": "C17",
           "hex": "#70C9E0",
           "l": 76.4,
           "a": -20.6,
@@ -2510,8 +2510,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC18",
-          "name": "JC18",
+          "color_id": "Y-C18",
+          "name": "C18",
           "hex": "#0B4F60",
           "l": 30.7,
           "a": -13.2,
@@ -2520,8 +2520,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC19",
-          "name": "JC19",
+          "color_id": "Y-C19",
+          "name": "C19",
           "hex": "#33A5A1",
           "l": 61.8,
           "a": -31.9,
@@ -2530,8 +2530,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC20",
-          "name": "JC20",
+          "color_id": "Y-C20",
+          "name": "C20",
           "hex": "#277DBE",
           "l": 50.5,
           "a": -2.3,
@@ -2540,8 +2540,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC21",
-          "name": "JC21",
+          "color_id": "Y-C21",
+          "name": "C21",
           "hex": "#CCF0FF",
           "l": 92.7,
           "a": -8.5,
@@ -2550,8 +2550,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC22",
-          "name": "JC22",
+          "color_id": "Y-C22",
+          "name": "C22",
           "hex": "#6BB2AE",
           "l": 68,
           "a": -23.2,
@@ -2560,8 +2560,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC23",
-          "name": "JC23",
+          "color_id": "Y-C23",
+          "name": "C23",
           "hex": "#C0D7E0",
           "l": 84.6,
           "a": -5.8,
@@ -2570,8 +2570,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC24",
-          "name": "JC24",
+          "color_id": "Y-C24",
+          "name": "C24",
           "hex": "#84C9FF",
           "l": 78.4,
           "a": -7.5,
@@ -2580,8 +2580,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC25",
-          "name": "JC25",
+          "color_id": "Y-C25",
+          "name": "C25",
           "hex": "#A5FFD5",
           "l": 93.6,
           "a": -35.8,
@@ -2590,8 +2590,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC26",
-          "name": "JC26",
+          "color_id": "Y-C26",
+          "name": "C26",
           "hex": "#5DAABA",
           "l": 65.5,
           "a": -19.4,
@@ -2600,8 +2600,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC27",
-          "name": "JC27",
+          "color_id": "Y-C27",
+          "name": "C27",
           "hex": "#EAF9FF",
           "l": 97,
           "a": -3.8,
@@ -2610,8 +2610,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC28",
-          "name": "JC28",
+          "color_id": "Y-C28",
+          "name": "C28",
           "hex": "#C5D5EB",
           "l": 84.7,
           "a": -0.9,
@@ -2620,8 +2620,8 @@
           "favorite": false
         },
         {
-          "color_id": "JC29",
-          "name": "JC29",
+          "color_id": "Y-C29",
+          "name": "C29",
           "hex": "#59688C",
           "l": 44.1,
           "a": 3.7,
@@ -2630,8 +2630,8 @@
           "favorite": false
         },
         {
-          "color_id": "JD01",
-          "name": "JD01",
+          "color_id": "Y-D01",
+          "name": "D01",
           "hex": "#97B4E5",
           "l": 72.8,
           "a": 1.7,
@@ -2640,8 +2640,8 @@
           "favorite": false
         },
         {
-          "color_id": "JD02",
-          "name": "JD02",
+          "color_id": "Y-D02",
+          "name": "D02",
           "hex": "#839DC6",
           "l": 64.2,
           "a": 0.8,
@@ -2650,8 +2650,8 @@
           "favorite": false
         },
         {
-          "color_id": "JD03",
-          "name": "JD03",
+          "color_id": "Y-D03",
+          "name": "D03",
           "hex": "#0F4499",
           "l": 30.7,
           "a": 17.8,
@@ -2660,8 +2660,8 @@
           "favorite": false
         },
         {
-          "color_id": "JD04",
-          "name": "JD04",
+          "color_id": "Y-D04",
+          "name": "D04",
           "hex": "#0B3372",
           "l": 22.5,
           "a": 13.1,
@@ -2670,8 +2670,8 @@
           "favorite": false
         },
         {
-          "color_id": "JD05",
-          "name": "JD05",
+          "color_id": "Y-D05",
+          "name": "D05",
           "hex": "#D35492",
           "l": 54.3,
           "a": 56.1,
@@ -2680,8 +2680,8 @@
           "favorite": false
         },
         {
-          "color_id": "JD06",
-          "name": "JD06",
+          "color_id": "Y-D06",
+          "name": "D06",
           "hex": "#B171C4",
           "l": 57.2,
           "a": 39.3,
@@ -2690,8 +2690,8 @@
           "favorite": false
         },
         {
-          "color_id": "JD07",
-          "name": "JD07",
+          "color_id": "Y-D07",
+          "name": "D07",
           "hex": "#760F96",
           "l": 30.4,
           "a": 58.6,
@@ -2700,8 +2700,8 @@
           "favorite": false
         },
         {
-          "color_id": "JD08",
-          "name": "JD08",
+          "color_id": "Y-D08",
+          "name": "D08",
           "hex": "#F4CCFF",
           "l": 86.8,
           "a": 22.8,
@@ -2710,8 +2710,8 @@
           "favorite": false
         },
         {
-          "color_id": "JD09",
-          "name": "JD09",
+          "color_id": "Y-D09",
+          "name": "D09",
           "hex": "#E9B2FF",
           "l": 79.8,
           "a": 33.2,
@@ -2720,8 +2720,8 @@
           "favorite": false
         },
         {
-          "color_id": "JD10",
-          "name": "JD10",
+          "color_id": "Y-D10",
+          "name": "D10",
           "hex": "#432866",
           "l": 22.5,
           "a": 26.9,
@@ -2730,8 +2730,8 @@
           "favorite": false
         },
         {
-          "color_id": "JD11",
-          "name": "JD11",
+          "color_id": "Y-D11",
+          "name": "D11",
           "hex": "#C3D6FF",
           "l": 85.5,
           "a": 2.3,
@@ -2740,8 +2740,8 @@
           "favorite": false
         },
         {
-          "color_id": "JD12",
-          "name": "JD12",
+          "color_id": "Y-D12",
+          "name": "D12",
           "hex": "#D175B2",
           "l": 61.2,
           "a": 44,
@@ -2750,8 +2750,8 @@
           "favorite": false
         },
         {
-          "color_id": "JD13",
-          "name": "JD13",
+          "color_id": "Y-D13",
+          "name": "D13",
           "hex": "#E52D86",
           "l": 52.1,
           "a": 73.2,
@@ -2760,8 +2760,8 @@
           "favorite": false
         },
         {
-          "color_id": "JD14",
-          "name": "JD14",
+          "color_id": "Y-D14",
+          "name": "D14",
           "hex": "#9200BF",
           "l": 37.6,
           "a": 72.4,
@@ -2770,8 +2770,8 @@
           "favorite": false
         },
         {
-          "color_id": "JD15",
-          "name": "JD15",
+          "color_id": "Y-D15",
+          "name": "D15",
           "hex": "#51287F",
           "l": 26.2,
           "a": 37.3,
@@ -2780,8 +2780,8 @@
           "favorite": false
         },
         {
-          "color_id": "JD16",
-          "name": "JD16",
+          "color_id": "Y-D16",
+          "name": "D16",
           "hex": "#DDE9FF",
           "l": 92.1,
           "a": 0.3,
@@ -2790,8 +2790,8 @@
           "favorite": false
         },
         {
-          "color_id": "JD17",
-          "name": "JD17",
+          "color_id": "Y-D17",
+          "name": "D17",
           "hex": "#B1CEF7",
           "l": 81.9,
           "a": -0.6,
@@ -2800,8 +2800,8 @@
           "favorite": false
         },
         {
-          "color_id": "JD18",
-          "name": "JD18",
+          "color_id": "Y-D18",
+          "name": "D18",
           "hex": "#B06DBC",
           "l": 55.9,
           "a": 39.6,
@@ -2810,8 +2810,8 @@
           "favorite": false
         },
         {
-          "color_id": "JD19",
-          "name": "JD19",
+          "color_id": "Y-D19",
+          "name": "D19",
           "hex": "#E6CEED",
           "l": 85.5,
           "a": 13.8,
@@ -2820,8 +2820,8 @@
           "favorite": false
         },
         {
-          "color_id": "JD20",
-          "name": "JD20",
+          "color_id": "Y-D20",
+          "name": "D20",
           "hex": "#CC00CC",
           "l": 48.5,
           "a": 83,
@@ -2830,8 +2830,8 @@
           "favorite": false
         },
         {
-          "color_id": "JD21",
-          "name": "JD21",
+          "color_id": "Y-D21",
+          "name": "D21",
           "hex": "#AA00AA",
           "l": 40.3,
           "a": 72.5,
@@ -2840,8 +2840,8 @@
           "favorite": false
         },
         {
-          "color_id": "JD22",
-          "name": "JD22",
+          "color_id": "Y-D22",
+          "name": "D22",
           "hex": "#4E508E",
           "l": 36.6,
           "a": 16.2,
@@ -2850,8 +2850,8 @@
           "favorite": false
         },
         {
-          "color_id": "JD23",
-          "name": "JD23",
+          "color_id": "Y-D23",
+          "name": "D23",
           "hex": "#F9E5FF",
           "l": 93.2,
           "a": 11.3,
@@ -2860,8 +2860,8 @@
           "favorite": false
         },
         {
-          "color_id": "JD24",
-          "name": "JD24",
+          "color_id": "Y-D24",
+          "name": "D24",
           "hex": "#916BEF",
           "l": 54.8,
           "a": 44.4,
@@ -2870,8 +2870,8 @@
           "favorite": false
         },
         {
-          "color_id": "JD25",
-          "name": "JD25",
+          "color_id": "Y-D25",
+          "name": "D25",
           "hex": "#5E33CC",
           "l": 36.2,
           "a": 55.1,
@@ -2880,8 +2880,8 @@
           "favorite": false
         },
         {
-          "color_id": "JD26",
-          "name": "JD26",
+          "color_id": "Y-D26",
+          "name": "D26",
           "hex": "#F5B2DA",
           "l": 79.8,
           "a": 30.4,
@@ -2890,8 +2890,8 @@
           "favorite": false
         },
         {
-          "color_id": "JE01",
-          "name": "JE01",
+          "color_id": "Y-E01",
+          "name": "E01",
           "hex": "#FFC0B2",
           "l": 83,
           "a": 20.7,
@@ -2900,8 +2900,8 @@
           "favorite": false
         },
         {
-          "color_id": "JE02",
-          "name": "JE02",
+          "color_id": "Y-E02",
+          "name": "E02",
           "hex": "#FFB9D2",
           "l": 82.2,
           "a": 28.9,
@@ -2910,8 +2910,8 @@
           "favorite": false
         },
         {
-          "color_id": "JE03",
-          "name": "JE03",
+          "color_id": "Y-E03",
+          "name": "E03",
           "hex": "#FF96B2",
           "l": 73.7,
           "a": 42.6,
@@ -2920,8 +2920,8 @@
           "favorite": false
         },
         {
-          "color_id": "JE04",
-          "name": "JE04",
+          "color_id": "Y-E04",
+          "name": "E04",
           "hex": "#FF7298",
           "l": 66.2,
           "a": 57.1,
@@ -2930,8 +2930,8 @@
           "favorite": false
         },
         {
-          "color_id": "JE05",
-          "name": "JE05",
+          "color_id": "Y-E05",
+          "name": "E05",
           "hex": "#FF5F94",
           "l": 63,
           "a": 64.9,
@@ -2940,8 +2940,8 @@
           "favorite": false
         },
         {
-          "color_id": "JE06",
-          "name": "JE06",
+          "color_id": "Y-E06",
+          "name": "E06",
           "hex": "#FF458C",
           "l": 59.4,
           "a": 73.6,
@@ -2950,8 +2950,8 @@
           "favorite": false
         },
         {
-          "color_id": "JE07",
-          "name": "JE07",
+          "color_id": "Y-E07",
+          "name": "E07",
           "hex": "#D8416E",
           "l": 51.3,
           "a": 61.5,
@@ -2960,8 +2960,8 @@
           "favorite": false
         },
         {
-          "color_id": "JE08",
-          "name": "JE08",
+          "color_id": "Y-E08",
+          "name": "E08",
           "hex": "#FFC4D5",
           "l": 84.8,
           "a": 23.5,
@@ -2970,8 +2970,8 @@
           "favorite": false
         },
         {
-          "color_id": "JE09",
-          "name": "JE09",
+          "color_id": "Y-E09",
+          "name": "E09",
           "hex": "#ED53AC",
           "l": 59.1,
           "a": 67.2,
@@ -2980,8 +2980,8 @@
           "favorite": false
         },
         {
-          "color_id": "JE10",
-          "name": "JE10",
+          "color_id": "Y-E10",
+          "name": "E10",
           "hex": "#DD4278",
           "l": 52.5,
           "a": 63.5,
@@ -2990,8 +2990,8 @@
           "favorite": false
         },
         {
-          "color_id": "JE11",
-          "name": "JE11",
+          "color_id": "Y-E11",
+          "name": "E11",
           "hex": "#FFCFC4",
           "l": 86.9,
           "a": 15.3,
@@ -3000,8 +3000,8 @@
           "favorite": false
         },
         {
-          "color_id": "JE12",
-          "name": "JE12",
+          "color_id": "Y-E12",
+          "name": "E12",
           "hex": "#FF75C3",
           "l": 68,
           "a": 60.8,
@@ -3010,8 +3010,8 @@
           "favorite": false
         },
         {
-          "color_id": "JE13",
-          "name": "JE13",
+          "color_id": "Y-E13",
+          "name": "E13",
           "hex": "#CC3F7C",
           "l": 49.3,
           "a": 60.1,
@@ -3020,8 +3020,8 @@
           "favorite": false
         },
         {
-          "color_id": "JE14",
-          "name": "JE14",
+          "color_id": "Y-E14",
+          "name": "E14",
           "hex": "#FFC3B0",
           "l": 83.7,
           "a": 18.9,
@@ -3030,8 +3030,8 @@
           "favorite": false
         },
         {
-          "color_id": "JE15",
-          "name": "JE15",
+          "color_id": "Y-E15",
+          "name": "E15",
           "hex": "#EDBBB4",
           "l": 80.1,
           "a": 16.9,
@@ -3040,8 +3040,8 @@
           "favorite": false
         },
         {
-          "color_id": "JE16",
-          "name": "JE16",
+          "color_id": "Y-E16",
+          "name": "E16",
           "hex": "#FFDFD8",
           "l": 91.2,
           "a": 9.9,
@@ -3050,8 +3050,8 @@
           "favorite": false
         },
         {
-          "color_id": "JE17",
-          "name": "JE17",
+          "color_id": "Y-E17",
+          "name": "E17",
           "hex": "#FFD3E6",
           "l": 88.7,
           "a": 18.4,
@@ -3060,8 +3060,8 @@
           "favorite": false
         },
         {
-          "color_id": "JE18",
-          "name": "JE18",
+          "color_id": "Y-E18",
+          "name": "E18",
           "hex": "#FFB2D7",
           "l": 80.7,
           "a": 33.3,
@@ -3070,8 +3070,8 @@
           "favorite": false
         },
         {
-          "color_id": "JE19",
-          "name": "JE19",
+          "color_id": "Y-E19",
+          "name": "E19",
           "hex": "#F2B3CE",
           "l": 79.4,
           "a": 26.9,
@@ -3080,8 +3080,8 @@
           "favorite": false
         },
         {
-          "color_id": "JE20",
-          "name": "JE20",
+          "color_id": "Y-E20",
+          "name": "E20",
           "hex": "#DDB3C3",
           "l": 77,
           "a": 17.7,
@@ -3090,8 +3090,8 @@
           "favorite": false
         },
         {
-          "color_id": "JE21",
-          "name": "JE21",
+          "color_id": "Y-E21",
+          "name": "E21",
           "hex": "#C69BAB",
           "l": 68.3,
           "a": 18.5,
@@ -3100,8 +3100,8 @@
           "favorite": false
         },
         {
-          "color_id": "JE22",
-          "name": "JE22",
+          "color_id": "Y-E22",
+          "name": "E22",
           "hex": "#C66D8E",
           "l": 57,
           "a": 39.1,
@@ -3110,8 +3110,8 @@
           "favorite": false
         },
         {
-          "color_id": "JE23",
-          "name": "JE23",
+          "color_id": "Y-E23",
+          "name": "E23",
           "hex": "#A07E8B",
           "l": 56.3,
           "a": 15.3,
@@ -3120,8 +3120,8 @@
           "favorite": false
         },
         {
-          "color_id": "JE24",
-          "name": "JE24",
+          "color_id": "Y-E24",
+          "name": "E24",
           "hex": "#FFE2F3",
           "l": 92.6,
           "a": 12.8,
@@ -3130,8 +3130,8 @@
           "favorite": false
         },
         {
-          "color_id": "JF01",
-          "name": "JF01",
+          "color_id": "Y-F01",
+          "name": "F01",
           "hex": "#FF7A64",
           "l": 66.6,
           "a": 48.9,
@@ -3140,8 +3140,8 @@
           "favorite": false
         },
         {
-          "color_id": "JF02",
-          "name": "JF02",
+          "color_id": "Y-F02",
+          "name": "F02",
           "hex": "#FF5350",
           "l": 59.9,
           "a": 64.7,
@@ -3150,8 +3150,8 @@
           "favorite": false
         },
         {
-          "color_id": "JF03",
-          "name": "JF03",
+          "color_id": "Y-F03",
+          "name": "F03",
           "hex": "#F25C50",
           "l": 59.1,
           "a": 56.9,
@@ -3160,8 +3160,8 @@
           "favorite": false
         },
         {
-          "color_id": "JF04",
-          "name": "JF04",
+          "color_id": "Y-F04",
+          "name": "F04",
           "hex": "#EF4131",
           "l": 54.4,
           "a": 65,
@@ -3170,8 +3170,8 @@
           "favorite": false
         },
         {
-          "color_id": "JF05",
-          "name": "JF05",
+          "color_id": "Y-F05",
+          "name": "F05",
           "hex": "#D31B0A",
           "l": 45.2,
           "a": 66.3,
@@ -3180,8 +3180,8 @@
           "favorite": false
         },
         {
-          "color_id": "JF06",
-          "name": "JF06",
+          "color_id": "Y-F06",
+          "name": "F06",
           "hex": "#912E00",
           "l": 33.9,
           "a": 40.1,
@@ -3190,8 +3190,8 @@
           "favorite": false
         },
         {
-          "color_id": "JF07",
-          "name": "JF07",
+          "color_id": "Y-F07",
+          "name": "F07",
           "hex": "#7F261F",
           "l": 29.4,
           "a": 37.9,
@@ -3200,8 +3200,8 @@
           "favorite": false
         },
         {
-          "color_id": "JF08",
-          "name": "JF08",
+          "color_id": "Y-F08",
+          "name": "F08",
           "hex": "#B2170F",
           "l": 38,
           "a": 58.1,
@@ -3210,8 +3210,8 @@
           "favorite": false
         },
         {
-          "color_id": "JF09",
-          "name": "JF09",
+          "color_id": "Y-F09",
+          "name": "F09",
           "hex": "#E86868",
           "l": 59.9,
           "a": 49.6,
@@ -3220,8 +3220,8 @@
           "favorite": false
         },
         {
-          "color_id": "JF10",
-          "name": "JF10",
+          "color_id": "Y-F10",
+          "name": "F10",
           "hex": "#9B4000",
           "l": 39,
           "a": 35.4,
@@ -3230,8 +3230,8 @@
           "favorite": false
         },
         {
-          "color_id": "JF11",
-          "name": "JF11",
+          "color_id": "Y-F11",
+          "name": "F11",
           "hex": "#6B2A00",
           "l": 26.1,
           "a": 27,
@@ -3240,8 +3240,8 @@
           "favorite": false
         },
         {
-          "color_id": "JF12",
-          "name": "JF12",
+          "color_id": "Y-F12",
+          "name": "F12",
           "hex": "#FF535A",
           "l": 60.1,
           "a": 65.2,
@@ -3250,8 +3250,8 @@
           "favorite": false
         },
         {
-          "color_id": "JF13",
-          "name": "JF13",
+          "color_id": "Y-F13",
+          "name": "F13",
           "hex": "#E5490B",
           "l": 53.4,
           "a": 58.2,
@@ -3260,8 +3260,8 @@
           "favorite": false
         },
         {
-          "color_id": "JF14",
-          "name": "JF14",
+          "color_id": "Y-F14",
+          "name": "F14",
           "hex": "#FF927A",
           "l": 71.7,
           "a": 38.7,
@@ -3270,8 +3270,8 @@
           "favorite": false
         },
         {
-          "color_id": "JF15",
-          "name": "JF15",
+          "color_id": "Y-F15",
+          "name": "F15",
           "hex": "#BF1C11",
           "l": 41.1,
           "a": 60.7,
@@ -3280,8 +3280,8 @@
           "favorite": false
         },
         {
-          "color_id": "JF16",
-          "name": "JF16",
+          "color_id": "Y-F16",
+          "name": "F16",
           "hex": "#FFC199",
           "l": 82.8,
           "a": 17.2,
@@ -3290,8 +3290,8 @@
           "favorite": false
         },
         {
-          "color_id": "JF17",
-          "name": "JF17",
+          "color_id": "Y-F17",
+          "name": "F17",
           "hex": "#FF9860",
           "l": 72.6,
           "a": 33.7,
@@ -3300,8 +3300,8 @@
           "favorite": false
         },
         {
-          "color_id": "JF18",
-          "name": "JF18",
+          "color_id": "Y-F18",
+          "name": "F18",
           "hex": "#E17A32",
           "l": 61.8,
           "a": 34.9,
@@ -3310,8 +3310,8 @@
           "favorite": false
         },
         {
-          "color_id": "JF19",
-          "name": "JF19",
+          "color_id": "Y-F19",
+          "name": "F19",
           "hex": "#CC4137",
           "l": 48.1,
           "a": 54.2,
@@ -3320,8 +3320,8 @@
           "favorite": false
         },
         {
-          "color_id": "JF20",
-          "name": "JF20",
+          "color_id": "Y-F20",
+          "name": "F20",
           "hex": "#CC745B",
           "l": 58.1,
           "a": 32.1,
@@ -3330,8 +3330,8 @@
           "favorite": false
         },
         {
-          "color_id": "JF21",
-          "name": "JF21",
+          "color_id": "Y-F21",
+          "name": "F21",
           "hex": "#FF968E",
           "l": 72.9,
           "a": 38.5,
@@ -3340,8 +3340,8 @@
           "favorite": false
         },
         {
-          "color_id": "JF22",
-          "name": "JF22",
+          "color_id": "Y-F22",
+          "name": "F22",
           "hex": "#FFAD99",
           "l": 78.1,
           "a": 27.7,
@@ -3350,8 +3350,8 @@
           "favorite": false
         },
         {
-          "color_id": "JF23",
-          "name": "JF23",
+          "color_id": "Y-F23",
+          "name": "F23",
           "hex": "#F96E5C",
           "l": 63.4,
           "a": 52,
@@ -3360,8 +3360,8 @@
           "favorite": false
         },
         {
-          "color_id": "JF24",
-          "name": "JF24",
+          "color_id": "Y-F24",
+          "name": "F24",
           "hex": "#F7A694",
           "l": 75.6,
           "a": 27.8,
@@ -3370,8 +3370,8 @@
           "favorite": false
         },
         {
-          "color_id": "JF25",
-          "name": "JF25",
+          "color_id": "Y-F25",
+          "name": "F25",
           "hex": "#EF6758",
           "l": 60.6,
           "a": 51.4,
@@ -3380,8 +3380,8 @@
           "favorite": false
         },
         {
-          "color_id": "JG01",
-          "name": "JG01",
+          "color_id": "Y-G01",
+          "name": "G01",
           "hex": "#FFD6A5",
           "l": 88,
           "a": 7.7,
@@ -3390,8 +3390,8 @@
           "favorite": false
         },
         {
-          "color_id": "JG02",
-          "name": "JG02",
+          "color_id": "Y-G02",
+          "name": "G02",
           "hex": "#FFC396",
           "l": 83.2,
           "a": 15.9,
@@ -3400,8 +3400,8 @@
           "favorite": false
         },
         {
-          "color_id": "JG03",
-          "name": "JG03",
+          "color_id": "Y-G03",
+          "name": "G03",
           "hex": "#E8C296",
           "l": 80.7,
           "a": 7.4,
@@ -3410,8 +3410,8 @@
           "favorite": false
         },
         {
-          "color_id": "JG04",
-          "name": "JG04",
+          "color_id": "Y-G04",
+          "name": "G04",
           "hex": "#CCA57A",
           "l": 70.3,
           "a": 8.5,
@@ -3420,8 +3420,8 @@
           "favorite": false
         },
         {
-          "color_id": "JG05",
-          "name": "JG05",
+          "color_id": "Y-G05",
+          "name": "G05",
           "hex": "#E8812E",
           "l": 64.2,
           "a": 34,
@@ -3430,8 +3430,8 @@
           "favorite": false
         },
         {
-          "color_id": "JG06",
-          "name": "JG06",
+          "color_id": "Y-G06",
+          "name": "G06",
           "hex": "#DD8135",
           "l": 62.8,
           "a": 29.8,
@@ -3440,8 +3440,8 @@
           "favorite": false
         },
         {
-          "color_id": "JG07",
-          "name": "JG07",
+          "color_id": "Y-G07",
+          "name": "G07",
           "hex": "#89561B",
           "l": 41.3,
           "a": 16.1,
@@ -3450,8 +3450,8 @@
           "favorite": false
         },
         {
-          "color_id": "JG08",
-          "name": "JG08",
+          "color_id": "Y-G08",
+          "name": "G08",
           "hex": "#5E3B12",
           "l": 28.3,
           "a": 11.5,
@@ -3460,8 +3460,8 @@
           "favorite": false
         },
         {
-          "color_id": "JG09",
-          "name": "JG09",
+          "color_id": "Y-G09",
+          "name": "G09",
           "hex": "#DBA75E",
           "l": 71.9,
           "a": 11,
@@ -3470,8 +3470,8 @@
           "favorite": false
         },
         {
-          "color_id": "JG10",
-          "name": "JG10",
+          "color_id": "Y-G10",
+          "name": "G10",
           "hex": "#BF802A",
           "l": 58.7,
           "a": 17.1,
@@ -3480,8 +3480,8 @@
           "favorite": false
         },
         {
-          "color_id": "JG11",
-          "name": "JG11",
+          "color_id": "Y-G11",
+          "name": "G11",
           "hex": "#D3B470",
           "l": 74.6,
           "a": 2.3,
@@ -3490,8 +3490,8 @@
           "favorite": false
         },
         {
-          "color_id": "JG12",
-          "name": "JG12",
+          "color_id": "Y-G12",
+          "name": "G12",
           "hex": "#CEA771",
           "l": 70.8,
           "a": 7.3,
@@ -3500,8 +3500,8 @@
           "favorite": false
         },
         {
-          "color_id": "JG13",
-          "name": "JG13",
+          "color_id": "Y-G13",
+          "name": "G13",
           "hex": "#D68848",
           "l": 63.7,
           "a": 24.1,
@@ -3510,8 +3510,8 @@
           "favorite": false
         },
         {
-          "color_id": "JG14",
-          "name": "JG14",
+          "color_id": "Y-G14",
+          "name": "G14",
           "hex": "#876136",
           "l": 44.2,
           "a": 10.4,
@@ -3520,8 +3520,8 @@
           "favorite": false
         },
         {
-          "color_id": "JG15",
-          "name": "JG15",
+          "color_id": "Y-G15",
+          "name": "G15",
           "hex": "#F2E7B2",
           "l": 91.3,
           "a": -4.3,
@@ -3530,8 +3530,8 @@
           "favorite": false
         },
         {
-          "color_id": "JG16",
-          "name": "JG16",
+          "color_id": "Y-G16",
+          "name": "G16",
           "hex": "#D8CDA6",
           "l": 82.4,
           "a": -2.4,
@@ -3540,8 +3540,8 @@
           "favorite": false
         },
         {
-          "color_id": "JG17",
-          "name": "JG17",
+          "color_id": "Y-G17",
+          "name": "G17",
           "hex": "#59442C",
           "l": 30.5,
           "a": 5.5,
@@ -3550,8 +3550,8 @@
           "favorite": false
         },
         {
-          "color_id": "JG18",
-          "name": "JG18",
+          "color_id": "Y-G18",
+          "name": "G18",
           "hex": "#FFE5C2",
           "l": 92.2,
           "a": 3.6,
@@ -3560,8 +3560,8 @@
           "favorite": false
         },
         {
-          "color_id": "JG19",
-          "name": "JG19",
+          "color_id": "Y-G19",
+          "name": "G19",
           "hex": "#E89B2E",
           "l": 70,
           "a": 20.3,
@@ -3570,8 +3570,8 @@
           "favorite": false
         },
         {
-          "color_id": "JG20",
-          "name": "JG20",
+          "color_id": "Y-G20",
+          "name": "G20",
           "hex": "#B26323",
           "l": 50.1,
           "a": 27.2,
@@ -3580,8 +3580,8 @@
           "favorite": false
         },
         {
-          "color_id": "JG21",
-          "name": "JG21",
+          "color_id": "Y-G21",
+          "name": "G21",
           "hex": "#BC8159",
           "l": 59.1,
           "a": 18.3,
@@ -3590,28 +3590,28 @@
           "favorite": false
         },
         {
-          "color_id": "JH02",
-          "name": "JH02",
+          "color_id": "Y-H02",
+          "name": "H02",
           "hex": "#FFFFFF",
           "l": 100,
-          "a": 0,
+          "a": -0,
           "b": 0,
           "enabled": true,
           "favorite": false
         },
         {
-          "color_id": "JH03",
-          "name": "JH03",
+          "color_id": "Y-H03",
+          "name": "H03",
           "hex": "#848484",
           "l": 55.1,
-          "a": 0,
+          "a": -0,
           "b": 0,
           "enabled": true,
           "favorite": false
         },
         {
-          "color_id": "JH04",
-          "name": "JH04",
+          "color_id": "Y-H04",
+          "name": "H04",
           "hex": "#6D6D67",
           "l": 45.9,
           "a": -1.2,
@@ -3620,18 +3620,18 @@
           "favorite": false
         },
         {
-          "color_id": "JH05",
-          "name": "JH05",
+          "color_id": "Y-H05",
+          "name": "H05",
           "hex": "#4C4C4C",
           "l": 32.3,
-          "a": 0,
+          "a": -0,
           "b": 0,
           "enabled": true,
           "favorite": false
         },
         {
-          "color_id": "JH06",
-          "name": "JH06",
+          "color_id": "Y-H06",
+          "name": "H06",
           "hex": "#2B2E2B",
           "l": 18.5,
           "a": -2,
@@ -3640,18 +3640,18 @@
           "favorite": false
         },
         {
-          "color_id": "JH07",
-          "name": "JH07",
+          "color_id": "Y-H07",
+          "name": "H07",
           "hex": "#020202",
           "l": 0.5,
-          "a": 0,
+          "a": -0,
           "b": 0,
           "enabled": true,
           "favorite": false
         },
         {
-          "color_id": "JH08",
-          "name": "JH08",
+          "color_id": "Y-H08",
+          "name": "H08",
           "hex": "#FFDDDD",
           "l": 90.9,
           "a": 11.7,
@@ -3660,8 +3660,8 @@
           "favorite": false
         },
         {
-          "color_id": "JH09",
-          "name": "JH09",
+          "color_id": "Y-H09",
+          "name": "H09",
           "hex": "#E2E2D7",
           "l": 89.6,
           "a": -1.9,
@@ -3670,8 +3670,8 @@
           "favorite": false
         },
         {
-          "color_id": "JH10",
-          "name": "JH10",
+          "color_id": "Y-H10",
+          "name": "H10",
           "hex": "#EDDDDD",
           "l": 89.4,
           "a": 5.5,
@@ -3680,8 +3680,8 @@
           "favorite": false
         },
         {
-          "color_id": "JH11",
-          "name": "JH11",
+          "color_id": "Y-H11",
+          "name": "H11",
           "hex": "#9E9E97",
           "l": 64.9,
           "a": -1.3,
@@ -3690,8 +3690,8 @@
           "favorite": false
         },
         {
-          "color_id": "JH12",
-          "name": "JH12",
+          "color_id": "Y-H12",
+          "name": "H12",
           "hex": "#EFE7C6",
           "l": 91.5,
           "a": -2.6,
@@ -3700,8 +3700,8 @@
           "favorite": false
         },
         {
-          "color_id": "JH13",
-          "name": "JH13",
+          "color_id": "Y-H13",
+          "name": "H13",
           "hex": "#CEC4A3",
           "l": 79.2,
           "a": -1.8,
@@ -3710,8 +3710,8 @@
           "favorite": false
         },
         {
-          "color_id": "JH14",
-          "name": "JH14",
+          "color_id": "Y-H14",
+          "name": "H14",
           "hex": "#D0D8D0",
           "l": 85.5,
           "a": -4.2,
@@ -3720,8 +3720,8 @@
           "favorite": false
         },
         {
-          "color_id": "JH15",
-          "name": "JH15",
+          "color_id": "Y-H15",
+          "name": "H15",
           "hex": "#96A3A6",
           "l": 66.1,
           "a": -4,
@@ -3730,8 +3730,8 @@
           "favorite": false
         },
         {
-          "color_id": "JH16",
-          "name": "JH16",
+          "color_id": "Y-H16",
+          "name": "H16",
           "hex": "#191001",
           "l": 5.2,
           "a": 1.7,
@@ -3740,8 +3740,8 @@
           "favorite": false
         },
         {
-          "color_id": "JH17",
-          "name": "JH17",
+          "color_id": "Y-H17",
+          "name": "H17",
           "hex": "#F4F4EF",
           "l": 96.1,
           "a": -0.9,
@@ -3750,8 +3750,8 @@
           "favorite": false
         },
         {
-          "color_id": "JH18",
-          "name": "JH18",
+          "color_id": "Y-H18",
+          "name": "H18",
           "hex": "#FFF9E0",
           "l": 97.8,
           "a": -2.1,
@@ -3760,8 +3760,8 @@
           "favorite": false
         },
         {
-          "color_id": "JH19",
-          "name": "JH19",
+          "color_id": "Y-H19",
+          "name": "H19",
           "hex": "#EFE3C6",
           "l": 90.5,
           "a": -0.6,
@@ -3770,8 +3770,8 @@
           "favorite": false
         },
         {
-          "color_id": "JH20",
-          "name": "JH20",
+          "color_id": "Y-H20",
+          "name": "H20",
           "hex": "#7A8389",
           "l": 54.2,
           "a": -2,
@@ -3780,8 +3780,8 @@
           "favorite": false
         },
         {
-          "color_id": "JH21",
-          "name": "JH21",
+          "color_id": "Y-H21",
+          "name": "H21",
           "hex": "#FFF4E0",
           "l": 96.6,
           "a": 0.4,
@@ -3790,8 +3790,8 @@
           "favorite": false
         },
         {
-          "color_id": "JH22",
-          "name": "JH22",
+          "color_id": "Y-H22",
+          "name": "H22",
           "hex": "#EAEADF",
           "l": 92.4,
           "a": -1.9,
@@ -3800,8 +3800,8 @@
           "favorite": false
         },
         {
-          "color_id": "JH23",
-          "name": "JH23",
+          "color_id": "Y-H23",
+          "name": "H23",
           "hex": "#B4BFA4",
           "l": 75.9,
           "a": -8.7,
@@ -3810,8 +3810,8 @@
           "favorite": false
         },
         {
-          "color_id": "JM01",
-          "name": "JM01",
+          "color_id": "Y-M01",
+          "name": "M01",
           "hex": "#DCE1BA",
           "l": 88.3,
           "a": -8.2,
@@ -3820,8 +3820,8 @@
           "favorite": false
         },
         {
-          "color_id": "JM02",
-          "name": "JM02",
+          "color_id": "Y-M02",
+          "name": "M02",
           "hex": "#7B967B",
           "l": 59.4,
           "a": -15,
@@ -3830,8 +3830,8 @@
           "favorite": false
         },
         {
-          "color_id": "JM03",
-          "name": "JM03",
+          "color_id": "Y-M03",
+          "name": "M03",
           "hex": "#617375",
           "l": 47.1,
           "a": -6.2,
@@ -3840,8 +3840,8 @@
           "favorite": false
         },
         {
-          "color_id": "JM04",
-          "name": "JM04",
+          "color_id": "Y-M04",
+          "name": "M04",
           "hex": "#BFB8A2",
           "l": 74.8,
           "a": -1.3,
@@ -3850,8 +3850,8 @@
           "favorite": false
         },
         {
-          "color_id": "JM05",
-          "name": "JM05",
+          "color_id": "Y-M05",
+          "name": "M05",
           "hex": "#B2AB75",
           "l": 69.4,
           "a": -5.8,
@@ -3860,8 +3860,8 @@
           "favorite": false
         },
         {
-          "color_id": "JM06",
-          "name": "JM06",
+          "color_id": "Y-M06",
+          "name": "M06",
           "hex": "#AD9B5F",
           "l": 64.3,
           "a": -1.8,
@@ -3870,8 +3870,8 @@
           "favorite": false
         },
         {
-          "color_id": "JM07",
-          "name": "JM07",
+          "color_id": "Y-M07",
+          "name": "M07",
           "hex": "#AA8D66",
           "l": 60.4,
           "a": 5.4,
@@ -3880,8 +3880,8 @@
           "favorite": false
         },
         {
-          "color_id": "JM08",
-          "name": "JM08",
+          "color_id": "Y-M08",
+          "name": "M08",
           "hex": "#AA866E",
           "l": 58.7,
           "a": 10.3,
@@ -3890,8 +3890,8 @@
           "favorite": false
         },
         {
-          "color_id": "JM09",
-          "name": "JM09",
+          "color_id": "Y-M09",
+          "name": "M09",
           "hex": "#A07F53",
           "l": 55.4,
           "a": 6.9,
@@ -3900,8 +3900,8 @@
           "favorite": false
         },
         {
-          "color_id": "JM10",
-          "name": "JM10",
+          "color_id": "Y-M10",
+          "name": "M10",
           "hex": "#AA8678",
           "l": 58.9,
           "a": 11.7,
@@ -3910,8 +3910,8 @@
           "favorite": false
         },
         {
-          "color_id": "JM11",
-          "name": "JM11",
+          "color_id": "Y-M11",
+          "name": "M11",
           "hex": "#997887",
           "l": 54,
           "a": 15.4,
@@ -3920,8 +3920,8 @@
           "favorite": false
         },
         {
-          "color_id": "JM12",
-          "name": "JM12",
+          "color_id": "Y-M12",
+          "name": "M12",
           "hex": "#59443C",
           "l": 30.8,
           "a": 7.7,
@@ -3930,8 +3930,8 @@
           "favorite": false
         },
         {
-          "color_id": "JM13",
-          "name": "JM13",
+          "color_id": "Y-M13",
+          "name": "M13",
           "hex": "#BC7959",
           "l": 57.2,
           "a": 22.7,
@@ -3940,8 +3940,8 @@
           "favorite": false
         },
         {
-          "color_id": "JM14",
-          "name": "JM14",
+          "color_id": "Y-M14",
+          "name": "M14",
           "hex": "#CC6647",
           "l": 54.9,
           "a": 38,
@@ -3950,11 +3950,11 @@
           "favorite": false
         },
         {
-          "color_id": "JM15",
-          "name": "JM15",
+          "color_id": "Y-M15",
+          "name": "M15",
           "hex": "#6D6D6D",
           "l": 46,
-          "a": 0,
+          "a": -0,
           "b": 0,
           "enabled": true,
           "favorite": false

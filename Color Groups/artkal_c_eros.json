@@ -1,946 +1,953 @@
 {
-  "colors": [
-    {
-      "color_id": "C01",
-      "r": 0,
-      "g": 0,
-      "b": 0
-    },
-    {
-      "color_id": "C02",
-      "r": 252,
-      "g": 252,
-      "b": 255
-    },
-    {
-      "color_id": "C03",
-      "r": 255,
-      "g": 150,
-      "b": 0
-    },
-    {
-      "color_id": "C04",
-      "r": 242,
-      "g": 116,
-      "b": 48
-    },
-    {
-      "color_id": "C05",
-      "r": 216,
-      "g": 34,
-      "b": 21
-    },
-    {
-      "color_id": "C06",
-      "r": 198,
-      "g": 29,
-      "b": 13
-    },
-    {
-      "color_id": "C07",
-      "r": 255,
-      "g": 102,
-      "b": 191
-    },
-    {
-      "color_id": "C08",
-      "r": 255,
-      "g": 63,
-      "b": 149
-    },
-    {
-      "color_id": "C09",
-      "r": 234,
-      "g": 46,
-      "b": 131
-    },
-    {
-      "color_id": "C10",
-      "r": 255,
-      "g": 237,
-      "b": 102
-    },
-    {
-      "color_id": "C11",
-      "r": 255,
-      "g": 190,
-      "b": 0
-    },
-    {
-      "color_id": "C12",
-      "r": 171,
-      "g": 221,
-      "b": 133
-    },
-    {
-      "color_id": "C13",
-      "r": 156,
-      "g": 185,
-      "b": 0
-    },
-    {
-      "color_id": "C14",
-      "r": 0,
-      "g": 137,
-      "b": 75
-    },
-    {
-      "color_id": "C15",
-      "r": 24,
-      "g": 111,
-      "b": 100
-    },
-    {
-      "color_id": "C16",
-      "r": 255,
-      "g": 109,
-      "b": 30
-    },
-    {
-      "color_id": "C17",
-      "r": 255,
-      "g": 89,
-      "b": 0
-    },
-    {
-      "color_id": "C18",
-      "r": 191,
-      "g": 235,
-      "b": 255
-    },
-    {
-      "color_id": "C19",
-      "r": 71,
-      "g": 193,
-      "b": 255
-    },
-    {
-      "color_id": "C20",
-      "r": 48,
-      "g": 146,
-      "b": 242
-    },
-    {
-      "color_id": "C21",
-      "r": 26,
-      "g": 87,
-      "b": 178
-    },
-    {
-      "color_id": "C22",
-      "r": 255,
-      "g": 217,
-      "b": 218
-    },
-    {
-      "color_id": "C23",
-      "r": 229,
-      "g": 180,
-      "b": 137
-    },
-    {
-      "color_id": "C24",
-      "r": 255,
-      "g": 220,
-      "b": 140
-    },
-    {
-      "color_id": "C25",
-      "r": 156,
-      "g": 122,
-      "b": 211
-    },
-    {
-      "color_id": "C26",
-      "r": 177,
-      "g": 91,
-      "b": 204
-    },
-    {
-      "color_id": "C27",
-      "r": 105,
-      "g": 7,
-      "b": 158
-    },
-    {
-      "color_id": "C28",
-      "r": 191,
-      "g": 123,
-      "b": 34
-    },
-    {
-      "color_id": "C29",
-      "r": 204,
-      "g": 116,
-      "b": 91
-    },
-    {
-      "color_id": "C30",
-      "r": 170,
-      "g": 46,
-      "b": 0
-    },
-    {
-      "color_id": "C31",
-      "r": 127,
-      "g": 73,
-      "b": 12
-    },
-    {
-      "color_id": "C32",
-      "r": 110,
-      "g": 55,
-      "b": 18
-    },
-    {
-      "color_id": "C33",
-      "r": 142,
-      "g": 145,
-      "b": 138
-    },
-    {
-      "color_id": "C34",
-      "r": 107,
-      "g": 107,
-      "b": 107
-    },
-    {
-      "color_id": "C35",
-      "r": 109,
-      "g": 109,
-      "b": 113
-    },
-    {
-      "color_id": "C36",
-      "r": 255,
-      "g": 120,
-      "b": 135
-    },
-    {
-      "color_id": "C37",
-      "r": 38,
-      "g": 112,
-      "b": 191
-    },
-    {
-      "color_id": "C38",
-      "r": 110,
-      "g": 175,
-      "b": 255
-    },
-    {
-      "color_id": "C39",
-      "r": 176,
-      "g": 232,
-      "b": 229
-    },
-    {
-      "color_id": "C40",
-      "r": 220,
-      "g": 224,
-      "b": 0
-    },
-    {
-      "color_id": "C41",
-      "r": 255,
-      "g": 234,
-      "b": 76
-    },
-    {
-      "color_id": "C42",
-      "r": 255,
-      "g": 205,
-      "b": 25
-    },
-    {
-      "color_id": "C43",
-      "r": 191,
-      "g": 15,
-      "b": 5
-    },
-    {
-      "color_id": "C44",
-      "r": 255,
-      "g": 130,
-      "b": 90
-    },
-    {
-      "color_id": "C45",
-      "r": 97,
-      "g": 216,
-      "b": 86
-    },
-    {
-      "color_id": "C46",
-      "r": 255,
-      "g": 255,
-      "b": 43
-    },
-    {
-      "color_id": "C47",
-      "r": 255,
-      "g": 201,
-      "b": 150
-    },
-    {
-      "color_id": "C48",
-      "r": 255,
-      "g": 193,
-      "b": 25
-    },
-    {
-      "color_id": "C49",
-      "r": 249,
-      "g": 112,
-      "b": 192
-    },
-    {
-      "color_id": "C50",
-      "r": 246,
-      "g": 216,
-      "b": 255
-    },
-    {
-      "color_id": "C51",
-      "r": 255,
-      "g": 233,
-      "b": 183
-    },
-    {
-      "color_id": "C52",
-      "r": 95,
-      "g": 6,
-      "b": 168
-    },
-    {
-      "color_id": "C53",
-      "r": 214,
-      "g": 237,
-      "b": 11
-    },
-    {
-      "color_id": "C54",
-      "r": 61,
-      "g": 204,
-      "b": 163
-    },
-    {
-      "color_id": "C55",
-      "r": 110,
-      "g": 185,
-      "b": 0
-    },
-    {
-      "color_id": "C56",
-      "r": 135,
-      "g": 137,
-      "b": 132
-    },
-    {
-      "color_id": "C57",
-      "r": 214,
-      "g": 47,
-      "b": 21
-    },
-    {
-      "color_id": "C58",
-      "r": 66,
-      "g": 5,
-      "b": 127
-    },
-    {
-      "color_id": "C59",
-      "r": 140,
-      "g": 26,
-      "b": 21
-    },
-    {
-      "color_id": "C60",
-      "r": 199,
-      "g": 234,
-      "b": 221
-    },
-    {
-      "color_id": "C61",
-      "r": 255,
-      "g": 255,
-      "b": 140
-    },
-    {
-      "color_id": "C62",
-      "r": 237,
-      "g": 60,
-      "b": 0
-    },
-    {
-      "color_id": "C63",
-      "r": 255,
-      "g": 185,
-      "b": 230
-    },
-    {
-      "color_id": "C64",
-      "r": 214,
-      "g": 27,
-      "b": 114
-    },
-    {
-      "color_id": "C65",
-      "r": 229,
-      "g": 114,
-      "b": 82
-    },
-    {
-      "color_id": "C66",
-      "r": 244,
-      "g": 124,
-      "b": 156
-    },
-    {
-      "color_id": "C67",
-      "r": 195,
-      "g": 0,
-      "b": 216
-    },
-    {
-      "color_id": "C68",
-      "r": 114,
-      "g": 201,
-      "b": 255
-    },
-    {
-      "color_id": "C69",
-      "r": 43,
-      "g": 40,
-      "b": 43
-    },
-    {
-      "color_id": "C70",
-      "r": 0,
-      "g": 38,
-      "b": 22
-    },
-    {
-      "color_id": "C71",
-      "r": 242,
-      "g": 177,
-      "b": 0
-    },
-    {
-      "color_id": "C72",
-      "r": 242,
-      "g": 169,
-      "b": 12
-    },
-    {
-      "color_id": "C73",
-      "r": 211,
-      "g": 120,
-      "b": 63
-    },
-    {
-      "color_id": "C74",
-      "r": 216,
-      "g": 155,
-      "b": 80
-    },
-    {
-      "color_id": "C75",
-      "r": 168,
-      "g": 105,
-      "b": 33
-    },
-    {
-      "color_id": "C76",
-      "r": 255,
-      "g": 95,
-      "b": 63
-    },
-    {
-      "color_id": "C77",
-      "r": 204,
-      "g": 75,
-      "b": 61
-    },
-    {
-      "color_id": "C78",
-      "r": 153,
-      "g": 37,
-      "b": 27
-    },
-    {
-      "color_id": "C79",
-      "r": 157,
-      "g": 235,
-      "b": 242
-    },
-    {
-      "color_id": "C80",
-      "r": 34,
-      "g": 170,
-      "b": 154
-    },
-    {
-      "color_id": "C81",
-      "r": 100,
-      "g": 190,
-      "b": 210
-    },
-    {
-      "color_id": "C82",
-      "r": 43,
-      "g": 170,
-      "b": 200
-    },
-    {
-      "color_id": "C83",
-      "r": 39,
-      "g": 135,
-      "b": 185
-    },
-    {
-      "color_id": "C84",
-      "r": 180,
-      "g": 195,
-      "b": 0
-    },
-    {
-      "color_id": "C85",
-      "r": 145,
-      "g": 145,
-      "b": 0
-    },
-    {
-      "color_id": "C86",
-      "r": 0,
-      "g": 122,
-      "b": 36
-    },
-    {
-      "color_id": "C87",
-      "r": 237,
-      "g": 237,
-      "b": 232
-    },
-    {
-      "color_id": "C88",
-      "r": 219,
-      "g": 219,
-      "b": 210
-    },
-    {
-      "color_id": "C89",
-      "r": 163,
-      "g": 163,
-      "b": 156
-    },
-    {
-      "color_id": "C90",
-      "r": 77,
-      "g": 77,
-      "b": 79
-    },
-    {
-      "color_id": "C91",
-      "r": 211,
-      "g": 171,
-      "b": 10
-    },
-    {
-      "color_id": "C92",
-      "r": 249,
-      "g": 195,
-      "b": 132
-    },
-    {
-      "color_id": "C93",
-      "r": 234,
-      "g": 140,
-      "b": 117
-    },
-    {
-      "color_id": "C94",
-      "r": 237,
-      "g": 117,
-      "b": 90
-    },
-    {
-      "color_id": "C95",
-      "r": 242,
-      "g": 124,
-      "b": 80
-    },
-    {
-      "color_id": "C96",
-      "r": 230,
-      "g": 125,
-      "b": 45
-    },
-    {
-      "color_id": "C97",
-      "r": 140,
-      "g": 191,
-      "b": 255
-    },
-    {
-      "color_id": "C98",
-      "r": 98,
-      "g": 222,
-      "b": 247
-    },
-    {
-      "color_id": "C99",
-      "r": 127,
-      "g": 197,
-      "b": 204
-    },
-    {
-      "color_id": "C100",
-      "r": 76,
-      "g": 168,
-      "b": 255
-    },
-    {
-      "color_id": "C101",
-      "r": 68,
-      "g": 131,
-      "b": 234
-    },
-    {
-      "color_id": "C102",
-      "r": 54,
-      "g": 108,
-      "b": 216
-    },
-    {
-      "color_id": "C103",
-      "r": 0,
-      "g": 139,
-      "b": 209
-    },
-    {
-      "color_id": "C104",
-      "r": 0,
-      "g": 156,
-      "b": 170
-    },
-    {
-      "color_id": "C105",
-      "r": 0,
-      "g": 104,
-      "b": 145
-    },
-    {
-      "color_id": "C106",
-      "r": 0,
-      "g": 118,
-      "b": 165
-    },
-    {
-      "color_id": "C107",
-      "r": 216,
-      "g": 185,
-      "b": 80
-    },
-    {
-      "color_id": "C108",
-      "r": 191,
-      "g": 177,
-      "b": 86
-    },
-    {
-      "color_id": "C109",
-      "r": 178,
-      "g": 163,
-      "b": 62
-    },
-    {
-      "color_id": "C110",
-      "r": 163,
-      "g": 147,
-      "b": 71
-    },
-    {
-      "color_id": "C111",
-      "r": 147,
-      "g": 133,
-      "b": 59
-    },
-    {
-      "color_id": "C112",
-      "r": 178,
-      "g": 171,
-      "b": 117
-    },
-    {
-      "color_id": "C113",
-      "r": 157,
-      "g": 163,
-      "b": 97
-    },
-    {
-      "color_id": "C114",
-      "r": 154,
-      "g": 158,
-      "b": 110
-    },
-    {
-      "color_id": "C115",
-      "r": 141,
-      "g": 145,
-      "b": 94
-    },
-    {
-      "color_id": "C116",
-      "r": 124,
-      "g": 127,
-      "b": 89
-    },
-    {
-      "color_id": "C117",
-      "r": 112,
-      "g": 130,
-      "b": 0
-    },
-    {
-      "color_id": "C118",
-      "r": 149,
-      "g": 229,
-      "b": 209
-    },
-    {
-      "color_id": "C119",
-      "r": 114,
-      "g": 229,
-      "b": 172
-    },
-    {
-      "color_id": "C120",
-      "r": 133,
-      "g": 191,
-      "b": 162
-    },
-    {
-      "color_id": "C121",
-      "r": 0,
-      "g": 204,
-      "b": 102
-    },
-    {
-      "color_id": "C122",
-      "r": 102,
-      "g": 204,
-      "b": 0
-    },
-    {
-      "color_id": "C123",
-      "r": 5,
-      "g": 114,
-      "b": 36
-    },
-    {
-      "color_id": "C124",
-      "r": 0,
-      "g": 130,
-      "b": 104
-    },
-    {
-      "color_id": "C125",
-      "r": 0,
-      "g": 114,
-      "b": 102
-    },
-    {
-      "color_id": "C126",
-      "r": 255,
-      "g": 204,
-      "b": 255
-    },
-    {
-      "color_id": "C127",
-      "r": 249,
-      "g": 132,
-      "b": 230
-    },
-    {
-      "color_id": "C128",
-      "r": 224,
-      "g": 161,
-      "b": 188
-    },
-    {
-      "color_id": "C129",
-      "r": 255,
-      "g": 127,
-      "b": 169
-    },
-    {
-      "color_id": "C130",
-      "r": 236,
-      "g": 193,
-      "b": 255
-    },
-    {
-      "color_id": "C131",
-      "r": 255,
-      "g": 89,
-      "b": 111
-    },
-    {
-      "color_id": "C132",
-      "r": 255,
-      "g": 12,
-      "b": 214
-    },
-    {
-      "color_id": "C133",
-      "r": 160,
-      "g": 0,
-      "b": 191
-    },
-    {
-      "color_id": "C134",
-      "r": 204,
-      "g": 210,
-      "b": 255
-    },
-    {
-      "color_id": "C135",
-      "r": 229,
-      "g": 229,
-      "b": 255
-    },
-    {
-      "color_id": "C136",
-      "r": 138,
-      "g": 178,
-      "b": 242
-    },
-    {
-      "color_id": "C137",
-      "r": 114,
-      "g": 160,
-      "b": 229
-    },
-    {
-      "color_id": "C138",
-      "r": 153,
-      "g": 161,
-      "b": 255
-    },
-    {
-      "color_id": "C139",
-      "r": 130,
-      "g": 137,
-      "b": 216
-    },
-    {
-      "color_id": "C140",
-      "r": 119,
-      "g": 117,
-      "b": 221
-    },
-    {
-      "color_id": "C141",
-      "r": 106,
-      "g": 104,
-      "b": 209
-    },
-    {
-      "color_id": "C142",
-      "r": 83,
-      "g": 81,
-      "b": 204
-    },
-    {
-      "color_id": "C143",
-      "r": 40,
-      "g": 38,
-      "b": 191
-    },
-    {
-      "color_id": "C144",
-      "r": 236,
-      "g": 255,
-      "b": 38
-    },
-    {
-      "color_id": "C145",
-      "r": 173,
-      "g": 8,
-      "b": 0
-    },
-    {
-      "color_id": "C146",
-      "r": 195,
-      "g": 229,
-      "b": 204
-    },
-    {
-      "color_id": "C147",
-      "r": 140,
-      "g": 91,
-      "b": 70
-    },
-    {
-      "color_id": "C148",
-      "r": 255,
-      "g": 222,
-      "b": 153
-    },
-    {
-      "color_id": "C149",
-      "r": 160,
-      "g": 133,
-      "b": 242
-    },
-    {
-      "color_id": "C150",
-      "r": 77,
-      "g": 89,
-      "b": 44
-    },
-    {
-      "color_id": "C151",
-      "r": 223,
-      "g": 191,
-      "b": 255
-    },
-    {
-      "color_id": "C152",
-      "r": 216,
-      "g": 219,
-      "b": 255
-    },
-    {
-      "color_id": "C153",
-      "r": 255,
-      "g": 212,
-      "b": 127
-    },
-    {
-      "color_id": "C154",
-      "r": 204,
-      "g": 142,
-      "b": 81
-    },
-    {
-      "color_id": "C155",
-      "r": 107,
-      "g": 107,
-      "b": 117
-    },
-    {
-      "color_id": "C156",
-      "r": 77,
-      "g": 77,
-      "b": 91
-    },
-    {
-      "color_id": "C157",
-      "r": 35,
-      "g": 32,
-      "b": 40
+  "groups": [
+    {
+      "group_id": "artkal_c_eros",
+      "name": "Artkal C Series (by Eros)",
+      "enabled": true,
+      "colors": [
+        {
+          "color_id": "C01",
+          "name": "C01",
+          "hex": "#000000",
+          "enabled": true
+        },
+        {
+          "color_id": "C02",
+          "name": "C02",
+          "hex": "#FCFCFF",
+          "enabled": true
+        },
+        {
+          "color_id": "C03",
+          "name": "C03",
+          "hex": "#FF9600",
+          "enabled": true
+        },
+        {
+          "color_id": "C04",
+          "name": "C04",
+          "hex": "#F27430",
+          "enabled": true
+        },
+        {
+          "color_id": "C05",
+          "name": "C05",
+          "hex": "#D82215",
+          "enabled": true
+        },
+        {
+          "color_id": "C06",
+          "name": "C06",
+          "hex": "#C61D0D",
+          "enabled": true
+        },
+        {
+          "color_id": "C07",
+          "name": "C07",
+          "hex": "#FF66BF",
+          "enabled": true
+        },
+        {
+          "color_id": "C08",
+          "name": "C08",
+          "hex": "#FF3F95",
+          "enabled": true
+        },
+        {
+          "color_id": "C09",
+          "name": "C09",
+          "hex": "#EA2E83",
+          "enabled": true
+        },
+        {
+          "color_id": "C10",
+          "name": "C10",
+          "hex": "#FFED66",
+          "enabled": true
+        },
+        {
+          "color_id": "C11",
+          "name": "C11",
+          "hex": "#FFBE00",
+          "enabled": true
+        },
+        {
+          "color_id": "C12",
+          "name": "C12",
+          "hex": "#ABDD85",
+          "enabled": true
+        },
+        {
+          "color_id": "C13",
+          "name": "C13",
+          "hex": "#9CB900",
+          "enabled": true
+        },
+        {
+          "color_id": "C14",
+          "name": "C14",
+          "hex": "#00894B",
+          "enabled": true
+        },
+        {
+          "color_id": "C15",
+          "name": "C15",
+          "hex": "#186F64",
+          "enabled": true
+        },
+        {
+          "color_id": "C16",
+          "name": "C16",
+          "hex": "#FF6D1E",
+          "enabled": true
+        },
+        {
+          "color_id": "C17",
+          "name": "C17",
+          "hex": "#FF5900",
+          "enabled": true
+        },
+        {
+          "color_id": "C18",
+          "name": "C18",
+          "hex": "#BFEBFF",
+          "enabled": true
+        },
+        {
+          "color_id": "C19",
+          "name": "C19",
+          "hex": "#47C1FF",
+          "enabled": true
+        },
+        {
+          "color_id": "C20",
+          "name": "C20",
+          "hex": "#3092F2",
+          "enabled": true
+        },
+        {
+          "color_id": "C21",
+          "name": "C21",
+          "hex": "#1A57B2",
+          "enabled": true
+        },
+        {
+          "color_id": "C22",
+          "name": "C22",
+          "hex": "#FFD9DA",
+          "enabled": true
+        },
+        {
+          "color_id": "C23",
+          "name": "C23",
+          "hex": "#E5B489",
+          "enabled": true
+        },
+        {
+          "color_id": "C24",
+          "name": "C24",
+          "hex": "#FFDC8C",
+          "enabled": true
+        },
+        {
+          "color_id": "C25",
+          "name": "C25",
+          "hex": "#9C7AD3",
+          "enabled": true
+        },
+        {
+          "color_id": "C26",
+          "name": "C26",
+          "hex": "#B15BCC",
+          "enabled": true
+        },
+        {
+          "color_id": "C27",
+          "name": "C27",
+          "hex": "#69079E",
+          "enabled": true
+        },
+        {
+          "color_id": "C28",
+          "name": "C28",
+          "hex": "#BF7B22",
+          "enabled": true
+        },
+        {
+          "color_id": "C29",
+          "name": "C29",
+          "hex": "#CC745B",
+          "enabled": true
+        },
+        {
+          "color_id": "C30",
+          "name": "C30",
+          "hex": "#AA2E00",
+          "enabled": true
+        },
+        {
+          "color_id": "C31",
+          "name": "C31",
+          "hex": "#7F490C",
+          "enabled": true
+        },
+        {
+          "color_id": "C32",
+          "name": "C32",
+          "hex": "#6E3712",
+          "enabled": true
+        },
+        {
+          "color_id": "C33",
+          "name": "C33",
+          "hex": "#8E918A",
+          "enabled": true
+        },
+        {
+          "color_id": "C34",
+          "name": "C34",
+          "hex": "#6B6B6B",
+          "enabled": true
+        },
+        {
+          "color_id": "C35",
+          "name": "C35",
+          "hex": "#6D6D71",
+          "enabled": true
+        },
+        {
+          "color_id": "C36",
+          "name": "C36",
+          "hex": "#FF7887",
+          "enabled": true
+        },
+        {
+          "color_id": "C37",
+          "name": "C37",
+          "hex": "#2670BF",
+          "enabled": true
+        },
+        {
+          "color_id": "C38",
+          "name": "C38",
+          "hex": "#6EAFFF",
+          "enabled": true
+        },
+        {
+          "color_id": "C39",
+          "name": "C39",
+          "hex": "#B0E8E5",
+          "enabled": true
+        },
+        {
+          "color_id": "C40",
+          "name": "C40",
+          "hex": "#DCE000",
+          "enabled": true
+        },
+        {
+          "color_id": "C41",
+          "name": "C41",
+          "hex": "#FFEA4C",
+          "enabled": true
+        },
+        {
+          "color_id": "C42",
+          "name": "C42",
+          "hex": "#FFCD19",
+          "enabled": true
+        },
+        {
+          "color_id": "C43",
+          "name": "C43",
+          "hex": "#BF0F05",
+          "enabled": true
+        },
+        {
+          "color_id": "C44",
+          "name": "C44",
+          "hex": "#FF825A",
+          "enabled": true
+        },
+        {
+          "color_id": "C45",
+          "name": "C45",
+          "hex": "#61D856",
+          "enabled": true
+        },
+        {
+          "color_id": "C46",
+          "name": "C46",
+          "hex": "#FFFF2B",
+          "enabled": true
+        },
+        {
+          "color_id": "C47",
+          "name": "C47",
+          "hex": "#FFC996",
+          "enabled": true
+        },
+        {
+          "color_id": "C48",
+          "name": "C48",
+          "hex": "#FFC119",
+          "enabled": true
+        },
+        {
+          "color_id": "C49",
+          "name": "C49",
+          "hex": "#F970C0",
+          "enabled": true
+        },
+        {
+          "color_id": "C50",
+          "name": "C50",
+          "hex": "#F6D8FF",
+          "enabled": true
+        },
+        {
+          "color_id": "C51",
+          "name": "C51",
+          "hex": "#FFE9B7",
+          "enabled": true
+        },
+        {
+          "color_id": "C52",
+          "name": "C52",
+          "hex": "#5F06A8",
+          "enabled": true
+        },
+        {
+          "color_id": "C53",
+          "name": "C53",
+          "hex": "#D6ED0B",
+          "enabled": true
+        },
+        {
+          "color_id": "C54",
+          "name": "C54",
+          "hex": "#3DCCA3",
+          "enabled": true
+        },
+        {
+          "color_id": "C55",
+          "name": "C55",
+          "hex": "#6EB900",
+          "enabled": true
+        },
+        {
+          "color_id": "C56",
+          "name": "C56",
+          "hex": "#878984",
+          "enabled": true
+        },
+        {
+          "color_id": "C57",
+          "name": "C57",
+          "hex": "#D62F15",
+          "enabled": true
+        },
+        {
+          "color_id": "C58",
+          "name": "C58",
+          "hex": "#42057F",
+          "enabled": true
+        },
+        {
+          "color_id": "C59",
+          "name": "C59",
+          "hex": "#8C1A15",
+          "enabled": true
+        },
+        {
+          "color_id": "C60",
+          "name": "C60",
+          "hex": "#C7EADD",
+          "enabled": true
+        },
+        {
+          "color_id": "C61",
+          "name": "C61",
+          "hex": "#FFFF8C",
+          "enabled": true
+        },
+        {
+          "color_id": "C62",
+          "name": "C62",
+          "hex": "#ED3C00",
+          "enabled": true
+        },
+        {
+          "color_id": "C63",
+          "name": "C63",
+          "hex": "#FFB9E6",
+          "enabled": true
+        },
+        {
+          "color_id": "C64",
+          "name": "C64",
+          "hex": "#D61B72",
+          "enabled": true
+        },
+        {
+          "color_id": "C65",
+          "name": "C65",
+          "hex": "#E57252",
+          "enabled": true
+        },
+        {
+          "color_id": "C66",
+          "name": "C66",
+          "hex": "#F47C9C",
+          "enabled": true
+        },
+        {
+          "color_id": "C67",
+          "name": "C67",
+          "hex": "#C300D8",
+          "enabled": true
+        },
+        {
+          "color_id": "C68",
+          "name": "C68",
+          "hex": "#72C9FF",
+          "enabled": true
+        },
+        {
+          "color_id": "C69",
+          "name": "C69",
+          "hex": "#2B282B",
+          "enabled": true
+        },
+        {
+          "color_id": "C70",
+          "name": "C70",
+          "hex": "#002616",
+          "enabled": true
+        },
+        {
+          "color_id": "C71",
+          "name": "C71",
+          "hex": "#F2B100",
+          "enabled": true
+        },
+        {
+          "color_id": "C72",
+          "name": "C72",
+          "hex": "#F2A90C",
+          "enabled": true
+        },
+        {
+          "color_id": "C73",
+          "name": "C73",
+          "hex": "#D3783F",
+          "enabled": true
+        },
+        {
+          "color_id": "C74",
+          "name": "C74",
+          "hex": "#D89B50",
+          "enabled": true
+        },
+        {
+          "color_id": "C75",
+          "name": "C75",
+          "hex": "#A86921",
+          "enabled": true
+        },
+        {
+          "color_id": "C76",
+          "name": "C76",
+          "hex": "#FF5F3F",
+          "enabled": true
+        },
+        {
+          "color_id": "C77",
+          "name": "C77",
+          "hex": "#CC4B3D",
+          "enabled": true
+        },
+        {
+          "color_id": "C78",
+          "name": "C78",
+          "hex": "#99251B",
+          "enabled": true
+        },
+        {
+          "color_id": "C79",
+          "name": "C79",
+          "hex": "#9DEBF2",
+          "enabled": true
+        },
+        {
+          "color_id": "C80",
+          "name": "C80",
+          "hex": "#22AA9A",
+          "enabled": true
+        },
+        {
+          "color_id": "C81",
+          "name": "C81",
+          "hex": "#64BED2",
+          "enabled": true
+        },
+        {
+          "color_id": "C82",
+          "name": "C82",
+          "hex": "#2BAAC8",
+          "enabled": true
+        },
+        {
+          "color_id": "C83",
+          "name": "C83",
+          "hex": "#2787B9",
+          "enabled": true
+        },
+        {
+          "color_id": "C84",
+          "name": "C84",
+          "hex": "#B4C300",
+          "enabled": true
+        },
+        {
+          "color_id": "C85",
+          "name": "C85",
+          "hex": "#919100",
+          "enabled": true
+        },
+        {
+          "color_id": "C86",
+          "name": "C86",
+          "hex": "#007A24",
+          "enabled": true
+        },
+        {
+          "color_id": "C87",
+          "name": "C87",
+          "hex": "#EDEDE8",
+          "enabled": true
+        },
+        {
+          "color_id": "C88",
+          "name": "C88",
+          "hex": "#DBDBD2",
+          "enabled": true
+        },
+        {
+          "color_id": "C89",
+          "name": "C89",
+          "hex": "#A3A39C",
+          "enabled": true
+        },
+        {
+          "color_id": "C90",
+          "name": "C90",
+          "hex": "#4D4D4F",
+          "enabled": true
+        },
+        {
+          "color_id": "C91",
+          "name": "C91",
+          "hex": "#D3AB0A",
+          "enabled": true
+        },
+        {
+          "color_id": "C92",
+          "name": "C92",
+          "hex": "#F9C384",
+          "enabled": true
+        },
+        {
+          "color_id": "C93",
+          "name": "C93",
+          "hex": "#EA8C75",
+          "enabled": true
+        },
+        {
+          "color_id": "C94",
+          "name": "C94",
+          "hex": "#ED755A",
+          "enabled": true
+        },
+        {
+          "color_id": "C95",
+          "name": "C95",
+          "hex": "#F27C50",
+          "enabled": true
+        },
+        {
+          "color_id": "C96",
+          "name": "C96",
+          "hex": "#E67D2D",
+          "enabled": true
+        },
+        {
+          "color_id": "C97",
+          "name": "C97",
+          "hex": "#8CBFFF",
+          "enabled": true
+        },
+        {
+          "color_id": "C98",
+          "name": "C98",
+          "hex": "#62DEF7",
+          "enabled": true
+        },
+        {
+          "color_id": "C99",
+          "name": "C99",
+          "hex": "#7FC5CC",
+          "enabled": true
+        },
+        {
+          "color_id": "C100",
+          "name": "C100",
+          "hex": "#4CA8FF",
+          "enabled": true
+        },
+        {
+          "color_id": "C101",
+          "name": "C101",
+          "hex": "#4483EA",
+          "enabled": true
+        },
+        {
+          "color_id": "C102",
+          "name": "C102",
+          "hex": "#366CD8",
+          "enabled": true
+        },
+        {
+          "color_id": "C103",
+          "name": "C103",
+          "hex": "#008BD1",
+          "enabled": true
+        },
+        {
+          "color_id": "C104",
+          "name": "C104",
+          "hex": "#009CAA",
+          "enabled": true
+        },
+        {
+          "color_id": "C105",
+          "name": "C105",
+          "hex": "#006891",
+          "enabled": true
+        },
+        {
+          "color_id": "C106",
+          "name": "C106",
+          "hex": "#0076A5",
+          "enabled": true
+        },
+        {
+          "color_id": "C107",
+          "name": "C107",
+          "hex": "#D8B950",
+          "enabled": true
+        },
+        {
+          "color_id": "C108",
+          "name": "C108",
+          "hex": "#BFB156",
+          "enabled": true
+        },
+        {
+          "color_id": "C109",
+          "name": "C109",
+          "hex": "#B2A33E",
+          "enabled": true
+        },
+        {
+          "color_id": "C110",
+          "name": "C110",
+          "hex": "#A39347",
+          "enabled": true
+        },
+        {
+          "color_id": "C111",
+          "name": "C111",
+          "hex": "#93853B",
+          "enabled": true
+        },
+        {
+          "color_id": "C112",
+          "name": "C112",
+          "hex": "#B2AB75",
+          "enabled": true
+        },
+        {
+          "color_id": "C113",
+          "name": "C113",
+          "hex": "#9DA361",
+          "enabled": true
+        },
+        {
+          "color_id": "C114",
+          "name": "C114",
+          "hex": "#9A9E6E",
+          "enabled": true
+        },
+        {
+          "color_id": "C115",
+          "name": "C115",
+          "hex": "#8D915E",
+          "enabled": true
+        },
+        {
+          "color_id": "C116",
+          "name": "C116",
+          "hex": "#7C7F59",
+          "enabled": true
+        },
+        {
+          "color_id": "C117",
+          "name": "C117",
+          "hex": "#708200",
+          "enabled": true
+        },
+        {
+          "color_id": "C118",
+          "name": "C118",
+          "hex": "#95E5D1",
+          "enabled": true
+        },
+        {
+          "color_id": "C119",
+          "name": "C119",
+          "hex": "#72E5AC",
+          "enabled": true
+        },
+        {
+          "color_id": "C120",
+          "name": "C120",
+          "hex": "#85BFA2",
+          "enabled": true
+        },
+        {
+          "color_id": "C121",
+          "name": "C121",
+          "hex": "#00CC66",
+          "enabled": true
+        },
+        {
+          "color_id": "C122",
+          "name": "C122",
+          "hex": "#66CC00",
+          "enabled": true
+        },
+        {
+          "color_id": "C123",
+          "name": "C123",
+          "hex": "#057224",
+          "enabled": true
+        },
+        {
+          "color_id": "C124",
+          "name": "C124",
+          "hex": "#008268",
+          "enabled": true
+        },
+        {
+          "color_id": "C125",
+          "name": "C125",
+          "hex": "#007266",
+          "enabled": true
+        },
+        {
+          "color_id": "C126",
+          "name": "C126",
+          "hex": "#FFCCFF",
+          "enabled": true
+        },
+        {
+          "color_id": "C127",
+          "name": "C127",
+          "hex": "#F984E6",
+          "enabled": true
+        },
+        {
+          "color_id": "C128",
+          "name": "C128",
+          "hex": "#E0A1BC",
+          "enabled": true
+        },
+        {
+          "color_id": "C129",
+          "name": "C129",
+          "hex": "#FF7FA9",
+          "enabled": true
+        },
+        {
+          "color_id": "C130",
+          "name": "C130",
+          "hex": "#ECC1FF",
+          "enabled": true
+        },
+        {
+          "color_id": "C131",
+          "name": "C131",
+          "hex": "#FF596F",
+          "enabled": true
+        },
+        {
+          "color_id": "C132",
+          "name": "C132",
+          "hex": "#FF0CD6",
+          "enabled": true
+        },
+        {
+          "color_id": "C133",
+          "name": "C133",
+          "hex": "#A000BF",
+          "enabled": true
+        },
+        {
+          "color_id": "C134",
+          "name": "C134",
+          "hex": "#CCD2FF",
+          "enabled": true
+        },
+        {
+          "color_id": "C135",
+          "name": "C135",
+          "hex": "#E5E5FF",
+          "enabled": true
+        },
+        {
+          "color_id": "C136",
+          "name": "C136",
+          "hex": "#8AB2F2",
+          "enabled": true
+        },
+        {
+          "color_id": "C137",
+          "name": "C137",
+          "hex": "#72A0E5",
+          "enabled": true
+        },
+        {
+          "color_id": "C138",
+          "name": "C138",
+          "hex": "#99A1FF",
+          "enabled": true
+        },
+        {
+          "color_id": "C139",
+          "name": "C139",
+          "hex": "#8289D8",
+          "enabled": true
+        },
+        {
+          "color_id": "C140",
+          "name": "C140",
+          "hex": "#7775DD",
+          "enabled": true
+        },
+        {
+          "color_id": "C141",
+          "name": "C141",
+          "hex": "#6A68D1",
+          "enabled": true
+        },
+        {
+          "color_id": "C142",
+          "name": "C142",
+          "hex": "#5351CC",
+          "enabled": true
+        },
+        {
+          "color_id": "C143",
+          "name": "C143",
+          "hex": "#2826BF",
+          "enabled": true
+        },
+        {
+          "color_id": "C144",
+          "name": "C144",
+          "hex": "#ECFF26",
+          "enabled": true
+        },
+        {
+          "color_id": "C145",
+          "name": "C145",
+          "hex": "#AD0800",
+          "enabled": true
+        },
+        {
+          "color_id": "C146",
+          "name": "C146",
+          "hex": "#C3E5CC",
+          "enabled": true
+        },
+        {
+          "color_id": "C147",
+          "name": "C147",
+          "hex": "#8C5B46",
+          "enabled": true
+        },
+        {
+          "color_id": "C148",
+          "name": "C148",
+          "hex": "#FFDE99",
+          "enabled": true
+        },
+        {
+          "color_id": "C149",
+          "name": "C149",
+          "hex": "#A085F2",
+          "enabled": true
+        },
+        {
+          "color_id": "C150",
+          "name": "C150",
+          "hex": "#4D592C",
+          "enabled": true
+        },
+        {
+          "color_id": "C151",
+          "name": "C151",
+          "hex": "#DFBFFF",
+          "enabled": true
+        },
+        {
+          "color_id": "C152",
+          "name": "C152",
+          "hex": "#D8DBFF",
+          "enabled": true
+        },
+        {
+          "color_id": "C153",
+          "name": "C153",
+          "hex": "#FFD47F",
+          "enabled": true
+        },
+        {
+          "color_id": "C154",
+          "name": "C154",
+          "hex": "#CC8E51",
+          "enabled": true
+        },
+        {
+          "color_id": "C155",
+          "name": "C155",
+          "hex": "#6B6B75",
+          "enabled": true
+        },
+        {
+          "color_id": "C156",
+          "name": "C156",
+          "hex": "#4D4D5B",
+          "enabled": true
+        },
+        {
+          "color_id": "C157",
+          "name": "C157",
+          "hex": "#232028",
+          "enabled": true
+        }
+      ]
     }
   ]
 }
