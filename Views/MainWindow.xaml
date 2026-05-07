@@ -1,0 +1,285 @@
+<Window x:Class="Pixelab.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Pixelab" 
+        Height="720" Width="1280"
+        MinHeight="480" MinWidth="800"
+        WindowStartupLocation="CenterScreen"
+        Background="#1E1E1E"
+        Icon="../Assets/app.ico">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- ==================== TOP BAR ==================== -->
+        <Border x:Name="TopBar" Grid.Row="0" Background="{DynamicResource TopBarBrush}" Height="36">
+            <Grid>
+                <!-- Left side: Menu buttons -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8,0">
+                    <Button x:Name="FileMenuButton" Content="File" Style="{StaticResource MenuButtonStyle}" Click="FileMenuButton_Click"/>
+                    <Button x:Name="ViewMenuButton" Content="View" Style="{StaticResource MenuButtonStyle}" Click="ViewMenuButton_Click"/>
+                </StackPanel>
+
+                <!-- Center: Application title -->
+                <TextBlock Text="Pixelab" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Foreground="{StaticResource LightTextBrush}" FontSize="14" FontWeight="Bold" Opacity="0.7"/>
+
+                <!-- Right side: Zoom level and settings button -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,8,0">
+                    <TextBlock x:Name="ZoomLevelText" Text="100%" VerticalAlignment="Center" Margin="0,0,12,0"
+                               Foreground="{StaticResource LightTextBrush}" FontSize="12" Opacity="0.8"/>
+                    <Button x:Name="SettingsButton" Content="⚙" ToolTip="Settings" Click="SettingsButton_Click"
+                            Background="Transparent" Foreground="{StaticResource LightTextBrush}"
+                            BorderThickness="0" Padding="8,4" FontSize="18" Cursor="Hand">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border x:Name="border" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" CornerRadius="3">
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter TargetName="border" Property="Background" Value="#33FFFFFF"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- ==================== FILE MENU POPUP ==================== -->
+        <Popup x:Name="FileMenuPopup" PlacementTarget="{Binding ElementName=FileMenuButton}" Placement="Bottom" StaysOpen="False" AllowsTransparency="True">
+            <Border Background="#2D2D30" BorderBrush="#3F3F46" BorderThickness="1" CornerRadius="4" Padding="4">
+                <Border.Effect><DropShadowEffect BlurRadius="10" ShadowDepth="3" Opacity="0.4"/></Border.Effect>
+                <StackPanel>
+                    <!-- Open File button -->
+                    <Button x:Name="OpenFileButton" Content="📁  Open File" Click="OpenFile_Click" Background="Transparent" Foreground="White" BorderThickness="0" Padding="16,8" HorizontalContentAlignment="Left" Cursor="Hand">
+                        <Button.Style><Style TargetType="Button"><Setter Property="Template"><Setter.Value><ControlTemplate TargetType="Button"><Border x:Name="border" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" CornerRadius="3"><ContentPresenter HorizontalAlignment="Left"/></Border><ControlTemplate.Triggers><Trigger Property="IsMouseOver" Value="True"><Setter TargetName="border" Property="Background" Value="#3E3E42"/></Trigger></ControlTemplate.Triggers></ControlTemplate></Setter.Value></Setter></Style></Button.Style>
+                    </Button>
+                    <!-- Open Folder button -->
+                    <Button x:Name="OpenFolderButton" Content="📂  Open Folder" Click="OpenFolder_Click" Background="Transparent" Foreground="White" BorderThickness="0" Padding="16,8" HorizontalContentAlignment="Left" Cursor="Hand">
+                        <Button.Style><Style TargetType="Button"><Setter Property="Template"><Setter.Value><ControlTemplate TargetType="Button"><Border x:Name="border" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" CornerRadius="3"><ContentPresenter HorizontalAlignment="Left"/></Border><ControlTemplate.Triggers><Trigger Property="IsMouseOver" Value="True"><Setter TargetName="border" Property="Background" Value="#3E3E42"/></Trigger></ControlTemplate.Triggers></ControlTemplate></Setter.Value></Setter></Style></Button.Style>
+                    </Button>
+                </StackPanel>
+            </Border>
+        </Popup>
+
+        <!-- ==================== VIEW MENU POPUP ==================== -->
+        <Popup x:Name="ViewMenuPopup" PlacementTarget="{Binding ElementName=ViewMenuButton}" Placement="Bottom" StaysOpen="False" AllowsTransparency="True">
+            <Border Background="#2D2D30" BorderBrush="#3F3F46" BorderThickness="1" CornerRadius="4" Padding="4">
+                <Border.Effect><DropShadowEffect BlurRadius="10" ShadowDepth="3" Opacity="0.4"/></Border.Effect>
+                <StackPanel>
+                    <!-- Zoom In button -->
+                    <Button x:Name="ZoomInButton" Content="🔍  Zoom In" Click="ZoomIn_Click" Background="Transparent" Foreground="White" BorderThickness="0" Padding="16,8" HorizontalContentAlignment="Left" Cursor="Hand">
+                        <Button.Style><Style TargetType="Button"><Setter Property="Template"><Setter.Value><ControlTemplate TargetType="Button"><Border x:Name="border" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" CornerRadius="3"><ContentPresenter HorizontalAlignment="Left"/></Border><ControlTemplate.Triggers><Trigger Property="IsMouseOver" Value="True"><Setter TargetName="border" Property="Background" Value="#3E3E42"/></Trigger></ControlTemplate.Triggers></ControlTemplate></Setter.Value></Setter></Style></Button.Style>
+                    </Button>
+                    <!-- Zoom Out button -->
+                    <Button x:Name="ZoomOutButton" Content="🔎  Zoom Out" Click="ZoomOut_Click" Background="Transparent" Foreground="White" BorderThickness="0" Padding="16,8" HorizontalContentAlignment="Left" Cursor="Hand">
+                        <Button.Style><Style TargetType="Button"><Setter Property="Template"><Setter.Value><ControlTemplate TargetType="Button"><Border x:Name="border" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" CornerRadius="3"><ContentPresenter HorizontalAlignment="Left"/></Border><ControlTemplate.Triggers><Trigger Property="IsMouseOver" Value="True"><Setter TargetName="border" Property="Background" Value="#3E3E42"/></Trigger></ControlTemplate.Triggers></ControlTemplate></Setter.Value></Setter></Style></Button.Style>
+                    </Button>
+                    <!-- Reset View button -->
+                    <Button x:Name="ResetViewButton" Content="🎯  Reset View" Click="ResetView_Click" Background="Transparent" Foreground="White" BorderThickness="0" Padding="16,8" HorizontalContentAlignment="Left" Cursor="Hand">
+                        <Button.Style><Style TargetType="Button"><Setter Property="Template"><Setter.Value><ControlTemplate TargetType="Button"><Border x:Name="border" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" CornerRadius="3"><ContentPresenter HorizontalAlignment="Left"/></Border><ControlTemplate.Triggers><Trigger Property="IsMouseOver" Value="True"><Setter TargetName="border" Property="Background" Value="#3E3E42"/></Trigger></ControlTemplate.Triggers></ControlTemplate></Setter.Value></Setter></Style></Button.Style>
+                    </Button>
+                    <Separator Background="#3F3F46" Margin="4"/>
+                    <!-- Fit to Window button -->
+                    <Button x:Name="FitToWindowButton" Content="📐  Fit to Window" Click="FitToWindow_Click" Background="Transparent" Foreground="White" BorderThickness="0" Padding="16,8" HorizontalContentAlignment="Left" Cursor="Hand">
+                        <Button.Style><Style TargetType="Button"><Setter Property="Template"><Setter.Value><ControlTemplate TargetType="Button"><Border x:Name="border" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" CornerRadius="3"><ContentPresenter HorizontalAlignment="Left"/></Border><ControlTemplate.Triggers><Trigger Property="IsMouseOver" Value="True"><Setter TargetName="border" Property="Background" Value="#3E3E42"/></Trigger></ControlTemplate.Triggers></ControlTemplate></Setter.Value></Setter></Style></Button.Style>
+                    </Button>
+                    <!-- Actual Size button -->
+                    <Button x:Name="ActualSizeButton" Content="📏  Actual Size (1:1)" Click="ActualSize_Click" Background="Transparent" Foreground="White" BorderThickness="0" Padding="16,8" HorizontalContentAlignment="Left" Cursor="Hand">
+                        <Button.Style><Style TargetType="Button"><Setter Property="Template"><Setter.Value><ControlTemplate TargetType="Button"><Border x:Name="border" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" CornerRadius="3"><ContentPresenter HorizontalAlignment="Left"/></Border><ControlTemplate.Triggers><Trigger Property="IsMouseOver" Value="True"><Setter TargetName="border" Property="Background" Value="#3E3E42"/></Trigger></ControlTemplate.Triggers></ControlTemplate></Setter.Value></Setter></Style></Button.Style>
+                    </Button>
+                    <Separator Background="#3F3F46" Margin="4"/>
+                    <!-- Show/Hide Grid button -->
+                    <Button x:Name="ShowGridButton" Content="🔘  Show Pixel Grid" Click="ShowGrid_Click" Background="Transparent" Foreground="White" BorderThickness="0" Padding="16,8" HorizontalContentAlignment="Left" Cursor="Hand">
+                        <Button.Style><Style TargetType="Button"><Setter Property="Template"><Setter.Value><ControlTemplate TargetType="Button"><Border x:Name="border" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" CornerRadius="3"><ContentPresenter HorizontalAlignment="Left"/></Border><ControlTemplate.Triggers><Trigger Property="IsMouseOver" Value="True"><Setter TargetName="border" Property="Background" Value="#3E3E42"/></Trigger></ControlTemplate.Triggers></ControlTemplate></Setter.Value></Setter></Style></Button.Style>
+                    </Button>
+                </StackPanel>
+            </Border>
+        </Popup>
+
+        <!-- ==================== MAIN CONTENT AREA ==================== -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.15*" MinWidth="150"/>   <!-- Left panel: File browser -->
+                <ColumnDefinition Width="0.60*"/>                   <!-- Center: Image viewport -->
+                <ColumnDefinition Width="0.25*" MinWidth="200"/>    <!-- Right panel: Info panels -->
+            </Grid.ColumnDefinitions>
+
+            <!-- ==================== LEFT PANEL: FILE BROWSER ==================== -->
+            <Border x:Name="LeftPanel" Grid.Column="0" Background="{DynamicResource LeftPanelBrush}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <!-- Search box -->
+                    <Border Grid.Row="0" Padding="8">
+                        <TextBox x:Name="SearchTextBox" Style="{StaticResource SearchTextBoxStyle}" TextChanged="SearchTextBox_TextChanged"/>
+                    </Border>
+                    <!-- File tree view -->
+                    <TreeView x:Name="FileTreeView" Grid.Row="1" Style="{StaticResource FileTreeViewStyle}" ItemContainerStyle="{StaticResource FileTreeViewItemStyle}" SelectedItemChanged="FileTreeView_SelectedItemChanged" Margin="8,0,8,8"/>
+                </Grid>
+            </Border>
+            
+            <!-- Grid splitter between left panel and center -->
+            <GridSplitter Grid.Column="0" Width="3" HorizontalAlignment="Right" Background="#3F3F46" Cursor="SizeWE"/>
+
+            <!-- ==================== CENTER: IMAGE VIEWPORT ==================== -->
+            <Border Grid.Column="1" ClipToBounds="True">
+                <!-- Canvas background layer -->
+                <Border x:Name="CanvasBackground" Background="#FFFFFF">
+                    <Canvas x:Name="ViewportCanvas" 
+                            ClipToBounds="True"
+                            MouseLeftButtonDown="Viewport_MouseLeftButtonDown"
+                            MouseLeftButtonUp="Viewport_MouseLeftButtonUp"
+                            MouseRightButtonDown="Viewport_MouseRightButtonDown"
+                            MouseMove="Viewport_MouseMove"
+                            MouseWheel="Viewport_MouseWheel"
+                            SizeChanged="Viewport_SizeChanged">
+                        
+                        <!-- Layer Container: All image layers share this transform -->
+                        <Canvas x:Name="LayerContainer">
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform x:Name="LayerScale" ScaleX="1" ScaleY="1"/>
+                                    <TranslateTransform x:Name="LayerTranslate" X="0" Y="0"/>
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                            
+                            <!-- Layer 1: Original Image -->
+                            <Image x:Name="OriginalImageLayer"
+                                   RenderOptions.BitmapScalingMode="NearestNeighbor"
+                                   RenderOptions.EdgeMode="Aliased"
+                                   SnapsToDevicePixels="True"/>
+                            
+                            <!-- Layer 2: Generated Pattern Image -->
+                            <Image x:Name="GeneratedImageLayer"
+                                   RenderOptions.BitmapScalingMode="NearestNeighbor"
+                                   RenderOptions.EdgeMode="Aliased"
+                                   SnapsToDevicePixels="True"
+                                   Visibility="Collapsed"/>
+                            
+                            <!-- Layer 3: User Uploaded Image (for comparison) -->
+                            <Image x:Name="UserImageLayer"
+                                   RenderOptions.BitmapScalingMode="NearestNeighbor"
+                                   RenderOptions.EdgeMode="Aliased"
+                                   SnapsToDevicePixels="True"
+                                   Visibility="Collapsed"/>
+                            
+                            <!-- Layer 4: Pixel Grid Overlay -->
+                            <Canvas x:Name="GridLayer"
+                                    IsHitTestVisible="False"
+                                    Visibility="Collapsed"/>
+                            
+                            <!-- Layer 5: Color Highlight Overlay (blinking effect) -->
+                            <Canvas x:Name="HighlightLayer"
+                                    IsHitTestVisible="False"
+                                    Visibility="Collapsed"/>
+                        </Canvas>
+                        
+                        <!-- Placeholder panel (shown when no image is loaded) -->
+                        <StackPanel x:Name="PlaceholderPanel" Visibility="Visible">
+                            <TextBlock Text="🎨" FontSize="72" HorizontalAlignment="Center" Opacity="0.3"/>
+                            <TextBlock x:Name="PlaceholderText" Text="Drop an image here&#x0a;or use File → Open" FontSize="14" Foreground="#888888" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,16,0,0"/>
+                        </StackPanel>
+                    </Canvas>
+                </Border>
+            </Border>
+
+            <!-- Grid splitter between center and right panel -->
+            <GridSplitter Grid.Column="1" Width="3" HorizontalAlignment="Right" Background="#2D2D30" Cursor="SizeWE"/>
+
+            <!-- ==================== RIGHT PANEL: INFO SECTIONS ==================== -->
+            <Border x:Name="RightPanel" Grid.Column="2" Background="{DynamicResource RightPanelBrush}">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                    <StackPanel Margin="16">
+                        
+                        <!-- ===== IMAGE INFO SECTION ===== -->
+                        <TextBlock x:Name="ImageInfoHeader" Text="IMAGE INFO" Style="{StaticResource SectionHeaderStyle}"/>
+                        <TextBlock x:Name="FileNameLabel" Text="File Name" Style="{StaticResource InfoLabelStyle}"/>
+                        <TextBlock x:Name="FileNameText" Text="—" Style="{StaticResource InfoValueStyle}" TextWrapping="Wrap"/>
+                        <TextBlock x:Name="DimensionsLabel" Text="Dimensions" Style="{StaticResource InfoLabelStyle}"/>
+                        <TextBlock x:Name="DimensionsText" Text="—" Style="{StaticResource InfoValueStyle}"/>
+                        <TextBlock x:Name="UniqueColorsLabel" Text="Unique Colors" Style="{StaticResource InfoLabelStyle}"/>
+                        <TextBlock x:Name="UniqueColorsText" Text="—" Style="{StaticResource InfoValueStyle}"/>
+                        <TextBlock x:Name="ColorPaletteLabel" Text="Color Palette (Original)" Style="{StaticResource InfoLabelStyle}"/>
+                        <!-- Original image color palette display -->
+                        <WrapPanel x:Name="ColorPalettePanel" Margin="0,0,0,16"/>
+                        
+                        <Separator Background="#FFFFFF" Opacity="0.3" Margin="0,8,0,16"/>
+                        
+                        <!-- ===== BEADS INFO SECTION ===== -->
+                        <TextBlock x:Name="BeadsInfoHeader" Text="BEADS INFO" Style="{StaticResource SectionHeaderStyle}"/>
+                        <TextBlock x:Name="EstimatedBeadsLabel" Text="Estimated Beads" Style="{StaticResource InfoLabelStyle}"/>
+                        <TextBlock x:Name="EstimatedBeadsText" Text="—" Style="{StaticResource InfoValueStyle}"/>
+                        
+                        <!-- Alpha threshold slider -->
+                        <TextBlock x:Name="AlphaThresholdLabel" Text="Alpha/Transparency Threshold" Style="{StaticResource InfoLabelStyle}"/>
+                        <Grid Margin="0,0,0,8">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Slider x:Name="AlphaThresholdSlider" Minimum="0" Maximum="255" Value="200" IsSnapToTickEnabled="True" TickFrequency="1" Style="{StaticResource PanelSliderStyle}" ValueChanged="AlphaThreshold_ValueChanged" PreviewMouseLeftButtonDown="Slider_PreviewMouseLeftButtonDown"/>
+                            <TextBlock x:Name="AlphaThresholdText" Grid.Column="1" Text="200" Foreground="{StaticResource LightTextBrush}" FontSize="12" Margin="8,0,0,0" VerticalAlignment="Center" Width="30"/>
+                        </Grid>
+                        <TextBlock x:Name="AlphaThresholdDesc" Text="Pixels with alpha below this value are not counted" Foreground="{StaticResource LightTextBrush}" FontSize="10" Opacity="0.7" TextWrapping="Wrap" Margin="0,0,0,16"/>
+                        
+                        <!-- Color group selector -->
+                        <TextBlock x:Name="ColorGroupLabel" Text="Color Group" Style="{StaticResource InfoLabelStyle}"/>
+                        <ComboBox x:Name="ColorGroupComboBox" Margin="0,0,0,12" 
+                                  Style="{StaticResource DarkComboBox}"
+                                  SelectionChanged="ColorGroupComboBox_SelectionChanged"/>
+                        
+                        <!-- Generate pattern button -->
+                        <Button x:Name="GeneratePatternButton" Content="Generate Pattern" Style="{StaticResource PanelButtonStyle}" Click="GeneratePattern_Click" Margin="0,0,0,8"/>
+                        
+                        <!-- Toggle generated image visibility -->
+                        <CheckBox x:Name="ShowGeneratedImageCheckbox" 
+                                  Content="Show Generated Image" 
+                                  Style="{StaticResource PanelCheckBoxStyle}" 
+                                  Checked="ShowGeneratedImage_Changed" 
+                                  Unchecked="ShowGeneratedImage_Changed" 
+                                  IsEnabled="False"
+                                  Margin="0,0,0,8"/>
+                        
+                        <!-- Pattern colors count info -->
+                        <TextBlock x:Name="PatternColorsUsedText" Text="" Foreground="{StaticResource LightTextBrush}" FontSize="11" Opacity="0.8" Margin="0,0,0,8"/>
+                        
+                        <!-- Beads palette (colors used in generated pattern) -->
+                        <TextBlock x:Name="BeadsPaletteLabel" Text="Beads Palette (Generated)" Style="{StaticResource InfoLabelStyle}"/>
+                        <TextBlock x:Name="BeadsPaletteHint" Text="Click to highlight pixels. Click again to remove." Foreground="{StaticResource LightTextBrush}" FontSize="10" Opacity="0.6" Margin="0,0,0,4"/>
+                        <WrapPanel x:Name="BeadsPalettePanel" Margin="0,0,0,16"/>
+                        
+                        <Separator Background="#FFFFFF" Opacity="0.3" Margin="0,8,0,16"/>
+                        
+                        <!-- ===== FILE INFO SECTION ===== -->
+                        <TextBlock x:Name="FileInfoHeader" Text="FILE INFO" Style="{StaticResource SectionHeaderStyle}"/>
+                        <TextBlock x:Name="FileNameLabel2" Text="File Name" Style="{StaticResource InfoLabelStyle}"/>
+                        <TextBlock x:Name="FileNameText2" Text="—" Style="{StaticResource InfoValueStyle}" TextWrapping="Wrap"/>
+                        <TextBlock x:Name="FilePathLabel" Text="File Path" Style="{StaticResource InfoLabelStyle}"/>
+                        <TextBlock x:Name="FilePathText" Text="—" Style="{StaticResource InfoValueStyle}" TextWrapping="Wrap" FontSize="11"/>
+                        <TextBlock x:Name="DimensionsLabel2" Text="Dimensions" Style="{StaticResource InfoLabelStyle}"/>
+                        <TextBlock x:Name="DimensionsText2" Text="—" Style="{StaticResource InfoValueStyle}"/>
+                        <TextBlock x:Name="TotalPixelsLabel" Text="Total Pixels" Style="{StaticResource InfoLabelStyle}"/>
+                        <TextBlock x:Name="TotalPixelsText" Text="—" Style="{StaticResource InfoValueStyle}"/>
+                        <TextBlock x:Name="FileSizeLabel" Text="File Size" Style="{StaticResource InfoLabelStyle}"/>
+                        <TextBlock x:Name="FileSizeText" Text="—" Style="{StaticResource InfoValueStyle}"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

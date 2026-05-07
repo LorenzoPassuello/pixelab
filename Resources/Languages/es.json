@@ -1,0 +1,157 @@
+{
+  "language_name": "Español",
+  "language_code": "es",
+
+  "menu": {
+    "file": "Archivo",
+    "view": "Ver",
+    "open_file": "Abrir archivo...",
+    "open_folder": "Abrir carpeta...",
+    "zoom_in": "Acercar",
+    "zoom_out": "Alejar",
+    "reset_view": "Restablecer vista",
+    "fit_to_window": "Ajustar a la ventana",
+    "actual_size": "Tamaño real (100%)",
+    "show_grid": "Mostrar cuadrícula de píxeles",
+    "hide_grid": "Ocultar cuadrícula de píxeles"
+  },
+
+  "panels": {
+    "image_info": "INFO DE IMAGEN",
+    "beads_info": "INFO DE CUENTAS",
+    "file_info": "INFO DE ARCHIVO"
+  },
+
+  "labels": {
+    "file_name": "Nombre del archivo",
+    "file_path": "Ruta del archivo",
+    "dimensions": "Dimensiones",
+    "total_pixels": "Píxeles totales",
+    "file_size": "Tamaño del archivo",
+    "unique_colors": "Colores únicos",
+    "color_palette_original": "Paleta de colores (Original)",
+    "estimated_beads": "Cuentas estimadas",
+    "alpha_threshold": "Umbral Alfa/Transparencia",
+    "alpha_threshold_desc": "Los píxeles con alfa por debajo de este valor no se cuentan",
+    "beads_palette": "Paleta de cuentas (Generada)",
+    "beads_palette_hint": "Haz clic para resaltar. Haz clic de nuevo para quitar.",
+    "pattern_uses_colors": "El patrón usa {0} colores",
+    "search_files": "Buscar archivos...",
+    "color_group": "Grupo de colores",
+    "all_groups": "Todos los grupos"
+  },
+
+  "buttons": {
+    "generate_pattern": "Generar patrón",
+    "show_generated_image": "Mostrar imagen generada",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "settings": "Configuración"
+  },
+
+  "settings": {
+    "title": "Configuración",
+    "canvas": "Lienzo",
+    "language": "Idioma",
+    "color_manager": "Gestor de colores",
+    "appearance": "APARIENCIA",
+    "accent_color": "Color de acento",
+    "accent_color_desc": "Color principal de la interfaz (botones, resaltados)",
+    "canvas_background": "LIENZO",
+    "background_color": "Color de fondo",
+    "grid": "CUADRÍCULA",
+    "grid_color": "Color de cuadrícula",
+    "grid_opacity": "Opacidad de cuadrícula",
+    "highlight": "RESALTADO",
+    "highlight_color": "Color de resaltado",
+    "highlight_opacity": "Opacidad de resaltado",
+    "pattern_generation": "GENERACIÓN DE PATRÓN",
+    "color_space": "Espacio de color",
+    "color_space_rgb": "RGB",
+    "color_space_lab": "Lab",
+    "color_space_desc": "Algoritmo para la coincidencia de colores (RGB es más rápido, Lab es perceptualmente preciso)",
+    "color_compression": "Compresión de colores",
+    "compression_off": "Desactivado (n=1)",
+    "compression_low": "Bajo (n=2)",
+    "compression_medium": "Medio (n=3)",
+    "compression_high": "Alto (n=5)",
+    "compression_desc": "Una compresión mayor reduce la variedad de colores prefiriendo colores ya usados",
+    "color_groups": "GRUPOS DE COLORES",
+    "color_groups_desc": "Activar o desactivar grupos de colores completos",
+    "individual_colors": "COLORES INDIVIDUALES",
+    "individual_colors_desc": "Haz clic en un color para activar/desactivar. Clic derecho para favorito.",
+    "all_groups": "Todos los grupos",
+    "colors_enabled": "{0} de {1} colores activados",
+    "group_enabled": "{0} ({1}/{2} activados)",
+    "select_language": "Seleccionar idioma",
+    "language_restart": "El cambio de idioma tendrá efecto después de reiniciar la aplicación.",
+    "available_languages": "IDIOMAS DISPONIBLES",
+    "custom_colors": "COLORES PERSONALIZADOS",
+    "custom_colors_desc": "Añade tus propios colores personalizados",
+    "add_color": "Añadir color",
+    "import_json": "Añadir Grupo desde JSON",
+    "import_colors_hint": "Selecciona un archivo JSON con colores y asígnalos todos a un nuevo grupo.",
+    "custom_color_id_title": "ID de color",
+    "custom_color_id_prompt": "Introduce un ID de color único:",
+    "custom_color_added": "Color '{0}' añadido con éxito.",
+    "import_colors_title": "Importar colores",
+    "colors_imported": "{0} colores importados con éxito.",
+    "colors_imported_detail": "{0} colores importados, {1} colores actualizados.",
+    "colors_skipped_duplicates": "{0} IDs duplicados en el archivo fueron omitidos.",
+    "no_colors_imported": "No se encontraron colores válidos en el archivo.",
+    "import_error": "Error al importar colores: {0}",
+    "success": "Éxito",
+    "warning": "Advertencia",
+    "error": "Error"
+  },
+
+  "add_group_from_json": {
+    "title": "Añadir Grupo desde JSON",
+    "details": "DETALLES DEL GRUPO",
+    "group_id": "ID de Grupo",
+    "group_id_hint": "No puede coincidir con un ID de grupo existente",
+    "group_name": "Nombre del Grupo (opcional)",
+    "group_name_hint": "Si está vacío, se usará el ID de Grupo como nombre",
+    "json_file": "Archivo JSON",
+    "browse": "Examinar...",
+    "confirm_button": "Confirmar",
+    "error_no_group_id": "Por favor, introduce un ID de Grupo.",
+    "error_group_exists": "Ya existe un grupo con el ID '{0}'. Usa un ID diferente.",
+    "error_no_file": "Por favor, selecciona un archivo JSON."
+  },
+
+  "add_color": {
+    "title": "Añadir nuevo color",
+    "new": "Nuevo",
+    "details": "DETALLES DEL COLOR",
+    "group": "Grupo",
+    "new_group": "Nuevo grupo...",
+    "new_group_id": "ID del nuevo grupo",
+    "new_group_name": "Nombre del nuevo grupo",
+    "color_id": "ID del color",
+    "color_name": "Nombre del color (opcional)",
+    "color_name_hint": "Si está vacío, se usará el ID del color como nombre",
+    "add_button": "Añadir color",
+    "error_no_color_id": "Por favor, introduce un ID de color.",
+    "error_no_group_id": "Por favor, introduce un ID de grupo para el nuevo grupo."
+  },
+
+  "messages": {
+    "pattern_found": "Patrón encontrado",
+    "pattern_exists": "Ya existe un patrón para esta imagen.\n\n¿Quieres cargar el patrón existente?",
+    "error": "Error",
+    "error_loading_image": "Error al cargar la imagen: {0}",
+    "error_pattern": "Error de generación de patrón",
+    "error_loading_pattern": "Error al cargar el patrón.",
+    "drop_image": "Suelta una imagen aquí\no usa Archivo → Abrir",
+    "no_data": "—"
+  },
+
+  "tooltips": {
+    "color_beads": "{0}: {1}\n{2} cuentas\nHaz clic para resaltar",
+    "color_pixels": "#{0}\n{1} píxeles",
+    "color_enabled": "Activado",
+    "color_disabled": "Desactivado",
+    "color_favorite": "★ Favorito"
+  }
+}

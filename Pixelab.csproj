@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <RootNamespace>Pixelab</RootNamespace>
+    <AssemblyName>Pixelab</AssemblyName>
+
+    <AssemblyTitle>Pixelab</AssemblyTitle>
+    <Description>A specialized pixel art viewer and bead pattern generator</Description>
+    <Company>Pixelab Studio</Company>
+    <Product>Pixelab</Product>
+    <Version>2.1.0</Version>
+    
+    <!-- Application icon (for .exe file) -->
+    <ApplicationIcon>Assets\app.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Application icon as WPF resource (for window title bar) -->
+    <Resource Include="Assets\app.ico" />
+    
+    <Resource Include="Resources\**" />
+    <!-- Copy Colors database to output -->
+    <Content Include="Resources\Colors\*.json" CopyToOutputDirectory="PreserveNewest" />
+    <!-- Copy Language files to output -->
+    <Content Include="Resources\Languages\*.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,157 @@
+{
+  "language_name": "Italiano",
+  "language_code": "it",
+
+  "menu": {
+    "file": "File",
+    "view": "Visualizza",
+    "open_file": "Apri File...",
+    "open_folder": "Apri Cartella...",
+    "zoom_in": "Zoom Avanti",
+    "zoom_out": "Zoom Indietro",
+    "reset_view": "Reimposta Vista",
+    "fit_to_window": "Adatta alla Finestra",
+    "actual_size": "Dimensione Reale (100%)",
+    "show_grid": "Mostra Griglia Pixel",
+    "hide_grid": "Nascondi Griglia Pixel"
+  },
+
+  "panels": {
+    "image_info": "INFO IMMAGINE",
+    "beads_info": "INFO PERLINE",
+    "file_info": "INFO FILE"
+  },
+
+  "labels": {
+    "file_name": "Nome File",
+    "file_path": "Percorso File",
+    "dimensions": "Dimensioni",
+    "total_pixels": "Pixel Totali",
+    "file_size": "Dimensione File",
+    "unique_colors": "Colori Unici",
+    "color_palette_original": "Palette Colori (Originale)",
+    "estimated_beads": "Perline Stimate",
+    "alpha_threshold": "Soglia Alpha/Trasparenza",
+    "alpha_threshold_desc": "I pixel con alpha sotto questo valore non vengono contati",
+    "beads_palette": "Palette Perline (Generata)",
+    "beads_palette_hint": "Clicca per evidenziare i pixel. Clicca di nuovo per rimuovere.",
+    "pattern_uses_colors": "Il pattern usa {0} colori",
+    "search_files": "Cerca file...",
+    "color_group": "Gruppo Colori",
+    "all_groups": "Tutti i Gruppi"
+  },
+
+  "buttons": {
+    "generate_pattern": "Genera Pattern",
+    "show_generated_image": "Mostra Immagine Generata",
+    "save": "Salva",
+    "cancel": "Annulla",
+    "settings": "Impostazioni"
+  },
+
+  "settings": {
+    "title": "Impostazioni",
+    "canvas": "Canvas",
+    "language": "Lingua",
+    "color_manager": "Gestione Colori",
+    "appearance": "ASPETTO",
+    "accent_color": "Colore Principale",
+    "accent_color_desc": "Colore principale dell'interfaccia (pulsanti, evidenziazioni)",
+    "canvas_background": "CANVAS",
+    "background_color": "Colore Sfondo",
+    "grid": "GRIGLIA",
+    "grid_color": "Colore Griglia",
+    "grid_opacity": "Opacità Griglia",
+    "highlight": "EVIDENZIAZIONE",
+    "highlight_color": "Colore Evidenziazione",
+    "highlight_opacity": "Opacità Evidenziazione",
+    "pattern_generation": "GENERAZIONE PATTERN",
+    "color_space": "Spazio Colore",
+    "color_space_rgb": "RGB",
+    "color_space_lab": "Lab",
+    "color_space_desc": "Algoritmo per la corrispondenza colori (RGB è più veloce, Lab è percettivamente accurato)",
+    "color_compression": "Compressione Colori",
+    "compression_off": "Off (n=1)",
+    "compression_low": "Bassa (n=2)",
+    "compression_medium": "Media (n=3)",
+    "compression_high": "Alta (n=5)",
+    "compression_desc": "Una compressione maggiore riduce la varietà di colori preferendo colori già usati",
+    "color_groups": "GRUPPI COLORI",
+    "color_groups_desc": "Abilita o disabilita interi gruppi di colori",
+    "individual_colors": "COLORI INDIVIDUALI",
+    "individual_colors_desc": "Clicca un colore per abilitare/disabilitare. Tasto destro per preferito.",
+    "all_groups": "Tutti i Gruppi",
+    "colors_enabled": "{0} di {1} colori abilitati",
+    "group_enabled": "{0} ({1}/{2} abilitati)",
+    "select_language": "Seleziona Lingua",
+    "language_restart": "Il cambio di lingua avrà effetto dopo il riavvio dell'applicazione.",
+    "available_languages": "LINGUE DISPONIBILI",
+    "custom_colors": "COLORI PERSONALIZZATI",
+    "custom_colors_desc": "Aggiungi i tuoi colori personalizzati",
+    "add_color": "Aggiungi Colore",
+    "import_json": "Aggiungi Gruppo da JSON",
+    "import_colors_hint": "Seleziona un file JSON con colori e assegnali tutti a un nuovo gruppo.",
+    "custom_color_id_title": "ID Colore",
+    "custom_color_id_prompt": "Inserisci un ID colore univoco:",
+    "custom_color_added": "Colore '{0}' aggiunto con successo.",
+    "import_colors_title": "Importa Colori",
+    "colors_imported": "{0} colori importati con successo.",
+    "colors_imported_detail": "{0} colori importati, {1} colori aggiornati.",
+    "colors_skipped_duplicates": "{0} ID duplicati nel file sono stati ignorati.",
+    "no_colors_imported": "Nessun colore valido trovato nel file.",
+    "import_error": "Errore nell'importazione dei colori: {0}",
+    "success": "Successo",
+    "warning": "Avviso",
+    "error": "Errore"
+  },
+
+  "add_group_from_json": {
+    "title": "Aggiungi Gruppo da JSON",
+    "details": "DETTAGLI GRUPPO",
+    "group_id": "ID Gruppo",
+    "group_id_hint": "Non può corrispondere a un ID gruppo già esistente",
+    "group_name": "Nome Gruppo (opzionale)",
+    "group_name_hint": "Se vuoto, verrà usato l'ID Gruppo come nome",
+    "json_file": "File JSON",
+    "browse": "Sfoglia...",
+    "confirm_button": "Conferma",
+    "error_no_group_id": "Inserisci un ID Gruppo.",
+    "error_group_exists": "Esiste già un gruppo con ID '{0}'. Usa un ID diverso.",
+    "error_no_file": "Seleziona un file JSON."
+  },
+
+  "add_color": {
+    "title": "Aggiungi Nuovo Colore",
+    "new": "Nuovo",
+    "details": "DETTAGLI COLORE",
+    "group": "Gruppo",
+    "new_group": "Nuovo gruppo...",
+    "new_group_id": "ID Nuovo Gruppo",
+    "new_group_name": "Nome Nuovo Gruppo",
+    "color_id": "ID Colore",
+    "color_name": "Nome Colore (opzionale)",
+    "color_name_hint": "Se vuoto, verrà usato l'ID Colore come nome",
+    "add_button": "Aggiungi Colore",
+    "error_no_color_id": "Inserisci un ID Colore.",
+    "error_no_group_id": "Inserisci un ID Gruppo per il nuovo gruppo."
+  },
+
+  "messages": {
+    "pattern_found": "Pattern Trovato",
+    "pattern_exists": "Esiste già un pattern per questa immagine.\n\nVuoi caricare il pattern esistente?",
+    "error": "Errore",
+    "error_loading_image": "Errore nel caricamento dell'immagine: {0}",
+    "error_pattern": "Errore Generazione Pattern",
+    "error_loading_pattern": "Impossibile caricare il pattern.",
+    "drop_image": "Trascina un'immagine qui\no usa File → Apri",
+    "no_data": "—"
+  },
+
+  "tooltips": {
+    "color_beads": "{0}: {1}\n{2} perline\nClicca per evidenziare",
+    "color_pixels": "#{0}\n{1} pixel",
+    "color_enabled": "Abilitato",
+    "color_disabled": "Disabilitato",
+    "color_favorite": "★ Preferito"
+  }
+}

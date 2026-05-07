@@ -1,0 +1,157 @@
+{
+  "language_name": "English",
+  "language_code": "en",
+
+  "menu": {
+    "file": "File",
+    "view": "View",
+    "open_file": "Open File...",
+    "open_folder": "Open Folder...",
+    "zoom_in": "Zoom In",
+    "zoom_out": "Zoom Out",
+    "reset_view": "Reset View",
+    "fit_to_window": "Fit to Window",
+    "actual_size": "Actual Size (100%)",
+    "show_grid": "Show Pixel Grid",
+    "hide_grid": "Hide Pixel Grid"
+  },
+
+  "panels": {
+    "image_info": "IMAGE INFO",
+    "beads_info": "BEADS INFO",
+    "file_info": "FILE INFO"
+  },
+
+  "labels": {
+    "file_name": "File Name",
+    "file_path": "File Path",
+    "dimensions": "Dimensions",
+    "total_pixels": "Total Pixels",
+    "file_size": "File Size",
+    "unique_colors": "Unique Colors",
+    "color_palette_original": "Color Palette (Original)",
+    "estimated_beads": "Estimated Beads",
+    "alpha_threshold": "Alpha/Transparency Threshold",
+    "alpha_threshold_desc": "Pixels with alpha below this value are not counted",
+    "beads_palette": "Beads Palette (Generated)",
+    "beads_palette_hint": "Click to highlight pixels. Click again to remove.",
+    "pattern_uses_colors": "Pattern uses {0} colors",
+    "search_files": "Search files...",
+    "color_group": "Color Group",
+    "all_groups": "All Groups"
+  },
+
+  "buttons": {
+    "generate_pattern": "Generate Pattern",
+    "show_generated_image": "Show Generated Image",
+    "save": "Save",
+    "cancel": "Cancel",
+    "settings": "Settings"
+  },
+
+  "settings": {
+    "title": "Settings",
+    "canvas": "Canvas",
+    "language": "Language",
+    "color_manager": "Color Manager",
+    "appearance": "APPEARANCE",
+    "accent_color": "Accent Color",
+    "accent_color_desc": "Main interface color (buttons, highlights)",
+    "canvas_background": "CANVAS",
+    "background_color": "Background Color",
+    "grid": "GRID",
+    "grid_color": "Grid Color",
+    "grid_opacity": "Grid Opacity",
+    "highlight": "HIGHLIGHT",
+    "highlight_color": "Highlight Color",
+    "highlight_opacity": "Highlight Opacity",
+    "pattern_generation": "PATTERN GENERATION",
+    "color_space": "Color Space",
+    "color_space_rgb": "RGB",
+    "color_space_lab": "Lab",
+    "color_space_desc": "Algorithm for color matching (RGB is faster, Lab is perceptually accurate)",
+    "color_compression": "Color Compression",
+    "compression_off": "Off (n=1)",
+    "compression_low": "Low (n=2)",
+    "compression_medium": "Medium (n=3)",
+    "compression_high": "High (n=5)",
+    "compression_desc": "Higher compression reduces color variety by preferring already-used colors",
+    "color_groups": "COLOR GROUPS",
+    "color_groups_desc": "Enable or disable entire color groups",
+    "individual_colors": "INDIVIDUAL COLORS",
+    "individual_colors_desc": "Click a color to toggle enable/disable. Right-click for favorite.",
+    "all_groups": "All Groups",
+    "colors_enabled": "{0} of {1} colors enabled",
+    "group_enabled": "{0} ({1}/{2} enabled)",
+    "select_language": "Select Language",
+    "language_restart": "Language change will take effect after restarting the application.",
+    "available_languages": "AVAILABLE LANGUAGES",
+    "custom_colors": "CUSTOM COLORS",
+    "custom_colors_desc": "Add your own custom colors",
+    "add_color": "Add Color",
+    "import_json": "Add Group from JSON",
+    "import_colors_hint": "Select a JSON file with colors and assign all of them to a new group.",
+    "custom_color_id_title": "Color ID",
+    "custom_color_id_prompt": "Enter a unique color ID:",
+    "custom_color_added": "Color '{0}' added successfully.",
+    "import_colors_title": "Import Colors",
+    "colors_imported": "{0} colors imported successfully.",
+    "colors_imported_detail": "{0} colors imported, {1} colors updated.",
+    "colors_skipped_duplicates": "{0} duplicate IDs in file were skipped.",
+    "no_colors_imported": "No valid colors found in the file.",
+    "import_error": "Error importing colors: {0}",
+    "success": "Success",
+    "warning": "Warning",
+    "error": "Error"
+  },
+
+  "add_group_from_json": {
+    "title": "Add Group from JSON",
+    "details": "GROUP DETAILS",
+    "group_id": "Group ID",
+    "group_id_hint": "Cannot match an existing group ID",
+    "group_name": "Group Name (optional)",
+    "group_name_hint": "If empty, Group ID will be used as name",
+    "json_file": "JSON File",
+    "browse": "Browse...",
+    "confirm_button": "Confirm",
+    "error_no_group_id": "Please enter a Group ID.",
+    "error_group_exists": "A group with ID '{0}' already exists. Please use a different ID.",
+    "error_no_file": "Please select a JSON file."
+  },
+
+  "add_color": {
+    "title": "Add New Color",
+    "new": "New",
+    "details": "COLOR DETAILS",
+    "group": "Group",
+    "new_group": "New group...",
+    "new_group_id": "New Group ID",
+    "new_group_name": "New Group Name",
+    "color_id": "Color ID",
+    "color_name": "Color Name (optional)",
+    "color_name_hint": "If empty, Color ID will be used as name",
+    "add_button": "Add Color",
+    "error_no_color_id": "Please enter a Color ID.",
+    "error_no_group_id": "Please enter a Group ID for the new group."
+  },
+
+  "messages": {
+    "pattern_found": "Pattern Found",
+    "pattern_exists": "A pattern already exists for this image.\n\nWould you like to load the existing pattern?",
+    "error": "Error",
+    "error_loading_image": "Error loading image: {0}",
+    "error_pattern": "Pattern Generation Error",
+    "error_loading_pattern": "Failed to load pattern.",
+    "drop_image": "Drop an image here\nor use File → Open",
+    "no_data": "—"
+  },
+
+  "tooltips": {
+    "color_beads": "{0}: {1}\n{2} beads\nClick to highlight",
+    "color_pixels": "#{0}\n{1} pixels",
+    "color_enabled": "Enabled",
+    "color_disabled": "Disabled",
+    "color_favorite": "★ Favorite"
+  }
+}

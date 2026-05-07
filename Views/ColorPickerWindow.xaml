@@ -1,0 +1,214 @@
+<Window x:Class="Pixelab.ColorPickerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Color Picker"
+        Width="420" Height="520"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="#1E1E1E">
+    
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Color Preview (Current | New) -->
+        <Grid Grid.Row="0" Height="60" Margin="0,0,0,16">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" x:Name="OriginalColorPreview" Background="#FF0000" CornerRadius="4,0,0,4">
+                <TextBlock Text="Current" Foreground="White" FontSize="10" Opacity="0.7" 
+                           VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,4"/>
+            </Border>
+            <Border Grid.Column="1" x:Name="NewColorPreview" Background="#FF0000" CornerRadius="0,4,4,0">
+                <TextBlock Text="New" Foreground="White" FontSize="10" Opacity="0.7" 
+                           VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,4"/>
+            </Border>
+        </Grid>
+        
+        <!-- RGB Section -->
+        <TextBlock Grid.Row="1" Text="RGB" Foreground="#B70074" FontSize="12" FontWeight="Bold" Margin="0,0,0,8"/>
+        
+        <Grid Grid.Row="2" Margin="0,0,0,12">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+            
+            <!-- R Slider -->
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="R:" Foreground="#AAAAAA" VerticalAlignment="Center"/>
+            <Border Grid.Row="0" Grid.Column="1" x:Name="RSliderBorder" Height="20" CornerRadius="3" Margin="8,2" 
+                    Background="Red" Cursor="Hand" MouseLeftButtonDown="RSlider_MouseDown">
+                <Canvas x:Name="RSliderCanvas" ClipToBounds="True">
+                    <Border x:Name="RSliderThumb" Width="6" Height="20" Background="White" CornerRadius="2"
+                            BorderBrush="#333333" BorderThickness="1"/>
+                </Canvas>
+            </Border>
+            <TextBox Grid.Row="0" Grid.Column="2" x:Name="RTextBox" Text="255" 
+                     Background="#3E3E42" Foreground="White" BorderBrush="#555555" 
+                     Padding="4,2" TextAlignment="Center" TextChanged="RgbTextBox_TextChanged"/>
+            
+            <!-- G Slider -->
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="G:" Foreground="#AAAAAA" VerticalAlignment="Center" Margin="0,4,0,0"/>
+            <Border Grid.Row="1" Grid.Column="1" x:Name="GSliderBorder" Height="20" CornerRadius="3" Margin="8,6" 
+                    Background="Green" Cursor="Hand" MouseLeftButtonDown="GSlider_MouseDown">
+                <Canvas x:Name="GSliderCanvas" ClipToBounds="True">
+                    <Border x:Name="GSliderThumb" Width="6" Height="20" Background="White" CornerRadius="2"
+                            BorderBrush="#333333" BorderThickness="1"/>
+                </Canvas>
+            </Border>
+            <TextBox Grid.Row="1" Grid.Column="2" x:Name="GTextBox" Text="0" 
+                     Background="#3E3E42" Foreground="White" BorderBrush="#555555" 
+                     Padding="4,2" TextAlignment="Center" Margin="0,4,0,0" TextChanged="RgbTextBox_TextChanged"/>
+            
+            <!-- B Slider -->
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="B:" Foreground="#AAAAAA" VerticalAlignment="Center" Margin="0,4,0,0"/>
+            <Border Grid.Row="2" Grid.Column="1" x:Name="BSliderBorder" Height="20" CornerRadius="3" Margin="8,6" 
+                    Background="Blue" Cursor="Hand" MouseLeftButtonDown="BSlider_MouseDown">
+                <Canvas x:Name="BSliderCanvas" ClipToBounds="True">
+                    <Border x:Name="BSliderThumb" Width="6" Height="20" Background="White" CornerRadius="2"
+                            BorderBrush="#333333" BorderThickness="1"/>
+                </Canvas>
+            </Border>
+            <TextBox Grid.Row="2" Grid.Column="2" x:Name="BTextBox" Text="0" 
+                     Background="#3E3E42" Foreground="White" BorderBrush="#555555" 
+                     Padding="4,2" TextAlignment="Center" Margin="0,4,0,0" TextChanged="RgbTextBox_TextChanged"/>
+            
+            <!-- Hex -->
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Hex:" Foreground="#AAAAAA" VerticalAlignment="Center" Margin="0,8,0,0"/>
+            <TextBox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" x:Name="HexTextBox" Text="#FF0000" 
+                     Background="#3E3E42" Foreground="White" BorderBrush="#555555" 
+                     Padding="4,2" Margin="8,8,0,0" TextChanged="HexTextBox_TextChanged"/>
+        </Grid>
+        
+        <!-- HSV Section -->
+        <TextBlock Grid.Row="3" Text="HSV" Foreground="#B70074" FontSize="12" FontWeight="Bold" Margin="0,4,0,8"/>
+        
+        <Grid Grid.Row="4" Margin="0,0,0,8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+            
+            <!-- H Slider -->
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="H:" Foreground="#AAAAAA" VerticalAlignment="Center"/>
+            <Border Grid.Row="0" Grid.Column="1" x:Name="HSliderBorder" Height="20" CornerRadius="3" Margin="8,2" 
+                    Cursor="Hand" MouseLeftButtonDown="HSlider_MouseDown">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#FF0000" Offset="0.0"/>
+                        <GradientStop Color="#FFFF00" Offset="0.167"/>
+                        <GradientStop Color="#00FF00" Offset="0.333"/>
+                        <GradientStop Color="#00FFFF" Offset="0.5"/>
+                        <GradientStop Color="#0000FF" Offset="0.667"/>
+                        <GradientStop Color="#FF00FF" Offset="0.833"/>
+                        <GradientStop Color="#FF0000" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Canvas x:Name="HSliderCanvas" ClipToBounds="True">
+                    <Border x:Name="HSliderThumb" Width="6" Height="20" Background="White" CornerRadius="2"
+                            BorderBrush="#333333" BorderThickness="1"/>
+                </Canvas>
+            </Border>
+            <TextBox Grid.Row="0" Grid.Column="2" x:Name="HTextBox" Text="0" 
+                     Background="#3E3E42" Foreground="White" BorderBrush="#555555" 
+                     Padding="4,2" TextAlignment="Center" TextChanged="HsvTextBox_TextChanged"/>
+            
+            <!-- S Slider -->
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="S:" Foreground="#AAAAAA" VerticalAlignment="Center" Margin="0,4,0,0"/>
+            <Border Grid.Row="1" Grid.Column="1" x:Name="SSliderBorder" Height="20" CornerRadius="3" Margin="8,6" 
+                    Cursor="Hand" MouseLeftButtonDown="SSlider_MouseDown">
+                <Canvas x:Name="SSliderCanvas" ClipToBounds="True">
+                    <Border x:Name="SSliderThumb" Width="6" Height="20" Background="White" CornerRadius="2"
+                            BorderBrush="#333333" BorderThickness="1"/>
+                </Canvas>
+            </Border>
+            <TextBox Grid.Row="1" Grid.Column="2" x:Name="STextBox" Text="100" 
+                     Background="#3E3E42" Foreground="White" BorderBrush="#555555" 
+                     Padding="4,2" TextAlignment="Center" Margin="0,4,0,0" TextChanged="HsvTextBox_TextChanged"/>
+            
+            <!-- V Slider -->
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="V:" Foreground="#AAAAAA" VerticalAlignment="Center" Margin="0,4,0,0"/>
+            <Border Grid.Row="2" Grid.Column="1" x:Name="VSliderBorder" Height="20" CornerRadius="3" Margin="8,6" 
+                    Cursor="Hand" MouseLeftButtonDown="VSlider_MouseDown">
+                <Canvas x:Name="VSliderCanvas" ClipToBounds="True">
+                    <Border x:Name="VSliderThumb" Width="6" Height="20" Background="White" CornerRadius="2"
+                            BorderBrush="#333333" BorderThickness="1"/>
+                </Canvas>
+            </Border>
+            <TextBox Grid.Row="2" Grid.Column="2" x:Name="VTextBox" Text="100" 
+                     Background="#3E3E42" Foreground="White" BorderBrush="#555555" 
+                     Padding="4,2" TextAlignment="Center" Margin="0,4,0,0" TextChanged="HsvTextBox_TextChanged"/>
+        </Grid>
+        
+        <!-- Buttons -->
+        <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,8,0,0">
+            <Button Content="Cancel" Click="Cancel_Click" Background="#3E3E42" Foreground="White" 
+                    BorderThickness="0" Padding="24,10" Margin="0,0,8,0" Cursor="Hand">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name="border" Background="{TemplateBinding Background}" 
+                                            Padding="{TemplateBinding Padding}" CornerRadius="4">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="#4E4E52"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Content="OK" Click="OK_Click" Background="#B70074" Foreground="White" 
+                    BorderThickness="0" Padding="24,10" Cursor="Hand">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name="border" Background="{TemplateBinding Background}" 
+                                            Padding="{TemplateBinding Padding}" CornerRadius="4">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="#9E0066"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

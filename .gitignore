@@ -1,0 +1,33 @@
+# Build output
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# NuGet
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Rider / JetBrains
+.idea/
+
+# Claude Code
+.claude/
+CLAUDE.md
+
+# User-specific app data (generated at runtime, not source)
+# Runtime user data is stored in %appdata%/Pixelab/ and is never in the repo.
+# The Resources/ folder contains default/fallback files bundled with the app - do NOT ignore it.

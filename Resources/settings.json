@@ -1,0 +1,28 @@
+{
+  "canvas": {
+    "backgroundColor": "#FFFFFF"
+  },
+  "grid": {
+    "color": "#808080",
+    "opacity": 150,
+    "visible": false
+  },
+  "view": {
+    "lastZoom": 1.0
+  },
+  "files": {
+    "lastOpenedDirectory": "",
+    "recentFiles": []
+  },
+  "window": {
+    "width": 1280,
+    "height": 720,
+    "maximized": false
+  },
+  "beads": {
+    "alphaThreshold": 200,
+    "colorsThresholdMin": 2,
+    "colorsThresholdMax": 48,
+    "unlimitedThreshold": false
+  }
+}

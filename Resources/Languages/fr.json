@@ -1,0 +1,157 @@
+{
+  "language_name": "Français",
+  "language_code": "fr",
+
+  "menu": {
+    "file": "Fichier",
+    "view": "Affichage",
+    "open_file": "Ouvrir un fichier...",
+    "open_folder": "Ouvrir un dossier...",
+    "zoom_in": "Zoom avant",
+    "zoom_out": "Zoom arrière",
+    "reset_view": "Réinitialiser la vue",
+    "fit_to_window": "Ajuster à la fenêtre",
+    "actual_size": "Taille réelle (100%)",
+    "show_grid": "Afficher la grille pixel",
+    "hide_grid": "Masquer la grille pixel"
+  },
+
+  "panels": {
+    "image_info": "INFO IMAGE",
+    "beads_info": "INFO PERLES",
+    "file_info": "INFO FICHIER"
+  },
+
+  "labels": {
+    "file_name": "Nom du fichier",
+    "file_path": "Chemin du fichier",
+    "dimensions": "Dimensions",
+    "total_pixels": "Pixels totaux",
+    "file_size": "Taille du fichier",
+    "unique_colors": "Couleurs uniques",
+    "color_palette_original": "Palette de couleurs (Originale)",
+    "estimated_beads": "Perles estimées",
+    "alpha_threshold": "Seuil Alpha/Transparence",
+    "alpha_threshold_desc": "Les pixels avec un alpha inférieur ne sont pas comptés",
+    "beads_palette": "Palette de perles (Générée)",
+    "beads_palette_hint": "Cliquez pour mettre en évidence. Cliquez à nouveau pour supprimer.",
+    "pattern_uses_colors": "Le motif utilise {0} couleurs",
+    "search_files": "Rechercher des fichiers...",
+    "color_group": "Groupe de couleurs",
+    "all_groups": "Tous les groupes"
+  },
+
+  "buttons": {
+    "generate_pattern": "Générer le motif",
+    "show_generated_image": "Afficher l'image générée",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "settings": "Paramètres"
+  },
+
+  "settings": {
+    "title": "Paramètres",
+    "canvas": "Canevas",
+    "language": "Langue",
+    "color_manager": "Gestionnaire de couleurs",
+    "appearance": "APPARENCE",
+    "accent_color": "Couleur d'accent",
+    "accent_color_desc": "Couleur principale de l'interface (boutons, surbrillances)",
+    "canvas_background": "CANEVAS",
+    "background_color": "Couleur de fond",
+    "grid": "GRILLE",
+    "grid_color": "Couleur de la grille",
+    "grid_opacity": "Opacité de la grille",
+    "highlight": "SURBRILLANCE",
+    "highlight_color": "Couleur de surbrillance",
+    "highlight_opacity": "Opacité de surbrillance",
+    "pattern_generation": "GÉNÉRATION DE MOTIF",
+    "color_space": "Espace colorimétrique",
+    "color_space_rgb": "RGB",
+    "color_space_lab": "Lab",
+    "color_space_desc": "Algorithme de correspondance des couleurs (RGB est plus rapide, Lab est perceptuellement précis)",
+    "color_compression": "Compression des couleurs",
+    "compression_off": "Désactivé (n=1)",
+    "compression_low": "Faible (n=2)",
+    "compression_medium": "Moyen (n=3)",
+    "compression_high": "Élevé (n=5)",
+    "compression_desc": "Une compression plus élevée réduit la variété des couleurs en préférant les couleurs déjà utilisées",
+    "color_groups": "GROUPES DE COULEURS",
+    "color_groups_desc": "Activer ou désactiver des groupes de couleurs entiers",
+    "individual_colors": "COULEURS INDIVIDUELLES",
+    "individual_colors_desc": "Cliquez sur une couleur pour activer/désactiver. Clic droit pour favori.",
+    "all_groups": "Tous les groupes",
+    "colors_enabled": "{0} sur {1} couleurs activées",
+    "group_enabled": "{0} ({1}/{2} activées)",
+    "select_language": "Sélectionner la langue",
+    "language_restart": "Le changement de langue prendra effet après le redémarrage de l'application.",
+    "available_languages": "LANGUES DISPONIBLES",
+    "custom_colors": "COULEURS PERSONNALISÉES",
+    "custom_colors_desc": "Ajoutez vos propres couleurs personnalisées",
+    "add_color": "Ajouter une couleur",
+    "import_json": "Ajouter un groupe depuis JSON",
+    "import_colors_hint": "Sélectionnez un fichier JSON avec des couleurs et attribuez-les toutes à un nouveau groupe.",
+    "custom_color_id_title": "ID de couleur",
+    "custom_color_id_prompt": "Entrez un ID de couleur unique :",
+    "custom_color_added": "Couleur '{0}' ajoutée avec succès.",
+    "import_colors_title": "Importer des couleurs",
+    "colors_imported": "{0} couleurs importées avec succès.",
+    "colors_imported_detail": "{0} couleurs importées, {1} couleurs mises à jour.",
+    "colors_skipped_duplicates": "{0} ID en double dans le fichier ont été ignorés.",
+    "no_colors_imported": "Aucune couleur valide trouvée dans le fichier.",
+    "import_error": "Erreur lors de l'importation des couleurs : {0}",
+    "success": "Succès",
+    "warning": "Avertissement",
+    "error": "Erreur"
+  },
+
+  "add_group_from_json": {
+    "title": "Ajouter un groupe depuis JSON",
+    "details": "DÉTAILS DU GROUPE",
+    "group_id": "ID du Groupe",
+    "group_id_hint": "Ne peut pas correspondre à un ID de groupe existant",
+    "group_name": "Nom du Groupe (optionnel)",
+    "group_name_hint": "Si vide, l'ID du Groupe sera utilisé comme nom",
+    "json_file": "Fichier JSON",
+    "browse": "Parcourir...",
+    "confirm_button": "Confirmer",
+    "error_no_group_id": "Veuillez saisir un ID de Groupe.",
+    "error_group_exists": "Un groupe avec l'ID '{0}' existe déjà. Veuillez utiliser un ID différent.",
+    "error_no_file": "Veuillez sélectionner un fichier JSON."
+  },
+
+  "add_color": {
+    "title": "Ajouter une nouvelle couleur",
+    "new": "Nouveau",
+    "details": "DÉTAILS DE LA COULEUR",
+    "group": "Groupe",
+    "new_group": "Nouveau groupe...",
+    "new_group_id": "ID du nouveau groupe",
+    "new_group_name": "Nom du nouveau groupe",
+    "color_id": "ID de la couleur",
+    "color_name": "Nom de la couleur (optionnel)",
+    "color_name_hint": "Si vide, l'ID de la couleur sera utilisé comme nom",
+    "add_button": "Ajouter la couleur",
+    "error_no_color_id": "Veuillez entrer un ID de couleur.",
+    "error_no_group_id": "Veuillez entrer un ID de groupe pour le nouveau groupe."
+  },
+
+  "messages": {
+    "pattern_found": "Motif trouvé",
+    "pattern_exists": "Un motif existe déjà pour cette image.\n\nVoulez-vous charger le motif existant ?",
+    "error": "Erreur",
+    "error_loading_image": "Erreur lors du chargement de l'image : {0}",
+    "error_pattern": "Erreur de génération du motif",
+    "error_loading_pattern": "Échec du chargement du motif.",
+    "drop_image": "Déposez une image ici\nou utilisez Fichier → Ouvrir",
+    "no_data": "—"
+  },
+
+  "tooltips": {
+    "color_beads": "{0}: {1}\n{2} perles\nCliquez pour mettre en évidence",
+    "color_pixels": "#{0}\n{1} pixels",
+    "color_enabled": "Activé",
+    "color_disabled": "Désactivé",
+    "color_favorite": "★ Favori"
+  }
+}
