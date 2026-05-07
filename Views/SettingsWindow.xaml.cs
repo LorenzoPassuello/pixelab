@@ -850,19 +850,14 @@ namespace Pixelab
                 // Open the new AddColorWindow
                 var addColorWindow = new AddColorWindow(
                     () => generator.GetGroups(),
-                    (groupId) => generator.GetNextColorNumber(groupId)
+                    (groupId) => generator.GetNextColorNumber(groupId),
+                    allowNewGroup: false
                 ) { Owner = this };
-                
+
                 if (addColorWindow.ShowDialog() == true)
                 {
                     var color = addColorWindow.SelectedColor;
-                    
-                    // If new group was created, add it first
-                    if (!string.IsNullOrEmpty(addColorWindow.NewGroupId))
-                    {
-                        // The AddCustomColor method will create the group if it doesn't exist
-                    }
-                    
+
                     // Add the color
                     generator.AddCustomColor(
                         addColorWindow.ColorId, 
@@ -888,6 +883,293 @@ namespace Pixelab
             }
         }
 
+        private void CreateGroup_Click(object sender, RoutedEventArgs e)
+        {
+            if (Owner is not MainWindow mainWindow) return;
+            var generator = mainWindow.GetPatternGenerator();
+            if (generator == null) return;
+
+            var dialog = new Window
+            {
+                Title = "Create New Group",
+                Width = 360,
+                Height = 230,
+                WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                Owner = this,
+                ResizeMode = ResizeMode.NoResize,
+                Background = new SolidColorBrush(Color.FromRgb(30, 30, 30))
+            };
+
+            var stack = new StackPanel { Margin = new Thickness(16) };
+
+            stack.Children.Add(new TextBlock { Text = "Group ID:", Foreground = Brushes.White, Margin = new Thickness(0, 0, 0, 4) });
+            var idBox = new TextBox
+            {
+                Background = new SolidColorBrush(Color.FromRgb(62, 62, 66)),
+                Foreground = Brushes.White, BorderBrush = new SolidColorBrush(Color.FromRgb(85, 85, 85)),
+                Padding = new Thickness(8, 6, 8, 6), Margin = new Thickness(0, 0, 0, 10)
+            };
+            stack.Children.Add(idBox);
+
+            stack.Children.Add(new TextBlock { Text = "Group Name (optional):", Foreground = Brushes.White, Margin = new Thickness(0, 0, 0, 4) });
+            var nameBox = new TextBox
+            {
+                Background = new SolidColorBrush(Color.FromRgb(62, 62, 66)),
+                Foreground = Brushes.White, BorderBrush = new SolidColorBrush(Color.FromRgb(85, 85, 85)),
+                Padding = new Thickness(8, 6, 8, 6), Margin = new Thickness(0, 0, 0, 14)
+            };
+            stack.Children.Add(nameBox);
+
+            var btnRow = new StackPanel { Orientation = Orientation.Horizontal, HorizontalAlignment = HorizontalAlignment.Right };
+            var cancelBtn = new Button
+            {
+                Content = "Cancel", Width = 80, Padding = new Thickness(0, 6, 0, 6),
+                Background = new SolidColorBrush(Color.FromRgb(62, 62, 66)),
+                Foreground = Brushes.White, BorderThickness = new Thickness(0), Margin = new Thickness(0, 0, 8, 0)
+            };
+            var createBtn = new Button
+            {
+                Content = "Create", Width = 80, Padding = new Thickness(0, 6, 0, 6),
+                Background = new SolidColorBrush(Color.FromRgb(183, 0, 116)),
+                Foreground = Brushes.White, BorderThickness = new Thickness(0)
+            };
+            cancelBtn.Click += (s, ev) => dialog.DialogResult = false;
+            createBtn.Click += (s, ev) => dialog.DialogResult = true;
+            btnRow.Children.Add(cancelBtn);
+            btnRow.Children.Add(createBtn);
+            stack.Children.Add(btnRow);
+            dialog.Content = stack;
+
+            if (dialog.ShowDialog() != true) return;
+
+            var groupId = idBox.Text.Trim();
+            if (string.IsNullOrEmpty(groupId))
+            {
+                MessageBox.Show("Group ID cannot be empty.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (generator.GetGroups().Any(g => g.GroupId == groupId))
+            {
+                MessageBox.Show($"A group with ID '{groupId}' already exists.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            var groupName = string.IsNullOrWhiteSpace(nameBox.Text) ? groupId : nameBox.Text.Trim();
+            generator.AddGroup(groupId, groupName);
+
+            LoadColorsData();
+            PopulateColorGroups();
+            PopulateGroupFilter();
+            PopulateColors("all");
+            mainWindow.ReloadColorGroups();
+        }
+
+        private void AddColorsFromHex_Click(object sender, RoutedEventArgs e)
+        {
+            if (Owner is not MainWindow mainWindow) return;
+            var generator = mainWindow.GetPatternGenerator();
+            if (generator == null) return;
+
+            if (_groups.Count == 0)
+            {
+                MessageBox.Show("Create a group first before adding colors.", "No Groups", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+
+            var dialog = new Window
+            {
+                Title = "Add Color(s) from HEX",
+                Width = 520,
+                Height = 440,
+                WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                Owner = this,
+                ResizeMode = ResizeMode.CanResizeWithGrip,
+                Background = new SolidColorBrush(Color.FromRgb(30, 30, 30))
+            };
+
+            var root = new Grid { Margin = new Thickness(16) };
+            root.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });  // group
+            root.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });  // column headers
+            root.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });  // rows
+            root.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });  // add row + buttons
+
+            // Group selector
+            var groupRow = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 0, 0, 10) };
+            groupRow.Children.Add(new TextBlock { Text = "Group:", Foreground = Brushes.White, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 0, 8, 0) });
+            var groupCombo = new ComboBox { Style = (Style)Resources["DarkComboBox"], Width = 200 };
+            foreach (var g in _groups)
+                groupCombo.Items.Add(new ComboBoxItem { Content = g.Name, Tag = g.GroupId });
+            if (groupCombo.Items.Count > 0) groupCombo.SelectedIndex = 0;
+            groupRow.Children.Add(groupCombo);
+            Grid.SetRow(groupRow, 0);
+            root.Children.Add(groupRow);
+
+            // Column headers
+            var headers = new Grid { Margin = new Thickness(0, 0, 0, 4) };
+            headers.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(100) });
+            headers.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            headers.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(100) });
+            headers.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(28) });
+            void AddHeader(string text, int col)
+            {
+                var tb = new TextBlock { Text = text, Foreground = new SolidColorBrush(Color.FromRgb(136, 136, 136)), FontSize = 11 };
+                Grid.SetColumn(tb, col);
+                headers.Children.Add(tb);
+            }
+            AddHeader("Color ID", 0);
+            AddHeader("Name", 1);
+            AddHeader("Hex", 2);
+            Grid.SetRow(headers, 1);
+            root.Children.Add(headers);
+
+            // Scrollable rows area
+            var scroll = new ScrollViewer { VerticalScrollBarVisibility = ScrollBarVisibility.Auto, Margin = new Thickness(0, 0, 0, 8) };
+            var rowsPanel = new StackPanel();
+            scroll.Content = rowsPanel;
+            Grid.SetRow(scroll, 2);
+            root.Children.Add(scroll);
+
+            // Row factory
+            var rowList = new List<(TextBox idBox, TextBox nameBox, TextBox hexBox, Border preview)>();
+
+            void AddHexRow()
+            {
+                var rowGrid = new Grid { Margin = new Thickness(0, 0, 0, 4) };
+                rowGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(100) });
+                rowGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+                rowGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(100) });
+                rowGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(28) });
+
+                TextBox MakeBox(int col, int rightMargin = 4)
+                {
+                    var tb = new TextBox
+                    {
+                        Background = new SolidColorBrush(Color.FromRgb(62, 62, 66)),
+                        Foreground = Brushes.White,
+                        BorderBrush = new SolidColorBrush(Color.FromRgb(85, 85, 85)),
+                        Padding = new Thickness(6, 4, 6, 4),
+                        Margin = new Thickness(0, 0, rightMargin, 0)
+                    };
+                    Grid.SetColumn(tb, col);
+                    rowGrid.Children.Add(tb);
+                    return tb;
+                }
+
+                var idBox = MakeBox(0);
+                var nameBox = MakeBox(1);
+                var hexBox = MakeBox(2);
+                var preview = new Border
+                {
+                    Width = 20, Height = 20, CornerRadius = new CornerRadius(3),
+                    Background = Brushes.Transparent,
+                    BorderBrush = new SolidColorBrush(Color.FromRgb(85, 85, 85)),
+                    BorderThickness = new Thickness(1),
+                    VerticalAlignment = VerticalAlignment.Center,
+                    HorizontalAlignment = HorizontalAlignment.Left,
+                    Margin = new Thickness(4, 0, 0, 0)
+                };
+                Grid.SetColumn(preview, 3);
+                rowGrid.Children.Add(preview);
+
+                hexBox.TextChanged += (s, ev) =>
+                {
+                    if (TryParseHexColor(hexBox.Text.Trim(), out var c))
+                        preview.Background = new SolidColorBrush(c);
+                    else
+                        preview.Background = Brushes.Transparent;
+                };
+
+                rowsPanel.Children.Add(rowGrid);
+                rowList.Add((idBox, nameBox, hexBox, preview));
+            }
+
+            AddHexRow();
+
+            // Bottom bar
+            var bottomRow = new StackPanel { Orientation = Orientation.Horizontal };
+            Grid.SetRow(bottomRow, 3);
+
+            var addRowBtn = new Button
+            {
+                Content = "+ Add row", Padding = new Thickness(10, 6, 10, 6),
+                Background = new SolidColorBrush(Color.FromRgb(62, 62, 66)),
+                Foreground = Brushes.White, BorderThickness = new Thickness(0), Cursor = Cursors.Hand
+            };
+            addRowBtn.Click += (s, ev) => { AddHexRow(); scroll.ScrollToBottom(); };
+
+            var spacer = new Border { HorizontalAlignment = HorizontalAlignment.Stretch };
+            var cancelBtn2 = new Button
+            {
+                Content = "Cancel", Width = 80, Padding = new Thickness(0, 6, 0, 6),
+                Background = new SolidColorBrush(Color.FromRgb(62, 62, 66)),
+                Foreground = Brushes.White, BorderThickness = new Thickness(0), Margin = new Thickness(8, 0, 8, 0)
+            };
+            var addBtn = new Button
+            {
+                Content = "Add color(s)", Padding = new Thickness(14, 6, 14, 6),
+                Background = new SolidColorBrush(Color.FromRgb(183, 0, 116)),
+                Foreground = Brushes.White, BorderThickness = new Thickness(0)
+            };
+            cancelBtn2.Click += (s, ev) => dialog.DialogResult = false;
+            addBtn.Click += (s, ev) => dialog.DialogResult = true;
+
+            // Use DockPanel so Cancel+Add stay right, addRowBtn stays left
+            var dock = new DockPanel { LastChildFill = false };
+            DockPanel.SetDock(addRowBtn, Dock.Left);
+            DockPanel.SetDock(addBtn, Dock.Right);
+            DockPanel.SetDock(cancelBtn2, Dock.Right);
+            dock.Children.Add(addRowBtn);
+            dock.Children.Add(addBtn);
+            dock.Children.Add(cancelBtn2);
+            Grid.SetRow(dock, 3);
+            root.Children.Add(dock);
+
+            dialog.Content = root;
+
+            if (dialog.ShowDialog() != true) return;
+
+            var selectedGroupId = (groupCombo.SelectedItem as ComboBoxItem)?.Tag as string ?? "";
+            var errors = new List<string>();
+            var toAdd = new List<(string id, string name, byte r, byte g, byte b)>();
+
+            for (int i = 0; i < rowList.Count; i++)
+            {
+                var (idBox, nameBox, hexBox, _) = rowList[i];
+                var id = idBox.Text.Trim();
+                var name = nameBox.Text.Trim();
+                var hex = hexBox.Text.Trim();
+
+                if (string.IsNullOrEmpty(id) && string.IsNullOrEmpty(name) && string.IsNullOrEmpty(hex))
+                    continue;
+
+                if (string.IsNullOrEmpty(id))
+                { errors.Add($"Row {i + 1}: Color ID is required."); continue; }
+
+                if (!TryParseHexColor(hex, out var parsedColor))
+                { errors.Add($"Row {i + 1}: '{hex}' is not a valid hex color."); continue; }
+
+                toAdd.Add((id, string.IsNullOrEmpty(name) ? id : name, parsedColor.R, parsedColor.G, parsedColor.B));
+            }
+
+            if (errors.Count > 0)
+            {
+                MessageBox.Show(string.Join("\n", errors), "Validation Errors", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (toAdd.Count == 0) return;
+
+            foreach (var (id, name, r, g, b) in toAdd)
+                generator.AddCustomColor(id, r, g, b, name, selectedGroupId);
+
+            LoadColorsData();
+            PopulateColorGroups();
+            PopulateGroupFilter();
+            PopulateColors("all");
+            mainWindow.ReloadColorGroups();
+
+            MessageBox.Show($"{toAdd.Count} color(s) added.", "Done", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
         private void ImportColors_Click(object sender, RoutedEventArgs e)
         {
             if (Owner is not MainWindow mainWindow) return;
@@ -895,14 +1177,13 @@ namespace Pixelab
             var generator = mainWindow.GetPatternGenerator();
             if (generator == null) return;
 
-            var window = new AddGroupFromJsonWindow(() => generator.GetGroups()) { Owner = this };
+            var window = new AddGroupFromJsonWindow { Owner = this };
 
             if (window.ShowDialog() != true) return;
 
             try
             {
-                var (imported, updated, skipped) = generator.ImportColorsFromJsonWithGroup(
-                    window.JsonFilePath, window.GroupId, window.GroupName);
+                var (imported, updated, skipped) = generator.ImportGroupsFromJson(window.JsonFilePath);
 
                 if (imported > 0 || updated > 0)
                 {

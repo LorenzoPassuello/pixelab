@@ -1,6 +1,7 @@
 using System;
-using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text.Json;
 using System.Windows;
 
 namespace Pixelab
@@ -9,31 +10,33 @@ namespace Pixelab
     {
         private static LocalizationManager Loc => LocalizationManager.Instance;
 
-        private readonly Func<List<PatternGenerator.ColorGroup>> _getGroups;
-
-        public string GroupId { get; private set; } = "";
-        public string GroupName { get; private set; } = "";
         public string JsonFilePath { get; private set; } = "";
 
-        public AddGroupFromJsonWindow(Func<List<PatternGenerator.ColorGroup>> getGroups)
+        private bool _formatVisible = false;
+
+        private const string JsonSample =
+            "{\n" +
+            "  \"groups\": [\n" +
+            "    {\n" +
+            "      \"group_id\": \"my_group\",\n" +
+            "      \"name\": \"My Group\",\n" +
+            "      \"enabled\": true,\n" +
+            "      \"colors\": [\n" +
+            "        {\n" +
+            "          \"color_id\": \"MG_001\",\n" +
+            "          \"name\": \"Red\",\n" +
+            "          \"hex\": \"#FF0000\",\n" +
+            "          \"enabled\": true\n" +
+            "        }\n" +
+            "      ]\n" +
+            "    }\n" +
+            "  ]\n" +
+            "}";
+
+        public AddGroupFromJsonWindow()
         {
             InitializeComponent();
-            _getGroups = getGroups;
-            Loaded += (_, _) => ApplyLocalization();
-        }
-
-        private void ApplyLocalization()
-        {
-            Title = Loc.T("add_group_from_json.title");
-            DetailsHeader.Text = Loc.T("add_group_from_json.details");
-            GroupIdLabel.Text = Loc.T("add_group_from_json.group_id");
-            GroupIdHint.Text = Loc.T("add_group_from_json.group_id_hint");
-            GroupNameLabel.Text = Loc.T("add_group_from_json.group_name");
-            GroupNameHint.Text = Loc.T("add_group_from_json.group_name_hint");
-            JsonFileLabel.Text = Loc.T("add_group_from_json.json_file");
-            BrowseButton.Content = Loc.T("add_group_from_json.browse");
-            CancelButton.Content = Loc.T("buttons.cancel");
-            ConfirmButton.Content = Loc.T("add_group_from_json.confirm_button");
+            FormatTextBox.Text = JsonSample;
         }
 
         private void Browse_Click(object sender, RoutedEventArgs e)
@@ -41,11 +44,68 @@ namespace Pixelab
             var dialog = new Microsoft.Win32.OpenFileDialog
             {
                 Filter = "JSON Files (*.json)|*.json|All Files (*.*)|*.*",
-                Title = Loc.T("add_group_from_json.title")
+                Title = "Select JSON File"
             };
 
-            if (dialog.ShowDialog() == true)
-                JsonFilePathTextBox.Text = dialog.FileName;
+            if (dialog.ShowDialog() != true) return;
+
+            JsonFilePathTextBox.Text = dialog.FileName;
+            JsonFilePath = dialog.FileName;
+            UpdatePreview(dialog.FileName);
+        }
+
+        private void UpdatePreview(string filePath)
+        {
+            try
+            {
+                string json = File.ReadAllText(filePath);
+                using var doc = JsonDocument.Parse(json);
+                var root = doc.RootElement;
+
+                int colorCount = 0, groupCount = 0;
+
+                if (root.TryGetProperty("groups", out var groups))
+                {
+                    foreach (var g in groups.EnumerateArray())
+                    {
+                        groupCount++;
+                        if (g.TryGetProperty("colors", out var colors))
+                            colorCount += colors.GetArrayLength();
+                    }
+                }
+                else if (root.TryGetProperty("colors", out var flat))
+                {
+                    var colorList = flat.EnumerateArray().ToList();
+                    colorCount = colorList.Count;
+                    groupCount = colorList
+                        .Select(c => c.TryGetProperty("group", out var gp) ? gp.GetString() ?? "custom" : "custom")
+                        .Distinct()
+                        .Count();
+                }
+
+                if (colorCount == 0 && groupCount == 0)
+                    PreviewText.Text = "No colors or groups found in this file.";
+                else
+                    PreviewText.Text = $"{colorCount} color(s) from {groupCount} group(s)";
+
+                PreviewText.Foreground = colorCount > 0
+                    ? System.Windows.Media.Brushes.LightGreen
+                    : System.Windows.Media.Brushes.OrangeRed;
+            }
+            catch
+            {
+                PreviewText.Text = "Could not parse file — invalid JSON.";
+                PreviewText.Foreground = System.Windows.Media.Brushes.OrangeRed;
+            }
+        }
+
+        private void ToggleFormat_Click(object sender, RoutedEventArgs e)
+        {
+            _formatVisible = !_formatVisible;
+            FormatTextBox.Visibility = _formatVisible ? Visibility.Visible : Visibility.Collapsed;
+            ToggleFormatButton.Content = _formatVisible
+                ? "▼  Hide expected JSON format"
+                : "▶  Show expected JSON format";
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
@@ -56,34 +116,12 @@ namespace Pixelab
 
         private void Confirm_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(GroupIdTextBox.Text))
+            if (string.IsNullOrEmpty(JsonFilePath) || !File.Exists(JsonFilePath))
             {
-                MessageBox.Show(Loc.T("add_group_from_json.error_no_group_id"), Loc.T("settings.error"),
+                MessageBox.Show("Please select a valid JSON file.", Loc.T("settings.error"),
                     MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-
-            string groupId = GroupIdTextBox.Text.Trim();
-
-            if (_getGroups().Any(g => g.GroupId == groupId))
-            {
-                MessageBox.Show(Loc.T("add_group_from_json.error_group_exists", groupId), Loc.T("settings.error"),
-                    MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
-            if (string.IsNullOrEmpty(JsonFilePathTextBox.Text))
-            {
-                MessageBox.Show(Loc.T("add_group_from_json.error_no_file"), Loc.T("settings.error"),
-                    MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
-            GroupId = groupId;
-            GroupName = string.IsNullOrWhiteSpace(GroupNameTextBox.Text)
-                ? GroupId
-                : GroupNameTextBox.Text.Trim();
-            JsonFilePath = JsonFilePathTextBox.Text;
 
             DialogResult = true;
             Close();

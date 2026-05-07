@@ -116,6 +116,15 @@ namespace Pixelab
             return next;
         }
 
+        public void AddGroup(string groupId, string groupName)
+        {
+            LoadColors();
+            if (_colorsData == null) return;
+            if (_colorsData.Groups.Any(g => g.GroupId == groupId)) return;
+            _colorsData.Groups.Add(new ColorGroup { GroupId = groupId, Name = groupName, Enabled = true });
+            SaveColors();
+        }
+
         public void LoadColors() => LoadColors(false);
 
         public void LoadColors(bool forceReload)
@@ -251,6 +260,86 @@ namespace Pixelab
             }
 
             SaveColors();
+        }
+
+        /// <summary>
+        /// Imports all groups and colors from a JSON file, preserving group structure.
+        /// Supports both grouped format (groups[]) and legacy flat format (colors[]).
+        /// Returns (imported, updated, skipped).
+        /// </summary>
+        public (int imported, int updated, int skippedDuplicates) ImportGroupsFromJson(string jsonPath)
+        {
+            if (!File.Exists(jsonPath)) return (0, 0, 0);
+
+            LoadColors(true);
+
+            string json = File.ReadAllText(jsonPath);
+            using var doc = JsonDocument.Parse(json);
+            var root = doc.RootElement;
+
+            int imported = 0, updated = 0, skippedDuplicates = 0;
+            var seenIds = new HashSet<string>();
+
+            if (root.TryGetProperty("groups", out var groupsArray))
+            {
+                foreach (var gEl in groupsArray.EnumerateArray())
+                {
+                    string groupId   = gEl.TryGetProperty("group_id", out var gid) ? gid.GetString() ?? "custom" : "custom";
+                    string groupName = gEl.TryGetProperty("name",     out var gn)  ? gn.GetString()  ?? groupId  : groupId;
+
+                    var targetGroup = _colorsData!.Groups.FirstOrDefault(g => g.GroupId == groupId);
+                    if (targetGroup == null)
+                    {
+                        targetGroup = new ColorGroup { GroupId = groupId, Name = groupName, Enabled = true };
+                        _colorsData.Groups.Add(targetGroup);
+                    }
+
+                    if (!gEl.TryGetProperty("colors", out var colorsEl)) continue;
+
+                    foreach (var c in colorsEl.EnumerateArray())
+                    {
+                        if (!c.TryGetProperty("color_id", out var idProp)) continue;
+                        string colorId = idProp.GetString() ?? "";
+                        if (string.IsNullOrEmpty(colorId)) continue;
+
+                        if (seenIds.Contains(colorId)) { skippedDuplicates++; continue; }
+                        seenIds.Add(colorId);
+
+                        if (!TryExtractColorValues(c, colorId, out var vals)) continue;
+                        var (name, _, hex, r, g, b) = vals;
+                        RgbToLab(r, g, b, out double l, out double a, out double bLab);
+
+                        var existing = AllColors.FirstOrDefault(ec => ec.ColorId == colorId);
+                        if (existing != null)
+                        {
+                            existing.Name = name; existing.Hex = hex;
+                            existing.R = r; existing.G = g; existing.B = b;
+                            existing.L = Math.Round(l, 1); existing.A = Math.Round(a, 1); existing.BLab = Math.Round(bLab, 1);
+                            existing.Group = groupId;
+                            updated++;
+                        }
+                        else
+                        {
+                            targetGroup.Colors.Add(new BeadColor
+                            {
+                                ColorId = colorId, Name = name, Hex = hex,
+                                R = r, G = g, B = b,
+                                L = Math.Round(l, 1), A = Math.Round(a, 1), BLab = Math.Round(bLab, 1),
+                                Group = groupId, Enabled = true, Favorite = false
+                            });
+                            imported++;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                // Fall back to flat format (preserves group field per color)
+                return ImportColorsFromJson(jsonPath);
+            }
+
+            if (imported > 0 || updated > 0) SaveColors();
+            return (imported, updated, skippedDuplicates);
         }
 
         /// <summary>

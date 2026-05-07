@@ -32,14 +32,17 @@ namespace Pixelab
         
         private readonly Func<List<PatternGenerator.ColorGroup>>? _getGroups;
         private readonly Func<string, int>? _getNextColorNumber;
+        private readonly bool _allowNewGroup;
 
         public AddColorWindow(
             Func<List<PatternGenerator.ColorGroup>> getGroups,
-            Func<string, int> getNextColorNumber)
+            Func<string, int> getNextColorNumber,
+            bool allowNewGroup = true)
         {
             InitializeComponent();
             _getGroups = getGroups;
             _getNextColorNumber = getNextColorNumber;
+            _allowNewGroup = allowNewGroup;
             
             Loaded += AddColorWindow_Loaded;
             MouseMove += Window_MouseMove;
@@ -96,11 +99,12 @@ namespace Pixelab
             }
             
             // Add "New group" option
-            GroupComboBox.Items.Add(new ComboBoxItem 
-            { 
-                Content = Loc.T("add_color.new_group"), 
-                Tag = "__new__" 
-            });
+            if (_allowNewGroup)
+                GroupComboBox.Items.Add(new ComboBoxItem
+                {
+                    Content = Loc.T("add_color.new_group"),
+                    Tag = "__new__"
+                });
             
             // Select "custom" by default, or first group if custom doesn't exist
             int customIndex = -1;

@@ -1,9 +1,10 @@
 <Window x:Class="Pixelab.AddGroupFromJsonWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Add Group from JSON"
-        Width="400"
+        Title="Import Groups from JSON"
+        Width="440"
         SizeToContent="Height"
+        MaxHeight="600"
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize"
         Background="#1E1E1E">
@@ -15,39 +16,12 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!-- Section Header -->
-        <TextBlock Grid.Row="0" x:Name="DetailsHeader" Text="GROUP DETAILS"
-                   Foreground="#B70074" FontSize="12" FontWeight="Bold" Margin="0,0,0,16"/>
-
-        <!-- Group ID -->
-        <TextBlock Grid.Row="1" x:Name="GroupIdLabel" Text="Group ID"
-                   Foreground="#FFFFFF" FontSize="12" Margin="0,0,0,4"/>
-        <TextBox Grid.Row="2" x:Name="GroupIdTextBox"
-                 Background="#3E3E42" Foreground="White" BorderBrush="#555555"
-                 Padding="6,4" Margin="0,0,0,4"/>
-        <TextBlock Grid.Row="3" x:Name="GroupIdHint" Text="Cannot match an existing group ID"
-                   Foreground="#888888" FontSize="10" Margin="0,0,0,12"/>
-
-        <!-- Group Name -->
-        <TextBlock Grid.Row="4" x:Name="GroupNameLabel" Text="Group Name (optional)"
-                   Foreground="#FFFFFF" FontSize="12" Margin="0,0,0,4"/>
-        <TextBox Grid.Row="5" x:Name="GroupNameTextBox"
-                 Background="#3E3E42" Foreground="White" BorderBrush="#555555"
-                 Padding="6,4" Margin="0,0,0,4"/>
-        <TextBlock Grid.Row="6" x:Name="GroupNameHint" Text="If empty, Group ID will be used as name"
-                   Foreground="#888888" FontSize="10" Margin="0,0,0,12"/>
-
         <!-- JSON File -->
-        <TextBlock Grid.Row="7" x:Name="JsonFileLabel" Text="JSON File"
+        <TextBlock Grid.Row="0" x:Name="JsonFileLabel" Text="JSON File"
                    Foreground="#FFFFFF" FontSize="12" Margin="0,0,0,4"/>
-        <Grid Grid.Row="8" Margin="0,0,0,20">
+        <Grid Grid.Row="1" Margin="0,0,0,8">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
@@ -60,12 +34,31 @@
                     Padding="12,6" Cursor="Hand"/>
         </Grid>
 
+        <!-- Preview -->
+        <TextBlock Grid.Row="2" x:Name="PreviewText" Text="No file selected."
+                   Foreground="#888888" FontSize="11" Margin="0,0,0,12"/>
+
+        <!-- Collapsible JSON format section -->
+        <StackPanel Grid.Row="3" Margin="0,0,0,16">
+            <Button x:Name="ToggleFormatButton" Content="▶  Show expected JSON format"
+                    Click="ToggleFormat_Click" HorizontalAlignment="Left"
+                    Background="Transparent" Foreground="#777777" BorderThickness="0"
+                    Padding="0,2,0,4" Cursor="Hand"/>
+            <TextBox x:Name="FormatTextBox" Visibility="Collapsed"
+                     Background="#141414" Foreground="#BBBBBB" BorderBrush="#3E3E42"
+                     FontFamily="Consolas" FontSize="11"
+                     IsReadOnly="True" TextWrapping="NoWrap"
+                     HorizontalScrollBarVisibility="Auto"
+                     VerticalScrollBarVisibility="Disabled"
+                     Padding="10" Margin="0,4,0,0"/>
+        </StackPanel>
+
         <!-- Buttons -->
-        <StackPanel Grid.Row="9" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,4">
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,4">
             <Button x:Name="CancelButton" Content="Cancel" Click="Cancel_Click"
                     Background="#3E3E42" Foreground="#FFFFFF" BorderThickness="0"
                     Padding="24,10" Margin="0,0,8,0" Cursor="Hand"/>
-            <Button x:Name="ConfirmButton" Content="Confirm" Click="Confirm_Click"
+            <Button x:Name="ConfirmButton" Content="Import" Click="Confirm_Click"
                     Background="#B70074" Foreground="#FFFFFF" BorderThickness="0"
                     Padding="24,10" Cursor="Hand"/>
         </StackPanel>

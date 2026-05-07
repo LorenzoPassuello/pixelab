@@ -266,21 +266,29 @@
                             <TextBlock x:Name="CustomColorsHeader" Text="CUSTOM COLORS" Foreground="#B70074" FontSize="12" FontWeight="Bold" Margin="0,0,0,12"/>
                             <TextBlock x:Name="CustomColorsDescription" Text="Add your own custom colors" Foreground="#888888" FontSize="11" Margin="0,0,0,12"/>
                             
-                            <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
-                                <Button x:Name="AddCustomColorButton" Content="Add Color" Click="AddCustomColor_Click"
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
+                                <Button x:Name="AddCustomColorButton" Content="Add color with picker" Click="AddCustomColor_Click"
                                         Background="#3E3E42" Foreground="#FFFFFF" BorderBrush="#555555"
                                         Padding="12,6" Margin="0,0,8,0" Cursor="Hand"/>
-                                <Button x:Name="ImportColorsButton" Content="Add Group from JSON" Click="ImportColors_Click"
+                                <Button x:Name="AddColorsFromHexButton" Content="Add color(s) from HEX" Click="AddColorsFromHex_Click"
                                         Background="#3E3E42" Foreground="#FFFFFF" BorderBrush="#555555"
                                         Padding="12,6" Margin="0,0,8,0" Cursor="Hand"/>
                                 <Button x:Name="DeleteColorsButton" Content="Delete Color(s)" Click="DeleteColors_Click"
+                                        Background="#3E3E42" Foreground="#FFFFFF" BorderBrush="#555555"
+                                        Padding="12,6" Cursor="Hand"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                                <Button x:Name="CreateGroupButton" Content="Create new group" Click="CreateGroup_Click"
+                                        Background="#3E3E42" Foreground="#FFFFFF" BorderBrush="#555555"
+                                        Padding="12,6" Margin="0,0,8,0" Cursor="Hand"/>
+                                <Button x:Name="ImportColorsButton" Content="Add Group from JSON" Click="ImportColors_Click"
                                         Background="#3E3E42" Foreground="#FFFFFF" BorderBrush="#555555"
                                         Padding="12,6" Margin="0,0,8,0" Cursor="Hand"/>
                                 <Button x:Name="DeleteGroupButton" Content="Delete Group" Click="DeleteGroup_Click"
                                         Background="#3E3E42" Foreground="#FFFFFF" BorderBrush="#555555"
                                         Padding="12,6" Cursor="Hand"/>
                             </StackPanel>
-                            <TextBlock x:Name="ImportColorsHint" Text="Select a JSON file with colors and assign all of them to a new group."
+                            <TextBlock x:Name="ImportColorsHint" Text="Import a JSON file — all groups and colors in it will be imported as-is."
                                        Foreground="#666666" FontSize="10" TextWrapping="Wrap" Margin="0,4,0,16"/>
                             
                             <Separator Background="#3F3F46" Margin="0,0,0,16"/>
